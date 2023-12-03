@@ -1,0 +1,4407 @@
+{
+  "name": "root",
+  "globalData": {
+    "ambientCoeff": 0.5,
+    "diffuseCoeff": 0.5,
+    "specularCoeff": 0.5,
+    "transparentCoeff": 0
+  },
+  "cameraData": {
+    "position": [12.0, 6.0, 6.0],
+    "up": [0.0, 1.0, 0.0],
+    "heightAngle": 60.0,
+    "focus": [4.0, 0.0, 3.0]
+  },
+  "groups": [
+    {
+      "translate": [8.5, 2.0, 8.5],
+      "lights": [
+        {
+          "type": "point",
+          "color": [1.0, 1.0, 1.0],
+          "attenuationCoeff": [0.1, 1.0, 0.0]
+        }
+      ]
+    },
+    {
+      "translate": [3.0, 3.0, 3.0],
+      "lights": [
+        {
+          "type": "point",
+          "color": [1.0, 1.0, 1.0],
+          "attenuationCoeff": [0.1, 1.0, 0.0]
+        }
+      ]
+    },
+    {
+      "translate": [-3.0, 4.0, -3.0],
+      "lights": [
+        {
+          "type": "point",
+          "color": [1.0, 1.0, 1.0],
+          "attenuationCoeff": [0.1, 1.0, 0.0]
+        }
+      ]
+    },
+    {
+      "translate": [-3.0, 2.0, 3.0],
+      "lights": [
+        {
+          "type": "point",
+          "color": [1.0, 1.0, 1.0],
+          "attenuationCoeff": [0.1, 1.0, 0.0]
+        }
+      ]
+    },
+    {
+      "translate": [8.0, 3.0, 1.0],
+      "lights": [
+        {
+          "type": "point",
+          "color": [1.0, 1.0, 1.0],
+          "attenuationCoeff": [0.1, 1.0, 0.0]
+        }
+      ]
+    },
+    {
+      "translate": [6.0, 2.0, 6.0],
+      "lights": [
+        {
+          "type": "point",
+          "color": [1.0, 1.0, 1.0],
+          "attenuationCoeff": [0.1, 1.0, 0.0]
+        }
+      ]
+    },
+    {
+      "groups": [
+        {
+          "groups": [
+            {
+              "translate": [4.0, 0.0, 4.0],
+              "scale": [8.0, 0.1, 8.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.05, 0.05, 0.05]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 0.01, 0.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [2.5, 0.01, 0.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [4.5, 0.01, 0.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [6.5, 0.01, 0.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [1.5, 0.01, 1.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [3.5, 0.01, 1.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [5.5, 0.01, 1.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [7.5, 0.01, 1.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 0.01, 2.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [2.5, 0.01, 2.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [4.5, 0.01, 2.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [6.5, 0.01, 2.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [1.5, 0.01, 3.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [3.5, 0.01, 3.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [5.5, 0.01, 3.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [7.5, 0.01, 3.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 0.01, 4.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [2.5, 0.01, 4.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [4.5, 0.01, 4.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [6.5, 0.01, 4.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [1.5, 0.01, 5.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [3.5, 0.01, 5.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [5.5, 0.01, 5.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [7.5, 0.01, 5.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 0.01, 6.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [2.5, 0.01, 6.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [4.5, 0.01, 6.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [6.5, 0.01, 6.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [1.5, 0.01, 7.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [3.5, 0.01, 7.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [5.5, 0.01, 7.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [7.5, 0.01, 7.5],
+              "scale": [1.0, 0.1, 1.0],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.9, -0.5],
+          "scale": [0.4, 0.5, 0.4],
+          "groups": [
+            {
+              "translate": [0.0, -1.6, 0.0],
+              "scale": [1.3, 0.1, 1.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.5, 0.0],
+              "scale": [1.1, 0.1, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.0, 0.0],
+              "scale": [1.0, 0.8, 1.0],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.0, 0.0],
+              "scale": [0.6, 0.05, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [0.3, 1.0, 0.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.1, 0.0],
+              "scale": [0.6, 0.05, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.15, 0.0],
+              "scale": [0.4, 0.03, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.7, -0.7, 0.7],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.6, 0.0],
+              "scale": [0.7, 0.2, 0.7],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.7, 0.0],
+              "scale": [0.3, 0.05, 0.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.725, 0.0],
+              "scale": [0.15, 0.15, 0.15],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.9, -0.5],
+          "scale": [0.4, 0.5, 0.4],
+          "rotate": [0.0, 1.0, 0.0, 90.0],
+          "groups": [
+            {
+              "translate": [0.0, -1.6, 0.0],
+              "scale": [1.3, 0.1, 1.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.5, 0.0],
+              "scale": [1.1, 0.1, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.0, 0.0],
+              "scale": [1.0, 0.8, 1.0],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.0, 0.0],
+              "scale": [0.6, 0.05, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [0.3, 1.0, 0.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.1, 0.0],
+              "scale": [0.6, 0.05, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.15, 0.0],
+              "scale": [0.4, 0.03, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.7, -0.7, 0.7],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.6, 0.0],
+              "scale": [0.7, 0.2, 0.7],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.7, 0.0],
+              "scale": [0.3, 0.05, 0.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.85, 0.0],
+              "scale": [0.1, 0.5, 0.05],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.95, 0.0],
+              "scale": [0.3, 0.1, 0.05],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.65, -0.5],
+          "scale": [0.3, 0.4, 0.3],
+          "groups": [
+            {
+              "translate": [0.0, -1.4, 0.0],
+              "scale": [1.2, 0.2, 1.2],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.3, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.2, 0.0],
+              "scale": [1.0, 2.2, 1.0],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.1, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.25, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.25, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.25, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.25, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.0],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.0],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.65, -0.5],
+          "scale": [0.3, 0.4, 0.3],
+          "groups": [
+            {
+              "translate": [0.0, -1.4, 0.0],
+              "scale": [1.2, 0.2, 1.2],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.3, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.2, 0.0],
+              "scale": [1.0, 2.2, 1.0],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.1, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.25, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.25, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.25, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.25, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.0],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.0],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.4, -0.5],
+          "scale": [0.4, 0.6, 0.4],
+          "rotate": [0.0, 1.0, 0.0, 180.0],
+          "groups": [
+            {
+              "scale": [1.0, 0.7, 1.0],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.2, 0.3, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [0.6, 0.2, 1.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.1, 0.7, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [1.0, 0.2, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.05, 1.05, 0.05],
+              "rotate": [0.0, 0.0, 1.0, -20.0],
+              "scale": [0.15, 0.2, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.15, 1.05, 0.05],
+              "rotate": [0.0, 0.0, 1.0, -45.0],
+              "scale": [0.35, 0.15, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.05, 1.05, -0.05],
+              "rotate": [0.0, 0.0, 1.0, -20.0],
+              "scale": [0.15, 0.2, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.15, 1.05, -0.05],
+              "rotate": [0.0, 0.0, 1.0, -45.0],
+              "scale": [0.35, 0.15, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.9, 0.025],
+              "scale": [0.2, 0.2, 0.15],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.3, 0.72, 0.03],
+              "rotate": [0.0, 0.0, 1.0, 35.0],
+              "scale": [0.6, 0.25, 0.12],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.3, 0.72, -0.03],
+              "rotate": [0.0, 0.0, 1.0, 35.0],
+              "scale": [0.6, 0.25, 0.12],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.1, 0.5, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [0.4, 0.2, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 0.6, 0.0],
+              "scale": [0.2, 0.2, 0.2],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [1.1, 0.1, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.45, 0.0],
+              "scale": [1.2, 0.1, 1.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.4, -0.5],
+          "scale": [0.4, 0.6, 0.4],
+          "rotate": [0.0, 1.0, 0.0, 180.0],
+          "groups": [
+            {
+              "scale": [1.0, 0.7, 1.0],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.2, 0.3, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [0.6, 0.2, 1.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.1, 0.7, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [1.0, 0.2, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.05, 1.05, 0.05],
+              "rotate": [0.0, 0.0, 1.0, -20.0],
+              "scale": [0.15, 0.2, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.15, 1.05, 0.05],
+              "rotate": [0.0, 0.0, 1.0, -45.0],
+              "scale": [0.35, 0.15, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.05, 1.05, -0.05],
+              "rotate": [0.0, 0.0, 1.0, -20.0],
+              "scale": [0.15, 0.2, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.15, 1.05, -0.05],
+              "rotate": [0.0, 0.0, 1.0, -45.0],
+              "scale": [0.35, 0.15, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.9, 0.025],
+              "scale": [0.2, 0.2, 0.15],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.3, 0.72, 0.03],
+              "rotate": [0.0, 0.0, 1.0, 35.0],
+              "scale": [0.6, 0.25, 0.12],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.3, 0.72, -0.03],
+              "rotate": [0.0, 0.0, 1.0, 35.0],
+              "scale": [0.6, 0.25, 0.12],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.1, 0.5, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [0.4, 0.2, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 0.6, 0.0],
+              "scale": [0.2, 0.2, 0.2],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [1.1, 0.1, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.45, 0.0],
+              "scale": [1.2, 0.1, 1.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.25, -0.5],
+          "scale": [0.4, 0.3, 0.4],
+          "groups": [
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [1.2, 0.2, 1.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.8, 0.15, 0.8],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.7, 0.0],
+              "scale": [0.85, 1.8, 0.85],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.5, 0.0],
+              "scale": [0.5, 2.0, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.5, 0.0],
+              "scale": [0.5, 0.5, 0.5],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.4, 0.0],
+              "scale": [0.7, 0.15, 0.7],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.5, 0.0],
+              "scale": [0.6, 0.15, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.9, 0.0],
+              "scale": [0.7, 0.7, 0.7],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 2.3, 0.0],
+              "scale": [0.7, 0.6, 0.7],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 2.6, 0.0],
+              "scale": [0.2, 0.2, 0.2],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.25, -0.5],
+          "scale": [0.4, 0.3, 0.4],
+          "groups": [
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [1.2, 0.2, 1.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.8, 0.15, 0.8],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.7, 0.0],
+              "scale": [0.85, 1.8, 0.85],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.5, 0.0],
+              "scale": [0.5, 2.0, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.5, 0.0],
+              "scale": [0.5, 0.5, 0.5],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.4, 0.0],
+              "scale": [0.7, 0.15, 0.7],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.5, 0.0],
+              "scale": [0.6, 0.15, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.9, 0.0],
+              "scale": [0.7, 0.7, 0.7],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 2.3, 0.0],
+              "scale": [0.7, 0.6, 0.7],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 2.6, 0.0],
+              "scale": [0.2, 0.2, 0.2],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [1.0, 1.0, 1.0]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.9, -0.5],
+          "scale": [0.4, 0.5, 0.4],
+          "groups": [
+            {
+              "translate": [0.0, -1.6, 0.0],
+              "scale": [1.3, 0.1, 1.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.5, 0.0],
+              "scale": [1.1, 0.1, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.0, 0.0],
+              "scale": [1.0, 0.8, 1.0],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.0, 0.0],
+              "scale": [0.6, 0.05, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [0.3, 1.0, 0.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.1, 0.0],
+              "scale": [0.6, 0.05, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.15, 0.0],
+              "scale": [0.4, 0.03, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.7, -0.7, 0.7],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.6, 0.0],
+              "scale": [0.7, 0.2, 0.7],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.7, 0.0],
+              "scale": [0.3, 0.05, 0.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.725, 0.0],
+              "scale": [0.15, 0.15, 0.15],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.9, -0.5],
+          "scale": [0.4, 0.5, 0.4],
+          "rotate": [0.0, 1.0, 0.0, 90.0],
+          "groups": [
+            {
+              "translate": [0.0, -1.6, 0.0],
+              "scale": [1.3, 0.1, 1.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.5, 0.0],
+              "scale": [1.1, 0.1, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.0, 0.0],
+              "scale": [1.0, 0.8, 1.0],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.0, 0.0],
+              "scale": [0.6, 0.05, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [0.3, 1.0, 0.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.1, 0.0],
+              "scale": [0.6, 0.05, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.15, 0.0],
+              "scale": [0.4, 0.03, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.7, -0.7, 0.7],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.6, 0.0],
+              "scale": [0.7, 0.2, 0.7],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.7, 0.0],
+              "scale": [0.3, 0.05, 0.3],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.85, 0.0],
+              "scale": [0.1, 0.5, 0.05],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.95, 0.0],
+              "scale": [0.3, 0.1, 0.05],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.65, -0.5],
+          "scale": [0.3, 0.4, 0.3],
+          "groups": [
+            {
+              "translate": [0.0, -1.4, 0.0],
+              "scale": [1.2, 0.2, 1.2],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.3, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.2, 0.0],
+              "scale": [1.0, 2.2, 1.0],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.1, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.25, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.25, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.25, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.25, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.0],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.0],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.65, -0.5],
+          "scale": [0.3, 0.4, 0.3],
+          "groups": [
+            {
+              "translate": [0.0, -1.4, 0.0],
+              "scale": [1.2, 0.2, 1.2],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -1.3, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.2, 0.0],
+              "scale": [1.0, 2.2, 1.0],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.1, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.25, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.25, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.25, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.25, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, 0.0],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, 0.0],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.25],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 1.2, -0.5],
+              "scale": [0.1, 0.1, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.4, -0.5],
+          "scale": [0.4, 0.6, 0.4],
+          "groups": [
+            {
+              "scale": [1.0, 0.7, 1.0],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.2, 0.3, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [0.6, 0.2, 1.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.1, 0.7, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [1.0, 0.2, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.05, 1.05, 0.05],
+              "rotate": [0.0, 0.0, 1.0, -20.0],
+              "scale": [0.15, 0.2, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.15, 1.05, 0.05],
+              "rotate": [0.0, 0.0, 1.0, -45.0],
+              "scale": [0.35, 0.15, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.05, 1.05, -0.05],
+              "rotate": [0.0, 0.0, 1.0, -20.0],
+              "scale": [0.15, 0.2, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.15, 1.05, -0.05],
+              "rotate": [0.0, 0.0, 1.0, -45.0],
+              "scale": [0.35, 0.15, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.9, 0.025],
+              "scale": [0.2, 0.2, 0.15],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.3, 0.72, 0.03],
+              "rotate": [0.0, 0.0, 1.0, 35.0],
+              "scale": [0.6, 0.25, 0.12],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.3, 0.72, -0.03],
+              "rotate": [0.0, 0.0, 1.0, 35.0],
+              "scale": [0.6, 0.25, 0.12],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.1, 0.5, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [0.4, 0.2, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 0.6, 0.0],
+              "scale": [0.2, 0.2, 0.2],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [1.1, 0.1, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.45, 0.0],
+              "scale": [1.2, 0.1, 1.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.4, -0.5],
+          "scale": [0.4, 0.6, 0.4],
+          "groups": [
+            {
+              "scale": [1.0, 0.7, 1.0],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.2, 0.3, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [0.6, 0.2, 1.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.1, 0.7, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [1.0, 0.2, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.05, 1.05, 0.05],
+              "rotate": [0.0, 0.0, 1.0, -20.0],
+              "scale": [0.15, 0.2, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.15, 1.05, 0.05],
+              "rotate": [0.0, 0.0, 1.0, -45.0],
+              "scale": [0.35, 0.15, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.05, 1.05, -0.05],
+              "rotate": [0.0, 0.0, 1.0, -20.0],
+              "scale": [0.15, 0.2, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.15, 1.05, -0.05],
+              "rotate": [0.0, 0.0, 1.0, -45.0],
+              "scale": [0.35, 0.15, 0.1],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.9, 0.025],
+              "scale": [0.2, 0.2, 0.15],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.3, 0.72, 0.03],
+              "rotate": [0.0, 0.0, 1.0, 35.0],
+              "scale": [0.6, 0.25, 0.12],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.3, 0.72, -0.03],
+              "rotate": [0.0, 0.0, 1.0, 35.0],
+              "scale": [0.6, 0.25, 0.12],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.1, 0.5, 0.0],
+              "rotate": [1.0, 0.0, 0.0, 90.0],
+              "scale": [0.4, 0.2, 0.4],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [-0.5, 0.6, 0.0],
+              "scale": [0.2, 0.2, 0.2],
+              "primitives": [
+                {
+                  "type": "cube",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [1.1, 0.1, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.45, 0.0],
+              "scale": [1.2, 0.1, 1.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.25, -0.5],
+          "scale": [0.4, 0.3, 0.4],
+          "groups": [
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [1.2, 0.2, 1.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.8, 0.15, 0.8],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.7, 0.0],
+              "scale": [0.85, 1.8, 0.85],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.5, 0.0],
+              "scale": [0.5, 2.0, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.5, 0.0],
+              "scale": [0.5, 0.5, 0.5],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.4, 0.0],
+              "scale": [0.7, 0.15, 0.7],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.5, 0.0],
+              "scale": [0.6, 0.15, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.9, 0.0],
+              "scale": [0.7, 0.7, 0.7],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 2.3, 0.0],
+              "scale": [0.7, 0.6, 0.7],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 2.6, 0.0],
+              "scale": [0.2, 0.2, 0.2],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.25, -0.5],
+          "scale": [0.4, 0.3, 0.4],
+          "groups": [
+            {
+              "translate": [0.0, -0.4, 0.0],
+              "scale": [1.2, 0.2, 1.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [1.1, 0.2, 1.1],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.8, 0.15, 0.8],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.7, 0.0],
+              "scale": [0.85, 1.8, 0.85],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.5, 0.0],
+              "scale": [0.5, 2.0, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.5, 0.0],
+              "scale": [0.5, 0.5, 0.5],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.4, 0.0],
+              "scale": [0.7, 0.15, 0.7],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.5, 0.0],
+              "scale": [0.6, 0.15, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 1.9, 0.0],
+              "scale": [0.7, 0.7, 0.7],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 2.3, 0.0],
+              "scale": [0.7, 0.6, 0.7],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 2.6, 0.0],
+              "scale": [0.2, 0.2, 0.2],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "translate": [-0.5, 0.35, -0.5],
+          "scale": [0.7, 0.7, 0.7],
+          "groups": [
+            {
+              "translate": [0.0, -0.25, 0.0],
+              "scale": [0.5, 0.07, 0.5],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, -0.3, 0.0],
+              "scale": [0.6, 0.1, 0.6],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "scale": [0.4, 0.4, 0.4],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.2, 0.0],
+              "scale": [0.2, 0.6, 0.2],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.25, 0.0],
+              "scale": [0.25, 0.03, 0.25],
+              "primitives": [
+                {
+                  "type": "cylinder",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.45, 0.0],
+              "scale": [0.35, -0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.55, 0.0],
+              "scale": [0.35, 0.1, 0.35],
+              "primitives": [
+                {
+                  "type": "cone",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            },
+            {
+              "translate": [0.0, 0.65, 0.0],
+              "scale": [0.35, 0.35, 0.35],
+              "primitives": [
+                {
+                  "type": "sphere",
+                  "diffuse": [0.1, 0.1, 0.1]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "root",
+  "globalData": {
+    "ambientCoeff": 1,
+    "diffuseCoeff": 1,
+    "specularCoeff": 1,
+    "transparentCoeff": 0
+  },
+  "cameraData": {
+    "position": [-2, 0, 0],
+    "up": [0.0, 1.0, 0.0],
+    "heightAngle": 45.0,
+    "focus": [0.0, 0.0, 0.0]
+  },
+  "groups": [
+    {
+      "lights": [
+        {
+          "type": "directional",
+          "direction": [0.0, -1.0, 0.0],
+          "color": [1.0, 1.0, 1.0]
+        }
+      ]
+    },
+    {
+      "groups": [
+        {
+          "scale": [3, 3, 3],
+          "rotate": [0, 1, 0, -70],
+          "translate": [0, -0.3, 0],
+          "groups": [
+            {
+              "rotate": [1, 0, 0, 10],
+              "primitives": [
+                {
+                  "type": "mesh",
+                  "ambient": [0.2, 0.2, 0.7],
+                  "meshFile": "meshes/bunny.obj",
+                  "diffuse": [0.23, 0.33, 0.99],
+                  "specular": [1.0, 1.0, 1.0],
+                  "shininess": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scale": [3, 50, 50],
+          "translate": [10, 0, 0],
+          "primitives": [
+            {
+              "type": "cube",
+              "ambient": [0.9, 0.67, 0.7],
+              "diffuse": [0.99, 0.68, 0.69],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 30.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

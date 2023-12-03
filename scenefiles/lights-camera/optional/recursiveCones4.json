@@ -1,0 +1,3228 @@
+{
+  "name": "root",
+  "globalData": {
+    "ambientCoeff": 0.5,
+    "diffuseCoeff": 0.7,
+    "specularCoeff": 0.54,
+    "transparentCoeff": 0
+  },
+  "cameraData": {
+    "position": [10.0, 4.1, 16.0],
+    "up": [0.0, 1.0, 0.0],
+    "heightAngle": 49.5,
+    "look": [-9.0, -3.2, -16.0]
+  },
+  "groups": [
+    {
+      "translate": [10.0, 10.0, 10.0],
+      "lights": [
+        {
+          "type": "point",
+          "color": [1.0, 1.0, 1.0],
+          "attenuationCoeff": [1.5, 0.0, 0.0]
+        }
+      ]
+    },
+    {
+      "lights": [
+        {
+          "type": "directional",
+          "color": [1.0, 1.0, 1.0],
+          "direction": [0.25, 1.0, -1.0]
+        }
+      ]
+    },
+    {
+      "lights": [
+        {
+          "type": "directional",
+          "color": [1.0, 1.0, 1.0],
+          "direction": [1.0, -1.8, -2.0]
+        }
+      ]
+    },
+    {
+      "groups": [
+        {
+          "translate": [0.0, 0.0, 0.0],
+          "scale": [6.0, 6.0, 6.0],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.1968,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 0.0, 0.0],
+          "scale": [3.0, 3.0, 3.0],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.9766,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [6.75, 0.0, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.2444,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [7.875, 0.0, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.7666,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [6.75, 1.125, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.4099,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [6.75, 0.0, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.7733,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [6.75, -1.125, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.8391,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [6.75, 0.0, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.4326,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 2.25, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.7292,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [5.625, 2.25, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.2173,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 3.375, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.0327,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 2.25, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.5034,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [3.375, 2.25, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.8218,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 2.25, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.156,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 0.0, 2.25],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.1763,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [5.625, 0.0, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.7204,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 1.125, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.2493,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 0.0, 3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.215,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [3.375, 0.0, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.3822,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, -1.125, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.5107,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, -2.25, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.6821,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [5.625, -2.25, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.2206,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, -2.25, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.2644,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [3.375, -2.25, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.4539,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, -3.375, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.975,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, -2.25, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.9765,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 0.0, -2.25],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.9912,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [5.625, 0.0, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.2907,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 1.125, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.3521,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [3.375, 0.0, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.9804,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, -1.125, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.2313,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [4.5, 0.0, -3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.9015,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 4.5, 0.0],
+          "scale": [3.0, 3.0, 3.0],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.3978,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 4.5, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.9743,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [3.375, 4.5, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.0981,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 5.625, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.5722,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 4.5, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.769,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 3.375, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.3013,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 4.5, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.4459,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 6.75, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.0269,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, 6.75, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.4265,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 7.875, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.4287,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 6.75, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.4833,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, 6.75, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.2307,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 6.75, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.1662,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 4.5, 2.25],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.3638,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, 4.5, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.9119,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 5.625, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.8781,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 4.5, 3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.3818,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, 4.5, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.0898,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 3.375, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.3375,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 4.5, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.2601,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 5.625, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.4547,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 4.5, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.14,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-3.375, 4.5, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.3167,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 3.375, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.3216,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 4.5, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.1703,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 4.5, -2.25],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.1609,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, 4.5, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.4699,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 5.625, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.4889,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, 4.5, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.6027,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 3.375, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.0336,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 4.5, -3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.118,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 0.0, 4.5],
+          "scale": [3.0, 3.0, 3.0],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.8243,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 0.0, 4.5],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.7642,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [3.375, 0.0, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.9797,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 1.125, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.576,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 0.0, 5.625],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.2083,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, -1.125, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.8013,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 0.0, 3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.9314,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 2.25, 4.5],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.5151,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, 2.25, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.8611,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 3.375, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.0034,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 2.25, 5.625],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.339,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, 2.25, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.4136,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 2.25, 3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.1094,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 0.0, 6.75],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.6807,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, 0.0, 6.75],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.5309,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 1.125, 6.75],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.0547,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 0.0, 7.875],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.2985,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, 0.0, 6.75],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.2694,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -1.125, 6.75],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.9206,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 0.0, 4.5],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.518,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 1.125, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.8761,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 0.0, 5.625],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.4771,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-3.375, 0.0, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.4372,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, -1.125, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.0605,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 0.0, 3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.6777,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -2.25, 4.5],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.3203,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, -2.25, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.5373,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -2.25, 5.625],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.8447,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, -2.25, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.7501,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -3.375, 4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.7896,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -2.25, 3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.324,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 0.0, 0.0],
+          "scale": [3.0, 3.0, 3.0],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.6363,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 2.25, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.6632,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-3.375, 2.25, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.9006,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 3.375, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.7511,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 2.25, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.7127,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-5.625, 2.25, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.738,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 2.25, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.4347,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 0.0, 2.25],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.1821,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-3.375, 0.0, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.4735,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 1.125, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.5592,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 0.0, 3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.8765,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-5.625, 0.0, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.5276,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, -1.125, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.7431,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-6.75, 0.0, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.2465,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-6.75, 1.125, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.5588,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-6.75, 0.0, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.3771,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-7.875, 0.0, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.1929,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-6.75, -1.125, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.1008,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-6.75, 0.0, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.6242,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, -2.25, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.5122,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-3.375, -2.25, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.4791,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, -2.25, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.5268,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-5.625, -2.25, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.4253,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, -3.375, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.4091,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, -2.25, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.5686,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 0.0, -2.25],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.6925,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-3.375, 0.0, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.0647,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 1.125, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.1662,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-5.625, 0.0, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.4978,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, -1.125, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.3406,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-4.5, 0.0, -3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.9831,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -4.5, 0.0],
+          "scale": [3.0, 3.0, 3.0],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.2517,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, -4.5, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.7581,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [3.375, -4.5, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.2695,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, -3.375, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.2044,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, -4.5, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.7193,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, -5.625, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.0318,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, -4.5, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.5974,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -4.5, 2.25],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.955,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, -4.5, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.3558,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -3.375, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.9747,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -4.5, 3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.9687,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, -4.5, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.2683,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -5.625, 2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.8473,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, -4.5, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.5476,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, -3.375, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.8227,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, -4.5, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.9057,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-3.375, -4.5, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.7067,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, -5.625, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.4269,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, -4.5, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.0462,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -6.75, 0.0],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.7579,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, -6.75, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.3149,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -6.75, 1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.0117,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, -6.75, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.2467,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -7.875, 0.0],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.9188,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -6.75, -1.125],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.4903,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -4.5, -2.25],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.6508,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, -4.5, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.933,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -3.375, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.594,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, -4.5, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.6853,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -5.625, -2.25],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.9683,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -4.5, -3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.6723,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 0.0, -4.5],
+          "scale": [3.0, 3.0, 3.0],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.5824,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 0.0, -4.5],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.5379,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [3.375, 0.0, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.3553,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 1.125, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.6406,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 0.0, -3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.3497,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, -1.125, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.9028,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [2.25, 0.0, -5.625],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.8679,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 2.25, -4.5],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 20.3281,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, 2.25, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.7521,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 3.375, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.6802,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 2.25, -3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 21.2775,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, 2.25, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 15.3222,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 2.25, -5.625],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.3934,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 0.0, -4.5],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.013,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 1.125, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.5155,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 0.0, -3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.2358,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-3.375, 0.0, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.0644,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, -1.125, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.1072,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-2.25, 0.0, -5.625],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 16.3579,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -2.25, -4.5],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 22.5328,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, -2.25, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.7034,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -2.25, -3.375],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.0691,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, -2.25, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.5852,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -3.375, -4.5],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.3579,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -2.25, -5.625],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 24.2157,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 0.0, -6.75],
+          "scale": [1.5, 1.5, 1.5],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.7403,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [1.125, 0.0, -6.75],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.6512,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 1.125, -6.75],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 23.3646,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [-1.125, 0.0, -6.75],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 1.0, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 19.07,
+              "reflective": [0.75, 1.0, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, -1.125, -6.75],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [0.75, 0.75, 1.0],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 17.4063,
+              "reflective": [0.75, 0.75, 1.0],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        },
+        {
+          "translate": [0.0, 0.0, -7.875],
+          "scale": [0.75, 0.75, 0.75],
+          "primitives": [
+            {
+              "type": "cone",
+              "diffuse": [1.0, 0.75, 0.75],
+              "specular": [1.0, 1.0, 1.0],
+              "shininess": 18.063,
+              "reflective": [1.0, 0.75, 0.75],
+              "blend": 0.75,
+              "textureFile": "image/marsTexture.png",
+              "textureU": 1.0,
+              "textureV": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

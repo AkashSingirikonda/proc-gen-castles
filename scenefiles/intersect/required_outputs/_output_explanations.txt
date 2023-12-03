@@ -1,0 +1,12 @@
+ambient_total - phong_total where the only non-zero globalData coefficient is the ambient coefficient. All objects still possess their own material properties.
+diffuse_total - phong_total where the only non-zero globalData coefficient is the diffuse coefficient. All objects still possess their own material properties.
+directional_light_1 - A scene with 5 uniquely translated primitives, one of which with a scaling operation as well. The scene is lit by a single directional light source. The camera has been positioned, but is focused at [0,0,0].
+directional_light_2 - A scene with 5 uniquely translated primitives, one of which with a scaling operation as well. The scene is lit by 3 directional lights. The camera has been positioned, but is focused at [0,0,0].
+parse_matrix - A scene with 4 uniquely transformed primitives, where that transformation is defined by a matrix. The scene is lit by 3 directional lights. The camera has been positioned, and is given a non-standard up vector and look vector.
+phong_total - A scene with 5 uniquely translated and scaled primitives, 4 of which are rotated. The scene is lit by 1 directional light. The camera has been positioned, but is focused at [0,0,0].
+specular_total - phong_total where the only non-zero globalData coefficient is the specular coefficient. All objects still possess their own material properties.
+unit_cone_cap - A scene with a non-transformed cone, showing the base. Lit by a single directional light. The camera has been positioned, but is focused at [0,0,0].
+unit_cone - A scene with a non-transformed cone, showing the top triangular portion. Lit by a single directional light. The camera has been positioned, but is focused at [0,0,0].
+unit_cube - A scene with a non-transformed cube. Lit by a single directional light. The camera has been positioned, but is focused at [0,0,0].
+unit_cylinder - A scene with a non-transformed cylinder. Lit by a single directional light. The camera has been positioned, but is focused at [0,0,0].
+unit_sphere - A scene with a non-transformed sphere. Lit by a single directional light. The camera has been positioned, but is focused at [0,0,0].

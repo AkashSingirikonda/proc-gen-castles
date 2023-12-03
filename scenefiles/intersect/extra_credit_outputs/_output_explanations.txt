@@ -1,0 +1,2 @@
+recursive_sphere_2_supersample - rendered at 20 samples per pixel
+rendered_sphere_2_postproc = post-processed with filter techniques
