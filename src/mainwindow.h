@@ -23,18 +23,9 @@ private:
     void connectParam2();
     void connectNear();
     void connectFar();
-    void connectPerPixelFilter();
-    void connectKernelBasedFilter();
-    void connectUploadFile();
-    void connectSaveImage();
-    void connectExtraCredit();
 
     Realtime *realtime;
     AspectRatioWidget *aspectRatioWidget;
-    QCheckBox *filter1;
-    QCheckBox *filter2;
-    QPushButton *uploadFile;
-    QPushButton *saveImage;
     QSlider *p1Slider;
     QSlider *p2Slider;
     QSpinBox *p1Box;
@@ -44,17 +35,16 @@ private:
     QDoubleSpinBox *nearBox;
     QDoubleSpinBox *farBox;
 
-    // Extra Credit:
-    QCheckBox *ec1;
-    QCheckBox *ec2;
-    QCheckBox *ec3;
-    QCheckBox *ec4;
+
+    QPushButton *genRootSeedButton;
+    QSpinBox *rootSeedBox;
+
+    void connectRootSeed();
+    void connectRootSeedChanged();
+
+
 
 private slots:
-    void onPerPixelFilter();
-    void onKernelBasedFilter();
-    void onUploadFile();
-    void onSaveImage();
     void onValChangeP1(int newValue);
     void onValChangeP2(int newValue);
     void onValChangeNearSlider(int newValue);
@@ -62,9 +52,6 @@ private slots:
     void onValChangeNearBox(double newValue);
     void onValChangeFarBox(double newValue);
 
-    // Extra Credit:
-    void onExtraCredit1();
-    void onExtraCredit2();
-    void onExtraCredit3();
-    void onExtraCredit4();
+    void onValChangedRootSeed(int newValue);
+    void onGenerateRootSeed();
 };
