@@ -43,7 +43,10 @@ add_executable(${PROJECT_NAME}
 add_subdirectory(glm)
 
 # GLEW: this creates its library and allows you to `#include "GL/glew.h"`
-add_library(StaticGLEW STATIC glew/src/glew.c)
+add_library(StaticGLEW STATIC glew/src/glew.c
+    src/splines/spline.h src/splines/spline.cpp
+    src/splines/cameratrack.h src/splines/cameratrack.cpp
+    src/splines/cameratracksegment.h src/splines/cameratracksegment.cpp)
 include_directories(${PROJECT_NAME} PRIVATE glew/include)
 
 # Specifies libraries to be linked (Qt components, glew, etc)

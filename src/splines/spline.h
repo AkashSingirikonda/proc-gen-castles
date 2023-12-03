@@ -1,0 +1,7 @@
+
+
+class Spline
+{
+public:
+    Spline();
+};
