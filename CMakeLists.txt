@@ -46,7 +46,12 @@ add_subdirectory(glm)
 add_library(StaticGLEW STATIC glew/src/glew.c
     src/splines/spline.h src/splines/spline.cpp
     src/splines/cameratrack.h src/splines/cameratrack.cpp
-    src/splines/cameratracksegment.h src/splines/cameratracksegment.cpp)
+    src/splines/cameratracksegment.h src/splines/cameratracksegment.cpp
+    src/scene/scene.h src/scene/scene.cpp
+    src/scene/sceneobject.h src/scene/sceneobject.cpp
+    src/scene/sceneprimitive.h src/scene/sceneprimitive.cpp
+    src/textures/texturetypes.h
+    src/procedural/proceduralcastle.h src/procedural/proceduralcastle.cpp)
 include_directories(${PROJECT_NAME} PRIVATE glew/include)
 
 # Specifies libraries to be linked (Qt components, glew, etc)
