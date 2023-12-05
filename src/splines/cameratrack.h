@@ -1,18 +1,21 @@
-#include "glm/glm.hpp"
+#include <GL/glew.h>
+#include <glm/glm.hpp>
+#include <vector>
 
-struct CameraParams {
-    glm::vec3 position;
-    glm::vec3 look;
-};
-
+#include "cameratracksegment.h"
+#include "cameraparams.h"
 
 class CameraTrack
 {
 public:
     CameraTrack();
+    ~CameraTrack();
 
-    void AddSegment(){};
+    void AppendSegment(CameraTrackSegment* segment, float duration){};
 
     void get(float t, CameraParams& params){};
+
+private:
+    std::vector<CameraTrackSegment*> segments;
 };
 

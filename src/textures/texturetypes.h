@@ -1,4 +1,4 @@
-
+# pragma once
 
 /*
  * Generic texture enum to make it easier to specify texutres for scene objects.
