@@ -20,6 +20,14 @@ class LinearSpline : public Spline<T>
     T get(float time) override;
 };
 
+template <class T>
+class CubicSpline : public Spline<T>
+{
+    CubicSpline(T startData, T endData): Spline<T>(startData, endData){};
+
+    T get(float time) override;
+};
+
 /*
  * TODO
  *

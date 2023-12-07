@@ -13,5 +13,5 @@ public:
 
 private:
 
-    std::vector<SceneObject*> sceneObjects;
+    std::vector<SceneNode*> sceneObjects;
 };

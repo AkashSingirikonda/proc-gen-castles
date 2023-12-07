@@ -143,10 +143,3 @@ struct SceneTransformation {
     float angle;         // Only applicable when rotating.    Defines the angle to rotate by in RADIANS, following the right-hand rule.
     glm::mat4 matrix;    // Only applicable when transforming by a custom matrix. This is that custom matrix.
 };
-
-// Struct which represents a node in the scene graph/tree, to be parsed by the student's `SceneParser`.
-struct SceneNode {
-    std::vector<SceneTransformation*> transformations; // Note the order of transformations described in lab 5
-    std::vector<SceneLight*> lights;
-    std::vector<SceneNode*> children;
-};
