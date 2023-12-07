@@ -42,13 +42,13 @@ private:
     void timerEvent(QTimerEvent *event) override;
 
     // Tick Related Variables
-    int m_timer;                                        // Stores timer which attempts to run ~60 times per second
-    QElapsedTimer m_elapsedTimer;                       // Stores timer which keeps track of actual time between frames
+    int timer;                                        // Stores timer which attempts to run ~60 times per second
+    QElapsedTimer elapsedTimer;                       // Stores timer which keeps track of actual time between frames
 
     // Input Related Variables
-    bool m_mouseDown = false;                           // Stores state of left mouse button
-    glm::vec2 m_prev_mouse_pos;                         // Stores mouse position
-    std::unordered_map<Qt::Key, bool> m_keyMap;         // Stores whether keys are pressed or not
+    bool mouseDown = false;                           // Stores state of left mouse button
+    glm::vec2 prevMousePos;                         // Stores mouse position
+    std::unordered_map<Qt::Key, bool> keyMap;         // Stores whether keys are pressed or not
 
     // Device Correction Variables
     int m_devicePixelRatio;
@@ -65,17 +65,19 @@ private:
 
     Camera camera;
     void updateCamera(float aspectRatio);
-    const float movement_speed = 5;
-    const float rotation_speed = .003;
+    const float movementSpeed = 5;
+    const float rotationSpeed = .003;
 
 
+
+    // TODO It might make more sense to just have all of the light data in the scene since that is where it is generated anyway
     const int MAX_LIGHTS = 10;
-    std::vector<int> light_types;
-    std::vector<glm::vec4> light_colors;
-    std::vector<glm::vec4> light_positions;
-    std::vector<glm::vec4> light_directions;
-    std::vector<glm::vec2> light_datas;
-    std::vector<glm::vec3> light_funcs;
+    std::vector<int> lightTypes;
+    std::vector<glm::vec4> lightColors;
+    std::vector<glm::vec4> lightPositions;
+    std::vector<glm::vec4> lightDirections;
+    std::vector<glm::vec2> lightDatas;
+    std::vector<glm::vec3> lightFuncs;
 
     const std::map<LightType, int> LIGHT_TYPE_TO_INT_MAP = {{LightType::LIGHT_POINT, 1}, {LightType::LIGHT_DIRECTIONAL, 2}, {LightType::LIGHT_SPOT, 3}};
 

@@ -35,7 +35,7 @@ void Realtime::finish() {
 }
 
 void Realtime::initializeGL() {
-    devicePixelRatio = this->devicePixelRatio();
+    pixelRatio = this->devicePixelRatio();
 
     timer = startTimer(1000/60);
     elapsedTimer.start();
@@ -54,7 +54,7 @@ void Realtime::initializeGL() {
     // Tells OpenGL to only draw the front face
     glEnable(GL_CULL_FACE);
     // Tells OpenGL how big the screen is
-    glViewport(0, 0, size().width() * devicePixelRatio, size().height() * devicePixelRatio);
+    glViewport(0, 0, size().width() * pixelRatio, size().height() * pixelRatio);
 
     // Students: anything requiring OpenGL calls when the program starts should be done here
 }
@@ -65,7 +65,7 @@ void Realtime::paintGL() {
 
 void Realtime::resizeGL(int w, int h) {
     // Tells OpenGL how big the screen is
-    glViewport(0, 0, size().width() * devicePixelRatio, size().height() * devicePixelRatio);
+    glViewport(0, 0, size().width() * pixelRatio, size().height() * pixelRatio);
 
     // Students: anything requiring OpenGL calls when the program starts should be done here
 }
@@ -79,8 +79,6 @@ void Realtime::settingsChanged() {
 
     update(); // asks for a PaintGL() call to occur
 }
-
-// ================== Project 6: Action!
 
 void Realtime::keyPressEvent(QKeyEvent *event) {
     keyMap[Qt::Key(event->key())] = true;
