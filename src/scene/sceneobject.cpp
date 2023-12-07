@@ -4,3 +4,8 @@ SceneObject::SceneObject()
 {
 
 }
+
+SceneNode::SceneNode()
+{
+
+}

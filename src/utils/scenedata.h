@@ -12,15 +12,6 @@ enum class LightType {
     LIGHT_SPOT,
 };
 
-// Enum of the types of primitives that might be in the scene
-enum class PrimitiveType {
-    PRIMITIVE_CUBE,
-    PRIMITIVE_CONE,
-    PRIMITIVE_CYLINDER,
-    PRIMITIVE_SPHERE,
-    PRIMITIVE_MESH
-};
-
 // Enum of the types of transformations that can be applied
 enum class TransformationType {
     TRANSFORMATION_TRANSLATE,

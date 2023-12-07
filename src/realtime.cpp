@@ -21,8 +21,6 @@ Realtime::Realtime(QWidget *parent)
     keyMap[Qt::Key_D]       = false;
     keyMap[Qt::Key_Control] = false;
     keyMap[Qt::Key_Space]   = false;
-
-    // If you must use this function, do not edit anything above this
 }
 
 void Realtime::finish() {

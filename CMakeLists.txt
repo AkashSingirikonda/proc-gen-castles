@@ -53,7 +53,9 @@ add_library(StaticGLEW STATIC glew/src/glew.c
     src/textures/texturetypes.h
     src/procedural/proceduralcastle.h src/procedural/proceduralcastle.cpp
     src/splines/cameraparams.h
-    src/utils/camera.h src/utils/camera.cpp )
+    src/utils/camera.h src/utils/camera.cpp
+    src/scene/primitivetypes.h
+    src/utils/renderobject.h src/utils/renderobject.cpp )
 include_directories(${PROJECT_NAME} PRIVATE glew/include)
 
 # Specifies libraries to be linked (Qt components, glew, etc)
