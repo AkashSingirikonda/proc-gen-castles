@@ -13,6 +13,9 @@
 #include <QTime>
 #include <QTimer>
 
+#include "scene/scene.h"
+#include "utils/camera.h"
+
 class Realtime : public QOpenGLWidget
 {
 public:
@@ -49,4 +52,73 @@ private:
 
     // Device Correction Variables
     int m_devicePixelRatio;
+
+
+
+    // This is the scene where we want to generate our castle.
+    Scene scene;
+    void renderScene(){}; //TODO
+    // free up memory (if needed)
+    void clearScene(){}; //TODO
+
+
+
+    Camera camera;
+    void updateCamera(float aspectRatio);
+    const float movement_speed = 5;
+    const float rotation_speed = .003;
+
+
+    const int MAX_LIGHTS = 10;
+    std::vector<int> light_types;
+    std::vector<glm::vec4> light_colors;
+    std::vector<glm::vec4> light_positions;
+    std::vector<glm::vec4> light_directions;
+    std::vector<glm::vec2> light_datas;
+    std::vector<glm::vec3> light_funcs;
+
+    const std::map<LightType, int> LIGHT_TYPE_TO_INT_MAP = {{LightType::LIGHT_POINT, 1}, {LightType::LIGHT_DIRECTIONAL, 2}, {LightType::LIGHT_SPOT, 3}};
+
+    // update arrays above with scene lights so they are ready for rendering
+    void updateLights(){}; //TODO
+
+
+
+    // For each scene primitive generate the necessary VAO, VBO, and VBO data
+    void initVBOandVAOs(){}; //TODO
+    void updateVBOs(){}; //TODO
+    void clearVBOandVAOs(){}; //TODO
+
+
+
+
+
+
+
+
+
+
+
+    GLuint shader;
+
+    // FBO for screen level filters
+
+    GLuint defaultFBO;
+    int fboWidth;
+    int fboHeight;
+    int screenWidth;
+    int screenHeight;
+
+    GLuint textureShader;
+    GLuint fullscreenVbo;
+    GLuint fullscreenVao;
+    QImage image;
+    GLuint fboID;
+    GLuint fboTexture;
+    GLuint fboRenderBuffer;
+
+    void makeFBO(){}; //TODO
+    void makeTextureVBOandVAO(){}; //TODO
+    void paintTexture(GLuint texture, bool pixelFilter, bool kernelFilter){}; //TODO
+
 };

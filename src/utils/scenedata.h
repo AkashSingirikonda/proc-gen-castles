@@ -142,13 +142,6 @@ struct SceneMaterial {
     }
 };
 
-// Struct which contains data for a single primitive in a scene
-struct ScenePrimitive {
-    PrimitiveType type;
-    SceneMaterial material;
-    std::string meshfile; // Used for triangle meshes
-};
-
 // Struct which contains data for a transformation.
 struct SceneTransformation {
     TransformationType type;
@@ -163,7 +156,6 @@ struct SceneTransformation {
 // Struct which represents a node in the scene graph/tree, to be parsed by the student's `SceneParser`.
 struct SceneNode {
     std::vector<SceneTransformation*> transformations; // Note the order of transformations described in lab 5
-    std::vector<ScenePrimitive*> primitives;
     std::vector<SceneLight*> lights;
     std::vector<SceneNode*> children;
 };

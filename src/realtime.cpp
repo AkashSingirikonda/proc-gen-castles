@@ -11,22 +11,22 @@
 Realtime::Realtime(QWidget *parent)
     : QOpenGLWidget(parent)
 {
-    m_prev_mouse_pos = glm::vec2(size().width()/2, size().height()/2);
+    prevMousePos = glm::vec2(size().width()/2, size().height()/2);
     setMouseTracking(true);
     setFocusPolicy(Qt::StrongFocus);
 
-    m_keyMap[Qt::Key_W]       = false;
-    m_keyMap[Qt::Key_A]       = false;
-    m_keyMap[Qt::Key_S]       = false;
-    m_keyMap[Qt::Key_D]       = false;
-    m_keyMap[Qt::Key_Control] = false;
-    m_keyMap[Qt::Key_Space]   = false;
+    keyMap[Qt::Key_W]       = false;
+    keyMap[Qt::Key_A]       = false;
+    keyMap[Qt::Key_S]       = false;
+    keyMap[Qt::Key_D]       = false;
+    keyMap[Qt::Key_Control] = false;
+    keyMap[Qt::Key_Space]   = false;
 
     // If you must use this function, do not edit anything above this
 }
 
 void Realtime::finish() {
-    killTimer(m_timer);
+    killTimer(timer);
     this->makeCurrent();
 
     // Students: anything requiring OpenGL calls when the program exits should be done here
@@ -35,10 +35,10 @@ void Realtime::finish() {
 }
 
 void Realtime::initializeGL() {
-    m_devicePixelRatio = this->devicePixelRatio();
+    devicePixelRatio = this->devicePixelRatio();
 
-    m_timer = startTimer(1000/60);
-    m_elapsedTimer.start();
+    timer = startTimer(1000/60);
+    elapsedTimer.start();
 
     // Initializing GL.
     // GLEW (GL Extension Wrangler) provides access to OpenGL functions.
@@ -54,7 +54,7 @@ void Realtime::initializeGL() {
     // Tells OpenGL to only draw the front face
     glEnable(GL_CULL_FACE);
     // Tells OpenGL how big the screen is
-    glViewport(0, 0, size().width() * m_devicePixelRatio, size().height() * m_devicePixelRatio);
+    glViewport(0, 0, size().width() * devicePixelRatio, size().height() * devicePixelRatio);
 
     // Students: anything requiring OpenGL calls when the program starts should be done here
 }
@@ -65,7 +65,7 @@ void Realtime::paintGL() {
 
 void Realtime::resizeGL(int w, int h) {
     // Tells OpenGL how big the screen is
-    glViewport(0, 0, size().width() * m_devicePixelRatio, size().height() * m_devicePixelRatio);
+    glViewport(0, 0, size().width() * devicePixelRatio, size().height() * devicePixelRatio);
 
     // Students: anything requiring OpenGL calls when the program starts should be done here
 }
@@ -83,33 +83,33 @@ void Realtime::settingsChanged() {
 // ================== Project 6: Action!
 
 void Realtime::keyPressEvent(QKeyEvent *event) {
-    m_keyMap[Qt::Key(event->key())] = true;
+    keyMap[Qt::Key(event->key())] = true;
 }
 
 void Realtime::keyReleaseEvent(QKeyEvent *event) {
-    m_keyMap[Qt::Key(event->key())] = false;
+    keyMap[Qt::Key(event->key())] = false;
 }
 
 void Realtime::mousePressEvent(QMouseEvent *event) {
     if (event->buttons().testFlag(Qt::LeftButton)) {
-        m_mouseDown = true;
-        m_prev_mouse_pos = glm::vec2(event->position().x(), event->position().y());
+        mouseDown = true;
+        prevMousePos = glm::vec2(event->position().x(), event->position().y());
     }
 }
 
 void Realtime::mouseReleaseEvent(QMouseEvent *event) {
     if (!event->buttons().testFlag(Qt::LeftButton)) {
-        m_mouseDown = false;
+        mouseDown = false;
     }
 }
 
 void Realtime::mouseMoveEvent(QMouseEvent *event) {
-    if (m_mouseDown) {
+    if (mouseDown) {
         int posX = event->position().x();
         int posY = event->position().y();
-        int deltaX = posX - m_prev_mouse_pos.x;
-        int deltaY = posY - m_prev_mouse_pos.y;
-        m_prev_mouse_pos = glm::vec2(posX, posY);
+        int deltaX = posX - prevMousePos.x;
+        int deltaY = posY - prevMousePos.y;
+        prevMousePos = glm::vec2(posX, posY);
 
         // Use deltaX and deltaY here to rotate
 
@@ -118,11 +118,11 @@ void Realtime::mouseMoveEvent(QMouseEvent *event) {
 }
 
 void Realtime::timerEvent(QTimerEvent *event) {
-    int elapsedms   = m_elapsedTimer.elapsed();
+    int elapsedms   = elapsedTimer.elapsed();
     float deltaTime = elapsedms * 0.001f;
-    m_elapsedTimer.restart();
+    elapsedTimer.restart();
 
-    // Use deltaTime and m_keyMap here to move around
+    // Use deltaTime and keyMap here to move around
 
     update(); // asks for a PaintGL() call to occur
 }
