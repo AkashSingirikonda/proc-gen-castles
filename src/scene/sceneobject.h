@@ -33,4 +33,5 @@ public:
 private:
     TextureType texture;
     PrimitiveType primitive;
+    //TODO add material which we need to construct RenderObject
 };

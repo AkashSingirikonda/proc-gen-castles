@@ -17,8 +17,9 @@ public:
 
     GLuint VAO_name;
     GLuint VBO_name;
+    std::vector<float> VBO;
 
-    void getVBOData(std::vector<float>* VBO){}; // TODO
+    void generate(int k1, int k2){}; // TODO generate points, norms, and UVs based on parameters
 
     virtual PrimitiveType getPrimitiveType();
 

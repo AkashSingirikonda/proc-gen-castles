@@ -4,9 +4,12 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 #include <iostream>
+
 #include "settings.h"
+#include "debug.h"
 
 #include "utils/shaderloader.h"
+#include "utils/sceneloader.h"
 
 // ================== Project 5: Lights, Camera
 
@@ -29,7 +32,7 @@ void Realtime::finish() {
     killTimer(timer);
     this->makeCurrent();
 
-    // Students: anything requiring OpenGL calls when the program exits should be done here
+    //TODO delete all pointers
 
     this->doneCurrent();
 }
@@ -65,33 +68,77 @@ void Realtime::initializeGL() {
     ProceduralCastle castleGenerator = ProceduralCastle();
     castleGenerator.generateScene(scene);
 
+    SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, renderObjects);
+
     initVBOandVAOs();
+    makeTextureVBOandVAO();
+    makeFBO();
 }
 
 void Realtime::initVBOandVAOs() {
+    int k1 = settings.shapeParameter1;
+    int k2 = settings.shapeParameter1;
 
+
+    std::map<PrimitiveType, ScenePrimitive*>::iterator it;
+    for(it = primitiveTypes.begin(); it != primitiveTypes.end(); it++){
+        ScenePrimitive* primitive = it->second;
+        primitive->generate(k1, k2);
+
+        glGenVertexArrays(1, &primitive->VAO_name);
+        glBindVertexArray(primitive->VAO_name);
+
+        glGenBuffers(1, &primitive->VBO_name);
+        glBindBuffer(GL_ARRAY_BUFFER, primitive->VBO_name);
+
+
+        glBufferData(GL_ARRAY_BUFFER, primitive->VBO.size() * sizeof(GLfloat), primitive->VBO.data(), GL_DYNAMIC_DRAW);
+
+
+        //TODO add UVs to VAO
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), reinterpret_cast<void *>(0));
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), reinterpret_cast<void *>(3 * sizeof(GLfloat)));
+
+        glEnableVertexAttribArray(0);
+        glEnableVertexAttribArray(1);
+
+        glBindVertexArray(0);
+        glBindBuffer(GL_ARRAY_BUFFER,0);
+    }
+}
+
+void Realtime::updateVBOs(){
+    int k1 = settings.shapeParameter1;
+    int k2 = settings.shapeParameter2;
+
+    std::map<PrimitiveType, ScenePrimitive*>::iterator it;
+    for(it = primitiveTypes.begin(); it != primitiveTypes.end(); it++){
+        ScenePrimitive* primitive = it->second;
+        primitive->generate(k1, k2);
+        glNamedBufferData(primitive->VBO_name, primitive->VBO.size() * sizeof(GLfloat), primitive->VBO.data(), GL_DYNAMIC_DRAW);
+    }
 }
 
 void Realtime::makeFBO(){
-    glGenTextures(1, &fboTexture);
-    glBindTexture(GL_TEXTURE_2D, fboTexture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, fboWidth, fboHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+    glGenTextures(1, &FBO_texture);
+    glBindTexture(GL_TEXTURE_2D, FBO_texture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_width, FBO_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    glGenRenderbuffers(1, &fboRenderBuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, fboRenderBuffer);
-    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, fboWidth, fboHeight);
+    glGenRenderbuffers(1, &FBO_renderBuffer);
+    glBindRenderbuffer(GL_RENDERBUFFER, FBO_renderBuffer);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, FBO_width, FBO_height);
     glBindRenderbuffer(GL_RENDERBUFFER, 0);
 
-    glGenFramebuffers(1, &fboID);
-    glBindFramebuffer(GL_FRAMEBUFFER, fboID);
+    glGenFramebuffers(1, &FBO_id);
+    glBindFramebuffer(GL_FRAMEBUFFER, FBO_id);
 
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fboTexture, 0);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fboRenderBuffer);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, FBO_texture, 0);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, FBO_renderBuffer);
 
-    glBindFramebuffer(GL_FRAMEBUFFER, defaultFBO);
+    glBindFramebuffer(GL_FRAMEBUFFER, FBO_idDefault);
 }
 
 void Realtime::makeTextureVBOandVAO(){
@@ -121,10 +168,71 @@ void Realtime::makeTextureVBOandVAO(){
 }
 
 void Realtime::paintGL() {
-    // Students: anything requiring OpenGL calls every frame should be done here
+    glBindFramebuffer(GL_FRAMEBUFFER, FBO_id);
+
+    glViewport(0, 0, FBO_width, FBO_height);
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    renderScene();
+
+    glBindFramebuffer(GL_FRAMEBUFFER, FBO_idDefault);
+    glViewport(0, 0, screenWidth,screenHeight);
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    paintTexture(FBO_texture);
+
+    glFinish();
 }
 
-void Realtime::paintTexture(GLuint texture, bool pixelFilter, bool kernelFilter){
+
+void Realtime::renderScene(){
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    glUseProgram(shader);
+
+    // TODO add global render data
+    //glUniform1f(glGetUniformLocation(shader, "k_a"), renderData.globalData.ka);
+    //glUniform1f(glGetUniformLocation(shader, "k_d"), renderData.globalData.kd);
+    //glUniform1f(glGetUniformLocation(shader, "k_s"), renderData.globalData.ks);
+
+    glUniformMatrix4fv(glGetUniformLocation(shader, "view"), 1, false, &camera.viewMatrix[0][0]);
+    glUniformMatrix4fv(glGetUniformLocation(shader, "proj"), 1, false, &camera.projMatrix[0][0]);
+
+    glUniform4fv(glGetUniformLocation(shader, "camera_position"), 1, &camera.cameraPos[0]);
+
+    glUniform1iv(glGetUniformLocation(shader, "light_type"), MAX_LIGHTS, &lightTypes[0]);
+    glUniform4fv(glGetUniformLocation(shader, "light_position"), MAX_LIGHTS, &lightPositions[0][0]);
+    glUniform4fv(glGetUniformLocation(shader, "light_direction"), MAX_LIGHTS, &lightDirections[0][0]);
+    glUniform2fv(glGetUniformLocation(shader, "light_data"), MAX_LIGHTS, &lightDatas[0][0]);
+    glUniform4fv(glGetUniformLocation(shader, "light_color"), MAX_LIGHTS, &lightColors[0][0]);
+    glUniform3fv(glGetUniformLocation(shader, "light_func"), MAX_LIGHTS, &lightFuncs[0][0]);
+    Debug::glErrorCheck();
+
+    for(RenderObject* renderObject : renderObjects){
+        ScenePrimitive* primitive = renderObject->primitive;
+
+        glBindVertexArray(primitive->VAO_name);
+
+        SceneMaterial* material = renderObject->material;
+        glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
+        glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);
+        glUniform4fv(glGetUniformLocation(shader, "cSpecular"), 1, &material->cSpecular[0]);
+
+        glUniform1f(glGetUniformLocation(shader, "shine"), material->shininess);
+
+        glUniformMatrix4fv(glGetUniformLocation(shader, "model"), 1, false, &renderObject->ctm[0][0]);
+        glUniformMatrix4fv(glGetUniformLocation(shader, "norm_inv"), 1, false, &renderObject->normInv[0][0]);
+
+        glDrawArrays(GL_TRIANGLES, 0, primitive->VBO.size() / 6);
+
+        glBindVertexArray(0);
+        Debug::glErrorCheck();
+    }
+    glUseProgram(0);
+}
+
+void Realtime::paintTexture(GLuint texture){
     glUseProgram(textureShader);
 
     glBindVertexArray(fullscreenVao);

@@ -15,7 +15,7 @@
 
 #include "scene/scene.h"
 #include "utils/camera.h"
-
+#include "utils/renderobject.h"
 #include "procedural/proceduralcastle.h"
 
 class Realtime : public QOpenGLWidget
@@ -59,7 +59,11 @@ private:
 
     // This is the scene where we want to generate our castle.
     Scene scene;
-    void renderScene(){}; //TODO
+    // collection of render objects loaded from the scene
+    std::vector<RenderObject*> renderObjects;
+    std::map<PrimitiveType, ScenePrimitive*> primitiveTypes;
+
+    void renderScene(); //TODO
     // free up memory (if needed)
     void clearScene(){}; //TODO
 
@@ -87,10 +91,9 @@ private:
     void updateLights(){}; //TODO
 
 
-
     // For each scene primitive generate the necessary VAO, VBO, and VBO data
-    void initVBOandVAOs(); //TODO
-    void updateVBOs(){}; //TODO
+    void initVBOandVAOs();
+    void updateVBOs();
     void clearVBOandVAOs(){}; //TODO
 
 
@@ -107,9 +110,9 @@ private:
 
     // FBO for screen level filters
 
-    GLuint defaultFBO;
-    int fboWidth;
-    int fboHeight;
+    GLuint FBO_idDefault;
+    int FBO_width;
+    int FBO_height;
     int screenWidth;
     int screenHeight;
 
@@ -117,9 +120,9 @@ private:
     GLuint fullscreenVbo;
     GLuint fullscreenVao;
     QImage image;
-    GLuint fboID;
-    GLuint fboTexture;
-    GLuint fboRenderBuffer;
+    GLuint FBO_id;
+    GLuint FBO_texture;
+    GLuint FBO_renderBuffer;
 
     void makeFBO();
     void makeTextureVBOandVAO();

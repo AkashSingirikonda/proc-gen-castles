@@ -17,5 +17,6 @@ public:
     glm::mat4 normInv;
 
     ScenePrimitive* primitive;
+    SceneMaterial* material;
 };
 
