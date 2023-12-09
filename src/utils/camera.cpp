@@ -102,7 +102,9 @@ void Camera::rotateYaw(float angle)
 
 void Camera::move(float forwardStep, float rightStep, float upStep)
 {
-    pos += forwardStep * glm::normalize(look - pos) + rightStep * glm::normalize(right) + upStep * glm::vec3(0.0f, 1.0f, 0.0f);
+    glm::vec3 step = forwardStep * glm::normalize(look - pos) + rightStep * glm::normalize(right) + upStep * glm::vec3(0.0f, 1.0f, 0.0f);
+    pos += step;
+    look += step;
     updateViewMatrix();
 }
 

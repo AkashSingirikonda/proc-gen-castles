@@ -393,10 +393,10 @@ void Realtime::timerEvent(QTimerEvent *event) {
         movement[0] -= 1;
     }
     if(keyMap[Qt::Key_D]){
-        movement[1] += 1;
+        movement[1] -= 1;
     }
     if(keyMap[Qt::Key_A]){
-        movement[1] -= 1;
+        movement[1] += 1;
     }
     if(keyMap[Qt::Key_Space]){
         movement[2] += 1;
