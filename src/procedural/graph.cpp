@@ -1,6 +1,6 @@
 #include "graph.h"
-
-template <class T>
+#include "scene/sceneobject.h"
+template <typename T>
 void Graph<T>::addNode(int nodeId, T *val) {
     if (m_nodes.find(nodeId) == m_nodes.end()) {
         m_nodes[nodeId] = std::set<int>();
@@ -9,17 +9,18 @@ void Graph<T>::addNode(int nodeId, T *val) {
 }
 
 // Add an undirected edge between two nodes
-template <class T>
+template <typename T>
 void Graph<T>::addEdge(int node1, int node2) {
-    addNode(node1);
-    addNode(node2);
-
-    m_nodes[node1].insert(node2);
-    m_nodes[node2].insert(node1);
+    if (m_nodes.contains(node1) && m_nodes.contains(node2)) {
+        m_nodes[node1].insert(node2);
+        m_nodes[node2].insert(node1);
+    } else {
+        std::cerr << "Graph does not contain edge" << node1 << " " << node2 << std::endl;
+    }
 }
 
 // Get neighbors of a node
-template <class T>
+template <typename T>
 const std::set<int>& Graph<T>::getNeighbors(int nodeId) const {
     static const std::set<int> emptySet;
     auto it = m_nodes.find(nodeId);
@@ -27,13 +28,13 @@ const std::set<int>& Graph<T>::getNeighbors(int nodeId) const {
 }
 
 // Get value of a node
-template <class T>
-const T& Graph<T>::getVal(int nodeId) const {
+template <typename T>
+T* Graph<T>::getVal(int nodeId) {
     return m_vals[nodeId];
 }
 
 // Print the graph
-template <class T>
+template <typename T>
 void Graph<T>::printGraph() const {
     for (const auto& entry : m_nodes) {
         std::cout << "Node " << entry.first << " is connected to: ";
@@ -44,3 +45,4 @@ void Graph<T>::printGraph() const {
     }
 }
 
+template class Graph<SceneNode>;

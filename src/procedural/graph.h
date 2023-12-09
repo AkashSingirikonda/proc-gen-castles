@@ -4,8 +4,9 @@
 #include <iostream>
 #include <set>
 #include <unordered_map>
+#include "scene/sceneobject.h"
 
-template <class T>
+template <typename T>
 class Graph {
 public:
     // Constructor
@@ -19,7 +20,7 @@ public:
 
     // Gets the neighbor Ids of a node in the graph.
     const std::set<int>& getNeighbors(int nodeId) const;
-    const T& getVal(int nodeId) const;
+    T* getVal(int nodeId);
 
     // Prints the connections in a graph.
     void printGraph() const;
@@ -27,6 +28,5 @@ private:
     std::unordered_map<int, std::set<int>> m_nodes;
     std::unordered_map<int, T*> m_vals;
 };
-
 
 #endif // GRAPH_H

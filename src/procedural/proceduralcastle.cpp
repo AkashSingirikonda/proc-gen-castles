@@ -1,5 +1,9 @@
 #include "proceduralcastle.h"
+#include "glm/gtx/transform.hpp"
 #include "graph.h"
+#include "unordered_map"
+#include "set"
+#include "scene/sceneobject.h"
 
 ProceduralCastle::ProceduralCastle()
 {
@@ -13,36 +17,45 @@ void ProceduralCastle::generateScene(Scene& scene)
     // TODO
     SceneNode* root = new SceneNode();
     SceneObject* cube = new SceneObject(PrimitiveType::PRIMITIVE_CUBE, TextureType::TEXTURE_STONE);
-    root->objects.push_back(cube);
+    //root->objects.push_back(cube);
     scene.root = root;
 
     // Creating an nxn graph:
-//    int n = 10;
-//    SceneNode[n] val = ;
-//    Graph g = Graph<SceneNode>();
-//    for (int i = 0; i < n*n; i++) {
-//        g.addNode(i, cube);
-//    }
+    int n = 10;
+    std::vector<SceneNode*> vals(n*n);
 
-//    for (int i = 0; i < n*n; i++) {
-//        // Horizontal Edges
-//        if (i % n > 0 ) {
-//            g.addEdge(i, i-1);
-//        }
+    for (int i = 0; i < n*n; i++) {
+        vals[i] = new SceneNode();
+        vals[i]->objects.push_back(cube);
+//        vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.01, 0.01, 0.01));
+        vals[i]->transform = glm::translate(vals[i]->transform, glm::vec3(2 * (i/n), 0, 2 * (i % n)));
+        scene.root->children.push_back(vals[i]);
+    }
 
-//        if (i % n != n-1) {
-//            g.addEdge(i, i+1);
-//        }
+    Graph<SceneNode> g = Graph<SceneNode>();
+    for (int i = 0; i < n*n; i++) {
+        g.addNode(i, vals[i]);
+    }
 
-//        // Vertical Edges
-//        if (i / n != 0) {
-//            g.addEdge(i, i - n);
-//        }
+    for (int i = 0; i < n*n; i++) {
+        // Horizontal Edges
+        if (i % n > 0 ) {
+            g.addEdge(i, i-1);
+        }
 
-//        if (i / n != n-1) {
-//            g.addEdge(i, i + n);
-//        }
-//    }
+        if (i % n != n-1) {
+            g.addEdge(i, i+1);
+        }
 
-//    g.printGraph();
+        // Vertical Edges
+        if (i / n != 0) {
+            g.addEdge(i, i - n);
+        }
+
+        if (i / n != n-1) {
+            g.addEdge(i, i + n);
+        }
+    }
+
+    g.printGraph();
 }
