@@ -88,8 +88,8 @@ void Realtime::initializeGL() {
     generateScenePrimitives();
     generateSceneMaterials();
 
-    SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, materialTypes, renderObjects);
-
+    SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, materialTypes, renderObjects, renderLights);
+    updateLights();
 
     camera = Camera(scene.cameraData, 1.0f * size().width() / size().height(), settings.nearPlane, settings.farPlane);
 
@@ -231,16 +231,15 @@ void Realtime::updateLights(){
         glm::vec4 color = glm::vec4(0.0f);
         glm::vec3 func = glm::vec3(0.0f);
 
-        //TODO add lights to scene and into relevant structures
-//        if(i < renderData.lights.size()){
-//            auto light = renderData.lights[i];
-//            type = LIGHT_TYPE_TO_INT_MAP.find(light.type)->second;
-//            pos = light.pos;
-//            dir = light.dir;
-//            data = glm::vec2(light.penumbra, light.angle);
-//            color = light.color;
-//            func = light.function;
-//        }
+        if(i < renderLights.size()){
+            RenderLight* light = renderLights[i];
+            type = LIGHT_TYPE_TO_INT_MAP.find(light->lightData.type)->second;
+            pos = light->pos;
+            dir = light->dir;
+            data = glm::vec2(light->lightData.penumbra, light->lightData.angle);
+            color = light->lightData.color;
+            func = light->lightData.function;
+        }
 
         lightTypes.push_back(type);
         lightPositions.push_back(pos);
@@ -281,12 +280,12 @@ void Realtime::renderScene(){
 
     glUniform4fv(glGetUniformLocation(shader, "camera_position"), 1, &camera.getCameraPos()[0]);
 
-//    glUniform1iv(glGetUniformLocation(shader, "light_type"), MAX_LIGHTS, &lightTypes[0]);
-//    glUniform4fv(glGetUniformLocation(shader, "light_position"), MAX_LIGHTS, &lightPositions[0][0]);
-//    glUniform4fv(glGetUniformLocation(shader, "light_direction"), MAX_LIGHTS, &lightDirections[0][0]);
-//    glUniform2fv(glGetUniformLocation(shader, "light_data"), MAX_LIGHTS, &lightDatas[0][0]);
-//    glUniform4fv(glGetUniformLocation(shader, "light_color"), MAX_LIGHTS, &lightColors[0][0]);
-//    glUniform3fv(glGetUniformLocation(shader, "light_func"), MAX_LIGHTS, &lightFuncs[0][0]);
+    glUniform1iv(glGetUniformLocation(shader, "light_type"), MAX_LIGHTS, &lightTypes[0]);
+    glUniform4fv(glGetUniformLocation(shader, "light_position"), MAX_LIGHTS, &lightPositions[0][0]);
+    glUniform4fv(glGetUniformLocation(shader, "light_direction"), MAX_LIGHTS, &lightDirections[0][0]);
+    glUniform2fv(glGetUniformLocation(shader, "light_data"), MAX_LIGHTS, &lightDatas[0][0]);
+    glUniform4fv(glGetUniformLocation(shader, "light_color"), MAX_LIGHTS, &lightColors[0][0]);
+    glUniform3fv(glGetUniformLocation(shader, "light_func"), MAX_LIGHTS, &lightFuncs[0][0]);
     Debug::glErrorCheck();
 
     for(RenderObject* renderObject : renderObjects){
@@ -374,8 +373,6 @@ void Realtime::mouseReleaseEvent(QMouseEvent *event) {
         mouseDown = false;
     }
 }
-
-
 
 void Realtime::mouseMoveEvent(QMouseEvent *event) {
     if (mouseDown) {

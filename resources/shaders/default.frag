@@ -41,7 +41,6 @@ void main() {
     dir_camera.w = 0;
 
     fragColor = k_a * cAmbient;
-    return;
 
     for(int i = 0; i < MAX_LIGHTS; i++){
         vec4 sum = vec4(0.0);

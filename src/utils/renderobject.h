@@ -20,3 +20,12 @@ public:
     SceneMaterial* material;
 };
 
+class RenderLight
+{
+public:
+    RenderLight(glm::mat4 globalTransform, SceneLightData& lightData);
+    glm::vec4 pos;
+    glm::vec4 dir;
+    SceneLightData lightData;
+};
+

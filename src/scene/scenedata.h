@@ -24,19 +24,13 @@ enum class LightType {
 using SceneColor = glm::vec4;
 
 struct SceneLightData {
-    int id;
     LightType type;
-
     SceneColor color;
     glm::vec3 function; // Attenuation function
-
-    glm::vec4 pos; // Position with CTM applied (Not applicable to directional lights)
-    glm::vec4 dir; // Direction with CTM applied (Not applicable to point lights)
+    glm::vec4 direction;
 
     float penumbra; // Only applicable to spot lights, in RADIANS
     float angle;    // Only applicable to spot lights, in RADIANS
-
-    float width, height; // No longer supported (area lights)
 };
 
 // Struct which contains data for the camera of a scene

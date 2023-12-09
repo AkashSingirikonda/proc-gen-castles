@@ -17,7 +17,15 @@ void ProceduralCastle::generateScene(Scene& scene)
     // TODO
     SceneNode* root = new SceneNode();
     SceneObject* cube = new SceneObject(PrimitiveType::PRIMITIVE_CUBE, TextureType::TEXTURE_STONE);
-    //root->objects.push_back(cube);
+    root->objects.push_back(cube);
+
+    SceneLightData sceneLightData;
+    sceneLightData.type = LightType::LIGHT_DIRECTIONAL;
+    sceneLightData.color = SceneColor(1,1,1,1);
+    sceneLightData.direction = glm::vec4(0, -1, 0, 0);
+    SceneLight* sceneLight = new SceneLight(sceneLightData);
+    root->lights.push_back(sceneLight);
+
     scene.root = root;
 
     // Creating an nxn graph:

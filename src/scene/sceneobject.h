@@ -6,7 +6,7 @@
 
 #include "textures/texturetypes.h"
 #include "primitivetypes.h"
-
+#include "scenedata.h"
 
 class SceneObject
 {
@@ -16,8 +16,23 @@ public:
 
     SceneObject(PrimitiveType primitiveType, TextureType textureType);
 
+    glm::mat4 transform = glm::mat4(1);
+
     PrimitiveType primitive;
     TextureType texture;
+};
+
+class SceneLight
+{
+public:
+    SceneLight();
+    ~SceneLight();
+
+    SceneLight(SceneLightData sceneLightData);
+
+    glm::mat4 transform = glm::mat4(1);
+
+    SceneLightData lightData;
 };
 
 class SceneNode
@@ -30,6 +45,7 @@ public:
 
     std::vector<SceneNode*> children;
     std::vector<SceneObject*> objects;
+    std::vector<SceneLight*> lights;
 };
 
 

@@ -11,6 +11,16 @@ SceneObject::SceneObject(PrimitiveType primitiveType, TextureType textureType)
     texture = textureType;
 }
 
+SceneLight::SceneLight()
+{
+
+}
+
+SceneLight::SceneLight(SceneLightData sceneLightData)
+{
+    lightData = sceneLightData;
+}
+
 SceneNode::SceneNode()
 {
 
