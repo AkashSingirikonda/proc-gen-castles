@@ -167,6 +167,42 @@ void Realtime::makeTextureVBOandVAO(){
     glBindVertexArray(0);
 }
 
+void Realtime::updateLights(){
+    lightTypes.clear();
+    lightPositions.clear();
+    lightDirections.clear();
+    lightDatas.clear();
+    lightColors.clear();
+    lightFuncs.clear();
+
+    for(int i = 0; i < MAX_LIGHTS; i++){
+        int type = -1;
+        glm::vec4 pos = glm::vec4(0.0f);
+        glm::vec4 dir = glm::vec4(0.0f);
+        glm::vec2 data = glm::vec2(0.0f);
+        glm::vec4 color = glm::vec4(0.0f);
+        glm::vec3 func = glm::vec3(0.0f);
+
+        //TODO add lights to scene and into relevant structures
+//        if(i < renderData.lights.size()){
+//            auto light = renderData.lights[i];
+//            type = LIGHT_TYPE_TO_INT_MAP.find(light.type)->second;
+//            pos = light.pos;
+//            dir = light.dir;
+//            data = glm::vec2(light.penumbra, light.angle);
+//            color = light.color;
+//            func = light.function;
+//        }
+
+        lightTypes.push_back(type);
+        lightPositions.push_back(pos);
+        lightDirections.push_back(dir);
+        lightDatas.push_back(data);
+        lightColors.push_back(color);
+        lightFuncs.push_back(func);
+    }
+}
+
 void Realtime::paintGL() {
     glBindFramebuffer(GL_FRAMEBUFFER, FBO_id);
 
@@ -257,13 +293,14 @@ void Realtime::resizeGL(int w, int h) {
 }
 
 void Realtime::sceneChanged() {
-
-    update(); // asks for a PaintGL() call to occur
+    update();
 }
 
 void Realtime::settingsChanged() {
+    update();
 
-    update(); // asks for a PaintGL() call to occur
+    // TODO maybe we just add more callbacks for which setting specifically changed
+    // otherwise it is quite annoying to add code here to try to figure out what needs to be updated
 }
 
 void Realtime::keyPressEvent(QKeyEvent *event) {

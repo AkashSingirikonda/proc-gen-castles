@@ -63,8 +63,8 @@ private:
     std::vector<RenderObject*> renderObjects;
     std::map<PrimitiveType, ScenePrimitive*> primitiveTypes;
 
-    void renderScene(); //TODO
-    // free up memory (if needed)
+    void renderScene();
+    // helper function for finish()
     void clearScene(){}; //TODO
 
 
@@ -88,16 +88,13 @@ private:
     const std::map<LightType, int> LIGHT_TYPE_TO_INT_MAP = {{LightType::LIGHT_POINT, 1}, {LightType::LIGHT_DIRECTIONAL, 2}, {LightType::LIGHT_SPOT, 3}};
 
     // update arrays above with scene lights so they are ready for rendering
-    void updateLights(){}; //TODO
+    void updateLights(); //TODO
 
 
     // For each scene primitive generate the necessary VAO, VBO, and VBO data
     void initVBOandVAOs();
     void updateVBOs();
     void clearVBOandVAOs(){}; //TODO
-
-
-
 
 
 
