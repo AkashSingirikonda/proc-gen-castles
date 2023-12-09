@@ -11,8 +11,6 @@
 #include "utils/shaderloader.h"
 #include "utils/sceneloader.h"
 
-// ================== Project 5: Lights, Camera
-
 Realtime::Realtime(QWidget *parent)
     : QOpenGLWidget(parent)
 {
@@ -34,11 +32,28 @@ void Realtime::finish() {
 
     //TODO delete all pointers
 
+    glDeleteVertexArrays(1, &fullscreenVao);
+    glDeleteBuffers(1, &fullscreenVbo);
+
+    glDeleteTextures(1, &FBO_texture);
+    glDeleteRenderbuffers(1, &FBO_renderBuffer);
+    glDeleteFramebuffers(1, &FBO_id);
+
+    glDeleteProgram(shader);
+    glDeleteProgram(textureShader);
+
     this->doneCurrent();
 }
 
 void Realtime::initializeGL() {
     pixelRatio = this->devicePixelRatio();
+
+
+
+    FBO_idDefault = 2;
+    updateSizes();
+    FBO_width = size().width() * pixelRatio;
+    FBO_height = size().height() * pixelRatio;
 
     timer = startTimer(1000/60);
     elapsedTimer.start();
@@ -54,7 +69,7 @@ void Realtime::initializeGL() {
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
-    glViewport(0, 0, size().width() * pixelRatio, size().height() * pixelRatio);
+    glClearColor(0,0,0,1);
 
 
     shader = ShaderLoader::createShaderProgram(":/resources/shaders/default.vert", ":/resources/shaders/default.frag");
@@ -71,6 +86,7 @@ void Realtime::initializeGL() {
     generateScenePrimitives();
 
     SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, renderObjects);
+
 
     initVBOandVAOs();
     makeTextureVBOandVAO();
@@ -148,7 +164,9 @@ void Realtime::makeFBO(){
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, FBO_texture, 0);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, FBO_renderBuffer);
 
+    Debug::glErrorCheck();
     glBindFramebuffer(GL_FRAMEBUFFER, FBO_idDefault);
+    Debug::glErrorCheck();
 }
 
 void Realtime::makeTextureVBOandVAO(){
@@ -215,17 +233,15 @@ void Realtime::updateLights(){
 
 void Realtime::paintGL() {
     glBindFramebuffer(GL_FRAMEBUFFER, FBO_id);
-
     glViewport(0, 0, FBO_width, FBO_height);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     renderScene();
 
     glBindFramebuffer(GL_FRAMEBUFFER, FBO_idDefault);
-    glViewport(0, 0, screenWidth,screenHeight);
+    glViewport(0, 0, screenWidth, screenHeight);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
     paintTexture(FBO_texture);
 
     glFinish();
@@ -233,26 +249,24 @@ void Realtime::paintGL() {
 
 
 void Realtime::renderScene(){
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
     glUseProgram(shader);
+    Debug::glErrorCheck();
 
-    // TODO add global render data
-    //glUniform1f(glGetUniformLocation(shader, "k_a"), renderData.globalData.ka);
-    //glUniform1f(glGetUniformLocation(shader, "k_d"), renderData.globalData.kd);
-    //glUniform1f(glGetUniformLocation(shader, "k_s"), renderData.globalData.ks);
+    glUniform1f(glGetUniformLocation(shader, "k_a"), scene.globalData.ka);
+    glUniform1f(glGetUniformLocation(shader, "k_d"), scene.globalData.kd);
+    glUniform1f(glGetUniformLocation(shader, "k_s"), scene.globalData.ks);
 
     glUniformMatrix4fv(glGetUniformLocation(shader, "view"), 1, false, &camera.viewMatrix[0][0]);
     glUniformMatrix4fv(glGetUniformLocation(shader, "proj"), 1, false, &camera.projMatrix[0][0]);
 
     glUniform4fv(glGetUniformLocation(shader, "camera_position"), 1, &camera.cameraPos[0]);
 
-    glUniform1iv(glGetUniformLocation(shader, "light_type"), MAX_LIGHTS, &lightTypes[0]);
-    glUniform4fv(glGetUniformLocation(shader, "light_position"), MAX_LIGHTS, &lightPositions[0][0]);
-    glUniform4fv(glGetUniformLocation(shader, "light_direction"), MAX_LIGHTS, &lightDirections[0][0]);
-    glUniform2fv(glGetUniformLocation(shader, "light_data"), MAX_LIGHTS, &lightDatas[0][0]);
-    glUniform4fv(glGetUniformLocation(shader, "light_color"), MAX_LIGHTS, &lightColors[0][0]);
-    glUniform3fv(glGetUniformLocation(shader, "light_func"), MAX_LIGHTS, &lightFuncs[0][0]);
+//    glUniform1iv(glGetUniformLocation(shader, "light_type"), MAX_LIGHTS, &lightTypes[0]);
+//    glUniform4fv(glGetUniformLocation(shader, "light_position"), MAX_LIGHTS, &lightPositions[0][0]);
+//    glUniform4fv(glGetUniformLocation(shader, "light_direction"), MAX_LIGHTS, &lightDirections[0][0]);
+//    glUniform2fv(glGetUniformLocation(shader, "light_data"), MAX_LIGHTS, &lightDatas[0][0]);
+//    glUniform4fv(glGetUniformLocation(shader, "light_color"), MAX_LIGHTS, &lightColors[0][0]);
+//    glUniform3fv(glGetUniformLocation(shader, "light_func"), MAX_LIGHTS, &lightFuncs[0][0]);
     Debug::glErrorCheck();
 
     for(RenderObject* renderObject : renderObjects){
@@ -267,7 +281,7 @@ void Realtime::renderScene(){
         glBindVertexArray(primitive->VAO_name);
 
         // TODO
-        SceneMaterial* material = renderObject->material;
+        //SceneMaterial* material = renderObject->material;
         //glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
         //glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);
         //glUniform4fv(glGetUniformLocation(shader, "cSpecular"), 1, &material->cSpecular[0]);
@@ -304,12 +318,20 @@ void Realtime::paintTexture(GLuint texture){
 
 void Realtime::resizeGL(int w, int h) {
     // Tells OpenGL how big the screen is
-    glViewport(0, 0, size().width() * pixelRatio, size().height() * pixelRatio);
+    updateSizes();
 
-    // Students: anything requiring OpenGL calls when the program starts should be done here
+    //TODO don't want to make a new camera each time
+    camera = Camera(scene.cameraData, 1.0f * size().width() / size().height(), settings.nearPlane, settings.farPlane);
+}
+
+void Realtime::updateSizes(){
+    screenWidth = size().width() * pixelRatio;
+    screenHeight = size().height() * pixelRatio;
+    glViewport(0, 0, screenWidth, screenHeight);
 }
 
 void Realtime::settingsChanged() {
+    camera.updateNearFar(settings.nearPlane, settings.farPlane);
     update();
 
     // TODO maybe we just add more callbacks for which setting specifically changed

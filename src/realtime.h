@@ -52,7 +52,8 @@ private:
     std::unordered_map<Qt::Key, bool> keyMap;         // Stores whether keys are pressed or not
 
     // Device Correction Variables
-    int pixelRatio;
+    float pixelRatio;
+    void updateSizes();
 
     ProceduralCastle castleGenerator;
 
@@ -70,7 +71,7 @@ private:
 
 
 
-    Camera camera;
+    Camera camera = Camera();
     void updateCamera(float aspectRatio);
     const float movementSpeed = 5;
     const float rotationSpeed = .003;

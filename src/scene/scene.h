@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "sceneobject.h"
-
+#include "scenedata.h"
 
 class Scene
 {
@@ -12,4 +12,7 @@ public:
     ~Scene();
 
     SceneNode* root;
+
+    SceneGlobalData globalData;
+    SceneCameraData cameraData;
 };

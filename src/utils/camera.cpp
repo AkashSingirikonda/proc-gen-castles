@@ -38,7 +38,7 @@ void Camera::updateNearFar(float near, float far){
 }
 
 void Camera::updateViewMatrix(){
-    cameraRight = glm::normalize(glm::cross(cameraLook, cameraUp));
-    viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraLook, cameraUp);
+    cameraRight = glm::normalize(glm::cross(cameraLook - cameraPos, cameraUp));
+    viewMatrix = glm::lookAt(cameraPos, cameraLook, cameraUp);
     invViewMatrix = glm::inverse(viewMatrix);
 }
