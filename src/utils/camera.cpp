@@ -6,39 +6,101 @@
 #include "glm/gtx/transform.hpp"
 #include "glm/glm.hpp"
 
-Camera::Camera(SceneCameraData cameraData, float aspectRatio, float near, float far) {
-    m_cameraData = cameraData;
-    m_aspectRatio = aspectRatio;
+Camera::Camera(SceneCameraData cameraData, float cameraAspectRatio, float cameraNear, float cameraFar)
+{
+    aspectRatio = cameraAspectRatio;
+    heightAngle = cameraData.heightAngle;
+    nearPlane = cameraNear;
+    farPlane = cameraFar;
 
-    cameraPos = cameraData.pos;
-    cameraLook = cameraData.look;
-    cameraUp = cameraData.up;
+    pos = cameraData.pos;
+    look = cameraData.look;
+    up = cameraData.up;
 
     updateViewMatrix();
 
-    updateNearFar(near, far);
+    updateScalingMatrix();
+    updateUnhingingMatrix();
+    updateProjMatrix();
 }
 
-void Camera::updateNearFar(float near, float far){
-    glm::mat4 scaling = glm::mat4(0);
-    scaling[2][2] = 1 / far;
-    scaling[1][1] = scaling[2][2] / tan(m_cameraData.heightAngle / 2.0f);
-    scaling[0][0] = scaling[1][1] / m_aspectRatio;
-    scaling[3][3] = 1;
-    float c = -near / far;
+void Camera::updateHeightAngle(float newHeightAngle)
+{
+    heightAngle = newHeightAngle;
+    updateScalingMatrix();
+    updateProjMatrix();
+}
 
-    glm::mat4 unhinging = glm::mat4(0);
+void Camera::updateNearFar(float newNearDistance, float newFarDistance)
+{
+    nearPlane = newNearDistance;
+    farPlane = newFarDistance;
+    updateScalingMatrix();
+    updateUnhingingMatrix();
+    updateProjMatrix();
+}
+
+void Camera::updatePos(glm::vec3 cameraPos)
+{
+    pos = cameraPos;
+    updateViewMatrix();
+}
+
+void Camera::updateLook(glm::vec3 cameraLook)
+{
+    look = cameraLook;
+    updateViewMatrix();
+}
+void Camera::updateUp(glm::vec3 cameraUp)
+{
+    up = cameraUp;
+    updateViewMatrix();
+}
+
+void Camera::updatePosLook(glm::vec3 cameraPos, glm::vec3 cameraLook)
+{
+    pos = cameraPos;
+    look = cameraLook;
+    updateViewMatrix();
+}
+
+void Camera::updatePosLookUp(glm::vec3 cameraPos, glm::vec3 cameraLook, glm::vec3 cameraUp)
+{
+    pos = cameraPos;
+    look = cameraLook;
+    up = cameraUp;
+    updateViewMatrix();
+}
+
+void Camera::updateViewMatrix()
+{
+    right = glm::normalize(glm::cross(look - pos, up));
+    viewMatrix = glm::lookAt(pos, look, up);
+    invViewMatrix = glm::inverse(viewMatrix);
+}
+
+void Camera::updateScalingMatrix()
+{
+    scaling = glm::mat4(0);
+    scaling[2][2] = 1 / farPlane;
+    scaling[1][1] = scaling[2][2] / tan(heightAngle / 2.0f);
+    scaling[0][0] = scaling[1][1] / aspectRatio;
+    scaling[3][3] = 1;
+}
+
+void Camera::updateUnhingingMatrix()
+{
+    float c = -nearPlane / farPlane;
+
+    unhinging = glm::mat4(0);
     unhinging[0][0] = 1;
     unhinging[1][1] = 1;
     unhinging[2][2] = 1 / (1 + c);
     unhinging[3][2] = -c / (1 + c);
     unhinging[2][3] = -1;
-
-    projMatrix = remapping * unhinging * scaling;
 }
 
-void Camera::updateViewMatrix(){
-    cameraRight = glm::normalize(glm::cross(cameraLook - cameraPos, cameraUp));
-    viewMatrix = glm::lookAt(cameraPos, cameraLook, cameraUp);
-    invViewMatrix = glm::inverse(viewMatrix);
+void Camera::updateProjMatrix()
+{
+    projMatrix = remapping * unhinging * scaling;
 }

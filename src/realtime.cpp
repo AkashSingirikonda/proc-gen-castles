@@ -256,10 +256,10 @@ void Realtime::renderScene(){
     glUniform1f(glGetUniformLocation(shader, "k_d"), scene.globalData.kd);
     glUniform1f(glGetUniformLocation(shader, "k_s"), scene.globalData.ks);
 
-    glUniformMatrix4fv(glGetUniformLocation(shader, "view"), 1, false, &camera.viewMatrix[0][0]);
-    glUniformMatrix4fv(glGetUniformLocation(shader, "proj"), 1, false, &camera.projMatrix[0][0]);
+    glUniformMatrix4fv(glGetUniformLocation(shader, "view"), 1, false, &camera.getViewMatrix()[0][0]);
+    glUniformMatrix4fv(glGetUniformLocation(shader, "proj"), 1, false, &camera.getProjMatrix()[0][0]);
 
-    glUniform4fv(glGetUniformLocation(shader, "camera_position"), 1, &camera.cameraPos[0]);
+    glUniform4fv(glGetUniformLocation(shader, "camera_position"), 1, &camera.getCameraPos()[0]);
 
 //    glUniform1iv(glGetUniformLocation(shader, "light_type"), MAX_LIGHTS, &lightTypes[0]);
 //    glUniform4fv(glGetUniformLocation(shader, "light_position"), MAX_LIGHTS, &lightPositions[0][0]);
@@ -317,7 +317,6 @@ void Realtime::paintTexture(GLuint texture){
 }
 
 void Realtime::resizeGL(int w, int h) {
-    // Tells OpenGL how big the screen is
     updateSizes();
 
     //TODO don't want to make a new camera each time
