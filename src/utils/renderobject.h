@@ -2,7 +2,7 @@
 
 #include "scene/sceneobject.h"
 #include "scene/sceneprimitive.h"
-#include "utils/scenedata.h"
+#include "scene/scenedata.h"
 
 /*
  * After a scene is generated its scene objects are converted into render objects.

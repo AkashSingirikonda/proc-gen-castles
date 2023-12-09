@@ -266,6 +266,7 @@ void Realtime::renderScene(){
 
         glBindVertexArray(primitive->VAO_name);
 
+        // TODO
         SceneMaterial* material = renderObject->material;
         //glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
         //glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);

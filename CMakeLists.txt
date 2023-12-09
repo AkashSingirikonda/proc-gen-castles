@@ -34,7 +34,7 @@ add_executable(${PROJECT_NAME}
     src/mainwindow.h
     src/realtime.h
     src/settings.h
-    src/utils/scenedata.h
+
     src/utils/shaderloader.h
     src/utils/aspectratiowidget/aspectratiowidget.hpp
 )
@@ -56,7 +56,9 @@ add_library(StaticGLEW STATIC glew/src/glew.c
     src/utils/camera.h src/utils/camera.cpp
     src/scene/primitivetypes.h
     src/utils/renderobject.h src/utils/renderobject.cpp
-    src/utils/sceneloader.h )
+    src/utils/sceneloader.h
+    src/scene/scenedata.h
+    src/textures/texturedata.h )
 include_directories(${PROJECT_NAME} PRIVATE glew/include)
 
 # Specifies libraries to be linked (Qt components, glew, etc)

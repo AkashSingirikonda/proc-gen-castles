@@ -1,9 +1,11 @@
+#include <GL/glew.h>
+#include <glm/glm.hpp>
 
 template <class T>
 class Spline
 {
 public:
-    Spline(T startData, T endData){start = startData; end = endData;};
+    Spline(T startData, T endData){ start = startData; end = endData; };
 
     virtual T get(float time) = 0;
 
@@ -48,6 +50,5 @@ class CubicSpline : public Spline<T>
  *  - ease-in-out
  *
  *  https://cubic-bezier.com/#0,1,1,0
- *
  *
  */
