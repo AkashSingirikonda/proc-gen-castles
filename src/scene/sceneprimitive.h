@@ -29,3 +29,9 @@ private:
     std::vector<glm::vec3> norms;
     std::vector<glm::vec2> uvs;
 };
+
+
+class PrimitiveCube : public ScenePrimitive
+{
+    PrimitiveType getPrimitiveType() override { return PrimitiveType::PRIMITIVE_CUBE; };
+};

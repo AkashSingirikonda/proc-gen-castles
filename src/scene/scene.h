@@ -11,8 +11,5 @@ public:
     Scene();
     ~Scene();
 
-
-private:
-
-    std::vector<SceneNode*> sceneObjects;
+    SceneNode* root;
 };

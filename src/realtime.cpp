@@ -68,11 +68,21 @@ void Realtime::initializeGL() {
     ProceduralCastle castleGenerator = ProceduralCastle();
     castleGenerator.generateScene(scene);
 
+    generateScenePrimitives();
+
     SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, renderObjects);
 
     initVBOandVAOs();
     makeTextureVBOandVAO();
     makeFBO();
+}
+
+void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, ScenePrimitive* primitive){
+    primitiveTypes.insert(primitive->getPrimitiveType(), primitive);
+}
+
+void Realtime::generateScenePrimitives(){
+    insertPrimitive(primitiveTypes, new PrimitiveCube());
 }
 
 void Realtime::initVBOandVAOs() {
@@ -290,10 +300,6 @@ void Realtime::resizeGL(int w, int h) {
     glViewport(0, 0, size().width() * pixelRatio, size().height() * pixelRatio);
 
     // Students: anything requiring OpenGL calls when the program starts should be done here
-}
-
-void Realtime::sceneChanged() {
-    update();
 }
 
 void Realtime::settingsChanged() {

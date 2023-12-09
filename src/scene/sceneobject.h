@@ -7,31 +7,28 @@
 #include "textures/texturetypes.h"
 #include "primitivetypes.h"
 
+
+class SceneObject
+{
+public:
+    SceneObject();
+    ~SceneObject();
+
+    TextureType texture;
+    PrimitiveType primitive;
+    //TODO add material which we need to construct RenderObject
+};
+
 class SceneNode
 {
 public:
     SceneNode();
     ~SceneNode();
 
-    // used during construction to keep track of transforms between SceneNodes and SceneObjects
-    glm::mat4 relativeTransform;
+    glm::mat4 transform;
 
-    // transient variable to compute global transform for scene objects
-    glm::mat4 ctm;
-
-private:
     std::vector<SceneNode*> children;
+    std::vector<SceneObject*> objects;
 };
 
 
-class SceneObject : public SceneNode
-{
-public:
-    SceneObject();
-    ~SceneObject();
-
-private:
-    TextureType texture;
-    PrimitiveType primitive;
-    //TODO add material which we need to construct RenderObject
-};

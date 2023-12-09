@@ -2,7 +2,7 @@
 
 #include "scene/sceneobject.h"
 #include "scene/sceneprimitive.h"
-
+#include "utils/scenedata.h"
 
 /*
  * After a scene is generated its scene objects are converted into render objects.
@@ -11,7 +11,7 @@
 class RenderObject
 {
 public:
-    RenderObject(SceneObject* source);
+    RenderObject(SceneObject* source, ScenePrimitive* primitive);
 
     glm::mat4 ctm;
     glm::mat4 normInv;

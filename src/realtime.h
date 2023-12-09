@@ -23,7 +23,6 @@ class Realtime : public QOpenGLWidget
 public:
     Realtime(QWidget *parent = nullptr);
     void finish();                                      // Called on program exit
-    void sceneChanged();
     void settingsChanged();
     void saveViewportImage(std::string filePath);
 
@@ -61,6 +60,8 @@ private:
     Scene scene;
     // collection of render objects loaded from the scene
     std::vector<RenderObject*> renderObjects;
+
+    void generateScenePrimitives();
     std::map<PrimitiveType, ScenePrimitive*> primitiveTypes;
 
     void renderScene();
