@@ -399,10 +399,10 @@ void Realtime::timerEvent(QTimerEvent *event) {
         movement[1] += 1;
     }
     if(keyMap[Qt::Key_Space]){
-        movement[2] += 1;
+        movement[2] -= 1;
     }
     if(keyMap[Qt::Key_Control]){
-        movement[2] -= 1;
+        movement[2] += 1;
     }
     if(movement.length() > .001f){
         movement *= movementSpeed * deltaTime;

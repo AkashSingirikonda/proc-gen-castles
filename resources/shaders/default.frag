@@ -34,7 +34,7 @@ float lightFalloff(float x, float inner, float outer){
 }
 
 void main() {
-    fragColor = vec4(normalize(world_norm), 1.0f);
+    fragColor = vec4(abs(normalize(world_norm)), 1.0f);
     return;
 
     vec4 pos = vec4(world_pos, 1);
