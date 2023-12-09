@@ -6,6 +6,8 @@
 #include <iostream>
 #include "settings.h"
 
+#include "utils/shaderloader.h"
+
 // ================== Project 5: Lights, Camera
 
 Realtime::Realtime(QWidget *parent)
@@ -47,18 +49,96 @@ void Realtime::initializeGL() {
     }
     std::cout << "Initialized GL: Version " << glewGetString(GLEW_VERSION) << std::endl;
 
-    // Allows OpenGL to draw objects appropriately on top of one another
     glEnable(GL_DEPTH_TEST);
-    // Tells OpenGL to only draw the front face
     glEnable(GL_CULL_FACE);
-    // Tells OpenGL how big the screen is
     glViewport(0, 0, size().width() * pixelRatio, size().height() * pixelRatio);
 
-    // Students: anything requiring OpenGL calls when the program starts should be done here
+
+    shader = ShaderLoader::createShaderProgram(":/resources/shaders/default.vert", ":/resources/shaders/default.frag");
+    textureShader = ShaderLoader::createShaderProgram(":/resources/shaders/texture.vert", ":/resources/shaders/texture.frag");
+
+    glUseProgram(textureShader);
+    glUniform1i(glGetUniformLocation(textureShader, "tex"), 0);
+    glUseProgram(0);
+
+
+    ProceduralCastle castleGenerator = ProceduralCastle();
+    castleGenerator.generateScene(scene);
+
+    initVBOandVAOs();
+}
+
+void Realtime::initVBOandVAOs() {
+
+}
+
+void Realtime::makeFBO(){
+    glGenTextures(1, &fboTexture);
+    glBindTexture(GL_TEXTURE_2D, fboTexture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, fboWidth, fboHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    glGenRenderbuffers(1, &fboRenderBuffer);
+    glBindRenderbuffer(GL_RENDERBUFFER, fboRenderBuffer);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, fboWidth, fboHeight);
+    glBindRenderbuffer(GL_RENDERBUFFER, 0);
+
+    glGenFramebuffers(1, &fboID);
+    glBindFramebuffer(GL_FRAMEBUFFER, fboID);
+
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fboTexture, 0);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fboRenderBuffer);
+
+    glBindFramebuffer(GL_FRAMEBUFFER, defaultFBO);
+}
+
+void Realtime::makeTextureVBOandVAO(){
+    std::vector<GLfloat> fullscreen_quad_data =
+        { //     POSITIONS    //
+         -1.0f,  1.0f, 0.0f, 0, 1,
+         -1.0f, -1.0f, 0.0f, 0, 0,
+         1.0f, -1.0f, 0.0f, 1, 0,
+         1.0f,  1.0f, 0.0f, 1, 1,
+         -1.0f,  1.0f, 0.0f, 0, 1,
+         1.0f, -1.0f, 0.0f, 1, 0,
+         };
+
+    glGenBuffers(1, &fullscreenVbo);
+    glBindBuffer(GL_ARRAY_BUFFER, fullscreenVbo);
+    glBufferData(GL_ARRAY_BUFFER, fullscreen_quad_data.size()*sizeof(GLfloat), fullscreen_quad_data.data(), GL_STATIC_DRAW);
+    glGenVertexArrays(1, &fullscreenVao);
+    glBindVertexArray(fullscreenVao);
+
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), nullptr);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
 }
 
 void Realtime::paintGL() {
     // Students: anything requiring OpenGL calls every frame should be done here
+}
+
+void Realtime::paintTexture(GLuint texture, bool pixelFilter, bool kernelFilter){
+    glUseProgram(textureShader);
+
+    glBindVertexArray(fullscreenVao);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    glUniform1i(glGetUniformLocation(textureShader, "width"), screenWidth);
+    glUniform1i(glGetUniformLocation(textureShader, "height"), screenHeight);
+
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    glBindVertexArray(0);
+    glUseProgram(0);
 }
 
 void Realtime::resizeGL(int w, int h) {

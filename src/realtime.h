@@ -16,6 +16,8 @@
 #include "scene/scene.h"
 #include "utils/camera.h"
 
+#include "procedural/proceduralcastle.h"
+
 class Realtime : public QOpenGLWidget
 {
 public:
@@ -53,7 +55,7 @@ private:
     // Device Correction Variables
     int pixelRatio;
 
-
+    ProceduralCastle castleGenerator;
 
     // This is the scene where we want to generate our castle.
     Scene scene;
@@ -87,7 +89,7 @@ private:
 
 
     // For each scene primitive generate the necessary VAO, VBO, and VBO data
-    void initVBOandVAOs(){}; //TODO
+    void initVBOandVAOs(); //TODO
     void updateVBOs(){}; //TODO
     void clearVBOandVAOs(){}; //TODO
 
@@ -119,8 +121,8 @@ private:
     GLuint fboTexture;
     GLuint fboRenderBuffer;
 
-    void makeFBO(){}; //TODO
-    void makeTextureVBOandVAO(){}; //TODO
-    void paintTexture(GLuint texture, bool pixelFilter, bool kernelFilter){}; //TODO
+    void makeFBO();
+    void makeTextureVBOandVAO();
+    void paintTexture(GLuint texture);
 
 };
