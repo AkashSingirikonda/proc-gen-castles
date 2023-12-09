@@ -1,8 +1,8 @@
 #pragma once
 
-#include "scene/sceneobject.h"
+
 #include "scene/sceneprimitive.h"
-#include "scene/scenedata.h"
+#include "textures/texturedata.h"
 
 /*
  * After a scene is generated its scene objects are converted into render objects.

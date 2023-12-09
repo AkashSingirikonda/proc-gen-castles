@@ -65,6 +65,9 @@ private:
     void generateScenePrimitives();
     std::map<PrimitiveType, ScenePrimitive*> primitiveTypes;
 
+    void generateSceneMaterials();
+    std::map<TextureType, SceneMaterial> materialTypes;
+
     void renderScene();
     // helper function for finish()
     void clearScene(){}; //TODO

@@ -11,6 +11,8 @@
 #include "utils/shaderloader.h"
 #include "utils/sceneloader.h"
 
+#include "textures/defaultmaterials.h"
+
 Realtime::Realtime(QWidget *parent)
     : QOpenGLWidget(parent)
 {
@@ -95,13 +97,28 @@ void Realtime::initializeGL() {
     makeFBO();
 }
 
-void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, ScenePrimitive* primitive){
-    auto pair = std::pair<PrimitiveType,ScenePrimitive*>(primitive->getPrimitiveType(), primitive);
+//template <T, Obj>
+void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, ScenePrimitive* primitive)
+{
+    auto pair = std::pair<PrimitiveType, ScenePrimitive*>(primitive->getPrimitiveType(), primitive);
     primitiveTypes.insert(pair);
 }
 
-void Realtime::generateScenePrimitives(){
+void Realtime::generateScenePrimitives()
+{
     insertPrimitive(primitiveTypes, new PrimitiveCube());
+}
+
+void Realtime::generateSceneMaterials()
+{
+    std::vector<TextureType> textureTypes;
+    textureTypes.push_back(TextureType::TEXTURE_GRASS);
+
+    for(TextureType textureType : textureTypes)
+    {
+        auto pair = std::pair<TextureType, SceneMaterial>(textureType, DefaultMaterials::getDefaultMaterial(textureType));
+        materialTypes.insert(pair);
+    }
 }
 
 void Realtime::initVBOandVAOs() {

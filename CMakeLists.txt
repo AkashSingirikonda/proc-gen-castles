@@ -59,7 +59,9 @@ add_library(StaticGLEW STATIC glew/src/glew.c
     src/utils/sceneloader.h
     src/scene/scenedata.h
     src/textures/texturedata.h
-    src/procedural/graph.h src/procedural/graph.cpp )
+    src/textures/defaulttextures.h
+    src/procedural/graph.h
+    src/procedural/graph.cpp )
 include_directories(${PROJECT_NAME} PRIVATE glew/include)
 
 # Specifies libraries to be linked (Qt components, glew, etc)
