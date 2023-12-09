@@ -71,8 +71,7 @@ private:
 
 
 
-    Camera camera = Camera();
-    void updateCamera(float aspectRatio);
+    Camera camera;
     const float movementSpeed = 5;
     const float rotationSpeed = .003;
 

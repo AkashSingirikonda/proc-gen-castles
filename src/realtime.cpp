@@ -88,6 +88,8 @@ void Realtime::initializeGL() {
     SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, renderObjects);
 
 
+    camera = Camera(scene.cameraData, 1.0f * size().width() / size().height(), settings.nearPlane, settings.farPlane);
+
     initVBOandVAOs();
     makeTextureVBOandVAO();
     makeFBO();
@@ -318,9 +320,7 @@ void Realtime::paintTexture(GLuint texture){
 
 void Realtime::resizeGL(int w, int h) {
     updateSizes();
-
-    //TODO don't want to make a new camera each time
-    camera = Camera(scene.cameraData, 1.0f * size().width() / size().height(), settings.nearPlane, settings.farPlane);
+    camera.updateAspectRatio(1.0f * size().width() / size().height());
 }
 
 void Realtime::updateSizes(){
@@ -358,6 +358,8 @@ void Realtime::mouseReleaseEvent(QMouseEvent *event) {
     }
 }
 
+
+
 void Realtime::mouseMoveEvent(QMouseEvent *event) {
     if (mouseDown) {
         int posX = event->position().x();
@@ -367,6 +369,12 @@ void Realtime::mouseMoveEvent(QMouseEvent *event) {
         prevMousePos = glm::vec2(posX, posY);
 
         // Use deltaX and deltaY here to rotate
+        if(mouseDown){
+            if(deltaX != 0 || deltaY != 0){
+                camera.rotateYaw(-((float)deltaX) * rotationSpeed);
+                camera.rotatePitch((-(float)deltaY) * rotationSpeed);
+            }
+        }
 
         update(); // asks for a PaintGL() call to occur
     }
@@ -377,9 +385,30 @@ void Realtime::timerEvent(QTimerEvent *event) {
     float deltaTime = elapsedms * 0.001f;
     elapsedTimer.restart();
 
-    // Use deltaTime and keyMap here to move around
-
-    update(); // asks for a PaintGL() call to occur
+    glm::vec3 movement = glm::vec3(0.0f,0.0f, 0.0f);
+    if(keyMap[Qt::Key_W]){
+        movement[0] += 1;
+    }
+    if(keyMap[Qt::Key_S]){
+        movement[0] -= 1;
+    }
+    if(keyMap[Qt::Key_D]){
+        movement[1] += 1;
+    }
+    if(keyMap[Qt::Key_A]){
+        movement[1] -= 1;
+    }
+    if(keyMap[Qt::Key_Space]){
+        movement[2] += 1;
+    }
+    if(keyMap[Qt::Key_Control]){
+        movement[2] -= 1;
+    }
+    if(movement.length() > .001f){
+        movement *= movementSpeed * deltaTime;
+        camera.move(movement[0], movement[1], movement[2]);
+    }
+    update();
 }
 
 // DO NOT EDIT

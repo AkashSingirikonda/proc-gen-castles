@@ -11,6 +11,7 @@ public:
 
 
     void updateHeightAngle(float newHeightAngle);
+    void updateAspectRatio(float newAspectRatio);
     void updateNearFar(float newNearDistance, float newFarDistance);
 
     void updatePos(glm::vec3 pos);
@@ -18,6 +19,12 @@ public:
     void updateUp(glm::vec3 up);
     void updatePosLook(glm::vec3 pos, glm::vec3 look);
     void updatePosLookUp(glm::vec3 pos, glm::vec3 look, glm::vec3 up);
+
+    void rotateRoll(float angle);
+    void rotatePitch(float angle);
+    void rotateYaw(float angle);
+
+    void move(float forwardStep, float rightStep, float upStep);
 
 
     glm::vec3& getCameraPos(){ return pos; };
