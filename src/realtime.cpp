@@ -96,6 +96,8 @@ void Realtime::initializeGL() {
     initVBOandVAOs();
     makeTextureVBOandVAO();
     makeFBO();
+
+    initFinished = true;
 }
 
 void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, ScenePrimitive* primitive)
@@ -293,7 +295,7 @@ void Realtime::renderScene(){
 
         if(primitive == nullptr)
         {
-            std::cout << "Encountered null primitive for render object" << std::endl;
+            //std::cout << "Encountered null primitive for render object" << std::endl;
             continue;
         }
 
@@ -346,6 +348,10 @@ void Realtime::updateSizes(){
 }
 
 void Realtime::settingsChanged() {
+    if(!initFinished)
+    {
+        return;
+    }
     // Updates planes
     camera.updateNearFar(settings.nearPlane, settings.farPlane);
 

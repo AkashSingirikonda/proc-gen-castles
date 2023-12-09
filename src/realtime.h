@@ -55,6 +55,9 @@ private:
     float pixelRatio;
     void updateSizes();
 
+
+    bool initFinished = false;
+
     ProceduralCastle castleGenerator;
 
     // This is the scene where we want to generate our castle.
