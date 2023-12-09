@@ -347,14 +347,23 @@ void Realtime::updateSizes(){
     glViewport(0, 0, screenWidth, screenHeight);
 }
 
-void Realtime::settingsChanged() {
-    if(!initFinished)
-    {
-        return;
-    }
-    // Updates planes
-    camera.updateNearFar(settings.nearPlane, settings.farPlane);
+void Realtime::parametersChanged()
+{
+    if(!initFinished) return;
+    // TODO update VAO / VBOs
+    update();
+}
 
+void Realtime::nearFarChanged()
+{
+    if(!initFinished) return;
+    camera.updateNearFar(settings.nearPlane, settings.farPlane);
+    update();
+}
+
+void Realtime::seedsChanged()
+{
+    if(!initFinished) return;
     // Updates Scene (TODO: Change only when random number changes)
     scene = Scene();
     renderObjects.clear();
@@ -367,8 +376,6 @@ void Realtime::settingsChanged() {
     updateLights();
 
     update();
-    // TODO maybe we just add more callbacks for which setting specifically changed
-    // otherwise it is quite annoying to add code here to try to figure out what needs to be updated
 }
 
 void Realtime::keyPressEvent(QKeyEvent *event) {

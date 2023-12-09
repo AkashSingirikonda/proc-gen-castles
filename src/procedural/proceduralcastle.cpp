@@ -23,7 +23,6 @@ void ProceduralCastle::generateScene(Scene& scene)
     // TODO
     SceneNode* root = new SceneNode();
     SceneObject* cube = new SceneObject(PrimitiveType::PRIMITIVE_CUBE, TextureType::TEXTURE_STONE);
-    root->objects.push_back(cube);
 
 
     // Adding Scene Light Data
@@ -32,7 +31,7 @@ void ProceduralCastle::generateScene(Scene& scene)
     sceneLightData.color = SceneColor(1,1,1,1);
     sceneLightData.direction = glm::vec4(0, 1, 0, 0);
     SceneLight* sceneLight = new SceneLight(sceneLightData);
-    sceneLight->transform = glm::translate(sceneLight->transform, glm::vec3(0.0f, 10.0f, 0.0f));
+    sceneLight->transform = glm::translate(sceneLight->transform, glm::vec3(0.0f, 100.0f, 0.0f));
     root->lights.push_back(sceneLight);
 
     scene.root = root;

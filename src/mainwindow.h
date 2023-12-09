@@ -35,13 +35,11 @@ private:
     QDoubleSpinBox *nearBox;
     QDoubleSpinBox *farBox;
 
-
     QPushButton *genRootSeedButton;
     QSpinBox *rootSeedBox;
 
     void connectRootSeed();
     void connectRootSeedChanged();
-
 
 
 private slots:

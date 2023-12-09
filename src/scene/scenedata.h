@@ -25,12 +25,12 @@ using SceneColor = glm::vec4;
 
 struct SceneLightData {
     LightType type;
-    SceneColor color;
-    glm::vec3 function; // Attenuation function
+    SceneColor color = SceneColor(1.0, 1.0, 1.0, 0.0);
+    glm::vec3 function = glm::vec3(0.8f, 0.05f, 0.0f); // Attenuation function
     glm::vec4 direction;
 
-    float penumbra; // Only applicable to spot lights, in RADIANS
-    float angle;    // Only applicable to spot lights, in RADIANS
+    float penumbra = 0.35f;
+    float angle = 0.52f;
 };
 
 // Struct which contains data for the camera of a scene

@@ -23,7 +23,9 @@ class Realtime : public QOpenGLWidget
 public:
     Realtime(QWidget *parent = nullptr);
     void finish();                                      // Called on program exit
-    void settingsChanged();
+    void parametersChanged();
+    void nearFarChanged();
+    void seedsChanged();
     void saveViewportImage(std::string filePath);
 
 public slots:

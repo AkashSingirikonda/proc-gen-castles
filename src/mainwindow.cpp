@@ -115,7 +115,6 @@ void MainWindow::initialize() {
     farBox->setValue(100.f);
 
     // PROCEDURAL GENERATION PARAMETERS
-
     QGroupBox *rootSeedLayout = new QGroupBox();
     QHBoxLayout *lRootSeed = new QHBoxLayout();
     genRootSeedButton = new QPushButton();
@@ -181,6 +180,7 @@ void MainWindow::connectUIElements() {
     connectFar();
 
     connectRootSeed();
+    connectRootSeedChanged();
 }
 
 void MainWindow::connectParam1() {
@@ -220,44 +220,43 @@ void MainWindow::onValChangeP1(int newValue) {
     p1Slider->setValue(newValue);
     p1Box->setValue(newValue);
     settings.shapeParameter1 = p1Slider->value();
-    realtime->settingsChanged();
+    realtime->parametersChanged();
 }
 
 void MainWindow::onValChangeP2(int newValue) {
     p2Slider->setValue(newValue);
     p2Box->setValue(newValue);
     settings.shapeParameter2 = p2Slider->value();
-    realtime->settingsChanged();
+    realtime->parametersChanged();
 }
 
 void MainWindow::onValChangeNearSlider(int newValue) {
     //nearSlider->setValue(newValue);
     nearBox->setValue(newValue/100.f);
     settings.nearPlane = nearBox->value();
-    realtime->settingsChanged();
+    realtime->nearFarChanged();
 }
 
 void MainWindow::onValChangeFarSlider(int newValue) {
     //farSlider->setValue(newValue);
     farBox->setValue(newValue/100.f);
     settings.farPlane = farBox->value();
-    realtime->settingsChanged();
+    realtime->nearFarChanged();
 }
 
 void MainWindow::onValChangeNearBox(double newValue) {
     nearSlider->setValue(int(newValue*100.f));
     //nearBox->setValue(newValue);
     settings.nearPlane = nearBox->value();
-    realtime->settingsChanged();
+    realtime->nearFarChanged();
 }
 
 void MainWindow::onValChangeFarBox(double newValue) {
     farSlider->setValue(int(newValue*100.f));
     //farBox->setValue(newValue);
     settings.farPlane = farBox->value();
-    realtime->settingsChanged();
+    realtime->nearFarChanged();
 }
-
 
 void MainWindow::onGenerateRootSeed(){
     onValChangedRootSeed(rand());
@@ -266,5 +265,5 @@ void MainWindow::onGenerateRootSeed(){
 void MainWindow::onValChangedRootSeed(int newValue) {
     rootSeedBox->setValue(newValue);
     settings.rootSeed = rootSeedBox->value();
-    realtime->settingsChanged();
+    realtime->seedsChanged();
 }
