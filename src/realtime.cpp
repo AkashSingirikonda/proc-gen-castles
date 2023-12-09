@@ -78,7 +78,8 @@ void Realtime::initializeGL() {
 }
 
 void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, ScenePrimitive* primitive){
-    primitiveTypes.insert(primitive->getPrimitiveType(), primitive);
+    auto pair = std::pair<PrimitiveType,ScenePrimitive*>(primitive->getPrimitiveType(), primitive);
+    primitiveTypes.insert(pair);
 }
 
 void Realtime::generateScenePrimitives(){
