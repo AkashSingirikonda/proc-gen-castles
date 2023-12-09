@@ -34,9 +34,6 @@ float lightFalloff(float x, float inner, float outer){
 }
 
 void main() {
-    fragColor = vec4(abs(normalize(world_norm)), 1.0f);
-    return;
-
     vec4 pos = vec4(world_pos, 1);
     vec4 norm = vec4(normalize(world_norm), 0.0f);
 
@@ -44,6 +41,7 @@ void main() {
     dir_camera.w = 0;
 
     fragColor = k_a * cAmbient;
+    return;
 
     for(int i = 0; i < MAX_LIGHTS; i++){
         vec4 sum = vec4(0.0);

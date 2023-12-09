@@ -18,7 +18,6 @@ public:
 
     PrimitiveType primitive;
     TextureType texture;
-    //TODO add material which we need to construct RenderObject
 };
 
 class SceneNode

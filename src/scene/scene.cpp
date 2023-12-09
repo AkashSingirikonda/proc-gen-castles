@@ -8,7 +8,7 @@ Scene::Scene()
 
     cameraData.heightAngle = 49.5f;
 
-    globalData.ka = 0.5f;
+    globalData.ka = 0.9f;
     globalData.kd = 0.5f;
     globalData.ks = 0.5f;
     globalData.kt = 0.0f;
