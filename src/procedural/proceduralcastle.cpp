@@ -17,31 +17,32 @@ void ProceduralCastle::generateScene(Scene& scene)
     scene.root = root;
 
     // Creating an nxn graph:
-    int n = 10;
-    Graph g = Graph();
-    for (int i = 0; i < n*n; i++) {
-        g.addNode(i);
-    }
+//    int n = 10;
+//    SceneNode[n] val = ;
+//    Graph g = Graph<SceneNode>();
+//    for (int i = 0; i < n*n; i++) {
+//        g.addNode(i, cube);
+//    }
 
-    for (int i = 0; i < n*n; i++) {
-        // Horizontal Edges
-        if (i % n > 0 ) {
-            g.addEdge(i, i-1);
-        }
+//    for (int i = 0; i < n*n; i++) {
+//        // Horizontal Edges
+//        if (i % n > 0 ) {
+//            g.addEdge(i, i-1);
+//        }
 
-        if (i % n != n-1) {
-            g.addEdge(i, i+1);
-        }
+//        if (i % n != n-1) {
+//            g.addEdge(i, i+1);
+//        }
 
-        // Vertical Edges
-        if (i / n != 0) {
-            g.addEdge(i, i - n);
-        }
+//        // Vertical Edges
+//        if (i / n != 0) {
+//            g.addEdge(i, i - n);
+//        }
 
-        if (i / n != n-1) {
-            g.addEdge(i, i + n);
-        }
-    }
+//        if (i / n != n-1) {
+//            g.addEdge(i, i + n);
+//        }
+//    }
 
-    g.printGraph();
+//    g.printGraph();
 }

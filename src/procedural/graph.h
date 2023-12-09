@@ -4,47 +4,27 @@
 #include <iostream>
 #include <set>
 
+template <class T>
 class Graph {
 public:
     // Constructor
     Graph() {}
 
     // Add a node to the graph
-    void addNode(int nodeId) {
-        if (nodes.find(nodeId) == nodes.end()) {
-            nodes[nodeId] = std::set<int>();
-        }
-    }
+    void addNode(int nodeId, T* val);
 
-    // Add an undirected edge between two nodes
-    void addEdge(int node1, int node2) {
-        addNode(node1);
-        addNode(node2);
+    // Add an edge to the graph
+    void addEdge(int node1, int node2);
 
-        nodes[node1].insert(node2);
-        nodes[node2].insert(node1);
-    }
+    // Gets the neighbor Ids of a node in the graph.
+    const std::set<int>& getNeighbors(int nodeId) const;
+    const T& getVal(int nodeId) const;
 
-    // Get neighbors of a node
-    const std::set<int>& getNeighbors(int nodeId) const {
-        static const std::set<int> emptySet;
-        auto it = nodes.find(nodeId);
-        return (it != nodes.end()) ? it->second : emptySet;
-    }
-
-    // Print the graph
-    void printGraph() const {
-        for (const auto& entry : nodes) {
-            std::cout << "Node " << entry.first << " is connected to: ";
-            for (int neighbor : entry.second) {
-                std::cout << neighbor << " ";
-            }
-            std::cout << std::endl;
-        }
-    }
-
+    // Prints the connections in a graph.
+    void printGraph() const;
 private:
-    std::unordered_map<int, std::set<int>> nodes;
+    std::unordered_map<int, std::set<int>> m_nodes;
+    std::unordered_map<int, T*> m_vals;
 };
 
 
