@@ -346,9 +346,21 @@ void Realtime::updateSizes(){
 }
 
 void Realtime::settingsChanged() {
+    // Updates planes
     camera.updateNearFar(settings.nearPlane, settings.farPlane);
-    update();
 
+    // Updates Scene (TODO: Change only when random number changes)
+    scene = Scene();
+    renderObjects.clear();
+    renderLights.clear();
+
+    ProceduralCastle castleGenerator = ProceduralCastle();
+    castleGenerator.generateScene(scene);
+
+    SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, materialTypes, renderObjects, renderLights);
+    updateLights();
+
+    update();
     // TODO maybe we just add more callbacks for which setting specifically changed
     // otherwise it is quite annoying to add code here to try to figure out what needs to be updated
 }

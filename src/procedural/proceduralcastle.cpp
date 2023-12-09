@@ -4,6 +4,8 @@
 #include "unordered_map"
 #include "set"
 #include "scene/sceneobject.h"
+#include <random>
+#include <settings.h>
 
 ProceduralCastle::ProceduralCastle()
 {
@@ -14,11 +16,17 @@ ProceduralCastle::ProceduralCastle()
 
 void ProceduralCastle::generateScene(Scene& scene)
 {
+    // Initialize Seed
+    auto seed = settings.rootSeed;
+    srand(seed);
+
     // TODO
     SceneNode* root = new SceneNode();
     SceneObject* cube = new SceneObject(PrimitiveType::PRIMITIVE_CUBE, TextureType::TEXTURE_STONE);
     root->objects.push_back(cube);
 
+
+    // Adding Scene Light Data
     SceneLightData sceneLightData;
     sceneLightData.type = LightType::LIGHT_DIRECTIONAL;
     sceneLightData.color = SceneColor(1,1,1,1);
@@ -36,7 +44,7 @@ void ProceduralCastle::generateScene(Scene& scene)
         vals[i] = new SceneNode();
         vals[i]->objects.push_back(cube);
 //        vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.01, 0.01, 0.01));
-        vals[i]->transform = glm::translate(vals[i]->transform, glm::vec3(2 * (i/n), 0, 2 * (i % n)));
+        vals[i]->transform = glm::translate(vals[i]->transform, glm::vec3(2 * (rand()/(float)RAND_MAX) * (i/n), 0, 2 * (rand()/(float)RAND_MAX) * (i % n)));
         scene.root->children.push_back(vals[i]);
     }
 
