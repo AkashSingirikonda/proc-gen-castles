@@ -1,8 +1,9 @@
 #include "renderobject.h"
 
-RenderObject::RenderObject(glm::mat4 globalTransform, ScenePrimitive* scenePrimitive)
+RenderObject::RenderObject(glm::mat4 globalTransform, ScenePrimitive* scenePrimitive, SceneMaterial* sceneMaterial)
 {
     primitive = scenePrimitive;
+    material = sceneMaterial;
 
     ctm = globalTransform;
 

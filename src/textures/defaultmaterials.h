@@ -16,18 +16,25 @@ public:
             material.cAmbient = SceneColor(0.0f, 0.5f, 0.0f, 1.0f);
             material.cDiffuse = SceneColor(0.5f, 0.5f, 0.5f, 1.0f);
             material.cSpecular = SceneColor(1.0f, 1.5f, 1.0f, 1.0f);
+            material.shininess = 15;
             break;
         case TextureType::TEXTURE_STONE:
             material.cAmbient = SceneColor(0.6f, 0.6f, 0.6f, 1.0f);
             material.cDiffuse = SceneColor(0.5f, 0.5f, 0.5f, 1.0f);
             material.cSpecular = SceneColor(1.0f, 1.5f, 1.0f, 1.0f);
+            material.shininess = 15;
             break;
         case TextureType::TEXTURE_ROOF:
             material.cAmbient = SceneColor(0.9f, 0.3f, 0.0f, 1.0f);
             material.cDiffuse = SceneColor(0.5f, 0.5f, 0.5f, 1.0f);
             material.cSpecular = SceneColor(1.0f, 1.5f, 1.0f, 1.0f);
+            material.shininess = 15;
             break;
         default:
+            material.cAmbient = SceneColor(1.0f, 1.0f, 1.0f, 1.0f);
+            material.cDiffuse = SceneColor(0.5f, 0.5f, 0.5f, 1.0f);
+            material.cSpecular = SceneColor(1.0f, 1.5f, 1.0f, 1.0f);
+            material.shininess = 15;
             break;
         }
 

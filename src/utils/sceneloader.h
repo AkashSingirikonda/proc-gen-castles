@@ -11,33 +11,41 @@
 class SceneLoader
 {
 public:
-    static void GetRenderObjectsForScene(Scene& scene, std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, std::vector<RenderObject*>& renderObjects)
+    static void GetRenderObjectsForScene(Scene& scene, std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes,
+                                         std::map<TextureType, SceneMaterial>& materialTypes, std::vector<RenderObject*>& renderObjects)
     {
         if(scene.root == nullptr)
         {
             return;
         }
-        buildSceneRecursive(scene.root, glm::mat4(1), primitiveTypes, renderObjects);
+        buildSceneRecursive(scene.root, glm::mat4(1), primitiveTypes, materialTypes, renderObjects);
     }
 
 
-    static void buildSceneRecursive(SceneNode* node, glm::mat4 ctm, std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, std::vector<RenderObject*>& renderObjects)
+    static void buildSceneRecursive(SceneNode* node, glm::mat4 ctm, std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes,
+                                    std::map<TextureType, SceneMaterial>& materialTypes, std::vector<RenderObject*>& renderObjects)
     {
         ctm = ctm * node->transform;
 
         for(SceneObject* sceneObject : node->objects)
         {
             PrimitiveType primitiveType = sceneObject->primitive;
+            TextureType textureType = sceneObject->texture;
 
             if(!primitiveTypes.contains(primitiveType))
             {
                 std::cout << "Encountered unknown primitive on load" << std::endl;
             }
 
-            const auto& it = primitiveTypes.find(primitiveType);
-            ScenePrimitive* primitive = it->second;
+            if(!materialTypes.contains(textureType))
+            {
+                std::cout << "Encountered unknown material on load" << std::endl;
+            }
 
-            RenderObject* renderObject = new RenderObject(ctm, primitive);
+            ScenePrimitive* primitive = primitiveTypes.find(primitiveType)->second;
+            SceneMaterial* material = &materialTypes.find(textureType)->second;
+
+            RenderObject* renderObject = new RenderObject(ctm, primitive, material);
             renderObjects.push_back(renderObject);
         }
 

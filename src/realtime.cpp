@@ -86,8 +86,9 @@ void Realtime::initializeGL() {
     castleGenerator.generateScene(scene);
 
     generateScenePrimitives();
+    generateSceneMaterials();
 
-    SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, renderObjects);
+    SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, materialTypes, renderObjects);
 
 
     camera = Camera(scene.cameraData, 1.0f * size().width() / size().height(), settings.nearPlane, settings.farPlane);
@@ -97,11 +98,9 @@ void Realtime::initializeGL() {
     makeFBO();
 }
 
-//template <T, Obj>
 void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, ScenePrimitive* primitive)
 {
-    auto pair = std::pair<PrimitiveType, ScenePrimitive*>(primitive->getPrimitiveType(), primitive);
-    primitiveTypes.insert(pair);
+    primitiveTypes[primitive->getPrimitiveType()] = primitive;
 }
 
 void Realtime::generateScenePrimitives()
@@ -113,15 +112,17 @@ void Realtime::generateSceneMaterials()
 {
     std::vector<TextureType> textureTypes;
     textureTypes.push_back(TextureType::TEXTURE_GRASS);
+    textureTypes.push_back(TextureType::TEXTURE_STONE);
+    textureTypes.push_back(TextureType::TEXTURE_ROOF);
 
     for(TextureType textureType : textureTypes)
     {
-        auto pair = std::pair<TextureType, SceneMaterial>(textureType, DefaultMaterials::getDefaultMaterial(textureType));
-        materialTypes.insert(pair);
+        materialTypes[textureType] = DefaultMaterials::getDefaultMaterial(textureType);
     }
 }
 
-void Realtime::initVBOandVAOs() {
+void Realtime::initVBOandVAOs()
+{
     int k1 = settings.shapeParameter1;
     int k2 = settings.shapeParameter1;
 
@@ -299,13 +300,12 @@ void Realtime::renderScene(){
 
         glBindVertexArray(primitive->VAO_name);
 
-        // TODO
-        //SceneMaterial* material = renderObject->material;
-        //glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
-        //glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);
-        //glUniform4fv(glGetUniformLocation(shader, "cSpecular"), 1, &material->cSpecular[0]);
+        SceneMaterial* material = renderObject->material;
+        glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
+        glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);
+        glUniform4fv(glGetUniformLocation(shader, "cSpecular"), 1, &material->cSpecular[0]);
 
-        //glUniform1f(glGetUniformLocation(shader, "shine"), material->shininess);
+        glUniform1f(glGetUniformLocation(shader, "shine"), material->shininess);
 
         glUniformMatrix4fv(glGetUniformLocation(shader, "model"), 1, false, &renderObject->ctm[0][0]);
         glUniformMatrix4fv(glGetUniformLocation(shader, "norm_inv"), 1, false, &renderObject->normInv[0][0]);

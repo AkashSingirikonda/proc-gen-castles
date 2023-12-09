@@ -11,7 +11,7 @@
 class RenderObject
 {
 public:
-    RenderObject(glm::mat4 globalTransform, ScenePrimitive* scenePrimitive);
+    RenderObject(glm::mat4 globalTransform, ScenePrimitive* scenePrimitive, SceneMaterial* sceneMaterial);
 
     glm::mat4 ctm;
     glm::mat4 normInv;
