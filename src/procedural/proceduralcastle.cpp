@@ -13,4 +13,6 @@ void ProceduralCastle::generateScene(Scene& scene)
     SceneNode* root = new SceneNode();
     SceneObject* cube = new SceneObject(PrimitiveType::PRIMITIVE_CUBE, TextureType::TEXTURE_STONE);
     root->objects.push_back(cube);
+
+    scene.root = root;
 }

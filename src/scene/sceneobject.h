@@ -27,7 +27,7 @@ public:
     SceneNode();
     ~SceneNode();
 
-    glm::mat4 transform;
+    glm::mat4 transform = glm::mat4(1);
 
     std::vector<SceneNode*> children;
     std::vector<SceneObject*> objects;

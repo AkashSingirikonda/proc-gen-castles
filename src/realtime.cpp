@@ -258,14 +258,20 @@ void Realtime::renderScene(){
     for(RenderObject* renderObject : renderObjects){
         ScenePrimitive* primitive = renderObject->primitive;
 
+        if(primitive == nullptr)
+        {
+            std::cout << "Encountered null primitive for render object" << std::endl;
+            continue;
+        }
+
         glBindVertexArray(primitive->VAO_name);
 
         SceneMaterial* material = renderObject->material;
-        glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
-        glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);
-        glUniform4fv(glGetUniformLocation(shader, "cSpecular"), 1, &material->cSpecular[0]);
+        //glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
+        //glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);
+        //glUniform4fv(glGetUniformLocation(shader, "cSpecular"), 1, &material->cSpecular[0]);
 
-        glUniform1f(glGetUniformLocation(shader, "shine"), material->shininess);
+        //glUniform1f(glGetUniformLocation(shader, "shine"), material->shininess);
 
         glUniformMatrix4fv(glGetUniformLocation(shader, "model"), 1, false, &renderObject->ctm[0][0]);
         glUniformMatrix4fv(glGetUniformLocation(shader, "norm_inv"), 1, false, &renderObject->normInv[0][0]);

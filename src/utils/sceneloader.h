@@ -13,6 +13,10 @@ class SceneLoader
 public:
     static void GetRenderObjectsForScene(Scene& scene, std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, std::vector<RenderObject*>& renderObjects)
     {
+        if(scene.root == nullptr)
+        {
+            return;
+        }
         buildSceneRecursive(scene.root, glm::mat4(1), primitiveTypes, renderObjects);
     }
 
@@ -33,7 +37,7 @@ public:
             const auto& it = primitiveTypes.find(primitiveType);
             ScenePrimitive* primitive = it->second;
 
-            RenderObject* renderObject = new RenderObject(sceneObject, primitive);
+            RenderObject* renderObject = new RenderObject(ctm, primitive);
             renderObjects.push_back(renderObject);
         }
 
