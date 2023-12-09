@@ -30,8 +30,9 @@ void ProceduralCastle::generateScene(Scene& scene)
     SceneLightData sceneLightData;
     sceneLightData.type = LightType::LIGHT_DIRECTIONAL;
     sceneLightData.color = SceneColor(1,1,1,1);
-    sceneLightData.direction = glm::vec4(0, -1, 0, 0);
+    sceneLightData.direction = glm::vec4(0, 1, 0, 0);
     SceneLight* sceneLight = new SceneLight(sceneLightData);
+    sceneLight->transform = glm::translate(sceneLight->transform, glm::vec3(0.0f, 10.0f, 0.0f));
     root->lights.push_back(sceneLight);
 
     scene.root = root;

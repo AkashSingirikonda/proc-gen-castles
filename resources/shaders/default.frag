@@ -84,7 +84,7 @@ void main() {
         }
 
         vec4 R = normalize(reflect(-L, norm));
-        if(dot(R, dir_camera) >= 0 && shine > 0){
+        if(dot(R, dir_camera) > 0 && shine > 0){
             sum += k_s * cSpecular * pow(dot(R, dir_camera), shine);
         }
 
