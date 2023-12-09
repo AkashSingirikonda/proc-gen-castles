@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <set>
+#include <unordered_map>
 
 template <class T>
 class Graph {

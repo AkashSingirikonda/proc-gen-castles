@@ -71,7 +71,7 @@ public:
 
         for(SceneNode* child : node->children)
         {
-            buildSceneRecursive(child, ctm, primitiveTypes, renderObjects);
+            buildSceneRecursive(child, ctm, primitiveTypes, materialTypes, renderObjects);
         }
     }
 };
