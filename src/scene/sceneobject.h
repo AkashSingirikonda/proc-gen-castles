@@ -14,8 +14,10 @@ public:
     SceneObject();
     ~SceneObject();
 
-    TextureType texture;
+    SceneObject(PrimitiveType primitiveType, TextureType textureType);
+
     PrimitiveType primitive;
+    TextureType texture;
     //TODO add material which we need to construct RenderObject
 };
 

@@ -17,5 +17,5 @@ class ProceduralCastle
 public:
     ProceduralCastle();
 
-    void generateScene(Scene& scene){}; // TODO
+    void generateScene(Scene& scene);
 };

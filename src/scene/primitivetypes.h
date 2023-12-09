@@ -2,7 +2,8 @@
 
 
 
-enum PrimitiveType {
+enum PrimitiveType
+{
     PRIMITIVE_PLANE,
     PRIMITIVE_CUBE,
     PRIMITIVE_CONE,

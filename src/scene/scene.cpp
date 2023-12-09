@@ -4,3 +4,8 @@ Scene::Scene()
 {
 
 }
+
+Scene::~Scene()
+{
+
+}

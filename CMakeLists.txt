@@ -76,6 +76,8 @@ qt6_add_resources(${PROJECT_NAME} "Resources"
     FILES
         resources/shaders/default.frag
         resources/shaders/default.vert
+        resources/shaders/texture.frag
+        resources/shaders/texture.vert
 )
 
 # GLEW: this provides support for Windows (including 64-bit)

@@ -12,16 +12,16 @@
 class ScenePrimitive
 {
 public:
-    ScenePrimitive();
-    ~ScenePrimitive();
+    ScenePrimitive(){};
+    ~ScenePrimitive(){};
 
     GLuint VAO_name;
     GLuint VBO_name;
     std::vector<float> VBO;
 
-    void generate(int k1, int k2){}; // TODO generate points, norms, and UVs based on parameters
+    virtual void generate(int k1, int k2){};
 
-    virtual PrimitiveType getPrimitiveType();
+    virtual PrimitiveType getPrimitiveType() = 0;
 
 private:
 
@@ -34,4 +34,9 @@ private:
 class PrimitiveCube : public ScenePrimitive
 {
     PrimitiveType getPrimitiveType() override { return PrimitiveType::PRIMITIVE_CUBE; };
+    void generate(int k1, int k2) override;
 };
+
+
+// TODO add more scene primitives
+// The most useful will likely be a flat plane

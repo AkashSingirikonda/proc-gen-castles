@@ -90,7 +90,6 @@ void Realtime::initVBOandVAOs() {
     int k1 = settings.shapeParameter1;
     int k2 = settings.shapeParameter1;
 
-
     std::map<PrimitiveType, ScenePrimitive*>::iterator it;
     for(it = primitiveTypes.begin(); it != primitiveTypes.end(); it++){
         ScenePrimitive* primitive = it->second;
