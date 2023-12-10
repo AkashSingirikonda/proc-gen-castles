@@ -24,6 +24,7 @@ Realtime::Realtime(QWidget *parent)
     keyMap[Qt::Key_A]       = false;
     keyMap[Qt::Key_S]       = false;
     keyMap[Qt::Key_D]       = false;
+    keyMap[Qt::Key_C]       = false;
     keyMap[Qt::Key_Control] = false;
     keyMap[Qt::Key_Space]   = false;
 }
@@ -92,12 +93,19 @@ void Realtime::initializeGL() {
     updateLights();
 
     camera = Camera(scene.cameraData, 1.0f * size().width() / size().height(), settings.nearPlane, settings.farPlane);
+    cameraTrack.linkCamera(&camera);
+    buildCameraTrack();
 
     initVBOandVAOs();
     makeTextureVBOandVAO();
     makeFBO();
 
     initFinished = true;
+}
+
+void Realtime::buildCameraTrack()
+{
+    CameraTrack::AddDefaultSegments(cameraTrack);
 }
 
 void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, ScenePrimitive* primitive)
@@ -365,7 +373,7 @@ void Realtime::nearFarChanged()
 void Realtime::seedsChanged()
 {
     if(!initFinished) return;
-    // Updates Scene (TODO: Change only when random number changes)
+
     scene = Scene();
     renderObjects.clear();
     renderLights.clear();
@@ -425,28 +433,46 @@ void Realtime::timerEvent(QTimerEvent *event) {
     float deltaTime = elapsedms * 0.001f;
     elapsedTimer.restart();
 
-    glm::vec3 movement = glm::vec3(0.0f,0.0f, 0.0f);
-    if(keyMap[Qt::Key_W]){
-        movement[0] += 1;
+    if(keyMap[Qt::Key_C])
+    {
+        cameraTrackStarted = true;
     }
-    if(keyMap[Qt::Key_S]){
-        movement[0] -= 1;
+
+    if(cameraTrackStarted)
+    {
+        cameraTrack.step(deltaTime);
     }
-    if(keyMap[Qt::Key_D]){
-        movement[1] -= 1;
-    }
-    if(keyMap[Qt::Key_A]){
-        movement[1] += 1;
-    }
-    if(keyMap[Qt::Key_Space]){
-        movement[2] += 1;
-    }
-    if(keyMap[Qt::Key_Control]){
-        movement[2] -= 1;
-    }
-    if(movement.length() > .001f){
-        movement *= movementSpeed * deltaTime;
-        camera.move(movement[0], movement[1], movement[2]);
+    else
+    {
+        glm::vec3 movement = glm::vec3(0.0f,0.0f, 0.0f);
+        if(keyMap[Qt::Key_W])
+        {
+            movement[0] += 1;
+        }
+        if(keyMap[Qt::Key_S])
+        {
+            movement[0] -= 1;
+        }
+        if(keyMap[Qt::Key_D])
+        {
+            movement[1] -= 1;
+        }
+        if(keyMap[Qt::Key_A])
+        {
+            movement[1] += 1;
+        }
+        if(keyMap[Qt::Key_Space])
+        {
+            movement[2] += 1;
+        }
+        if(keyMap[Qt::Key_Control])
+        {
+            movement[2] -= 1;
+        }
+        if(movement.length() > .001f){
+            movement *= movementSpeed * deltaTime;
+            camera.move(movement[0], movement[1], movement[2]);
+        }
     }
     update();
 }

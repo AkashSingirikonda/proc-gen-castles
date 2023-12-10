@@ -10,6 +10,6 @@ LerpSegment::LerpSegment(const CameraParams& start, const CameraParams& end)
 
 void LerpSegment::get(float t, CameraParams& params)
 {
-    params.position = startParams.position * t + endParams.position * (1 - t);
-    params.look = startParams.look * t + endParams.look * (1 - t);
+    params.position = startParams.position * (1 - t) + endParams.position * t;
+    params.look = startParams.look * (1 - t) + endParams.look * t;
 }

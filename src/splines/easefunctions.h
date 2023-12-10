@@ -3,6 +3,7 @@
 #include "spline.h"
 
 enum EaseType {
+    LINEAR,
     EASE,
     EASE_IN,
     EASE_OUT,

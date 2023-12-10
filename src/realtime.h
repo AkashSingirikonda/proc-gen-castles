@@ -17,6 +17,7 @@
 #include "utils/camera.h"
 #include "utils/renderobject.h"
 #include "procedural/proceduralcastle.h"
+#include "splines/cameratrack.h"
 
 class Realtime : public QOpenGLWidget
 {
@@ -58,6 +59,8 @@ private:
     void updateSizes();
 
 
+
+
     bool initFinished = false;
 
     ProceduralCastle castleGenerator;
@@ -83,6 +86,10 @@ private:
     Camera camera;
     const float movementSpeed = 5;
     const float rotationSpeed = .003;
+
+    CameraTrack cameraTrack;
+    void buildCameraTrack();
+    bool cameraTrackStarted = false;
 
 
 

@@ -1,23 +1,31 @@
+#pragma once
+
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <vector>
 
 #include "cameratracksegment.h"
-#include "cameraparams.h"
 
 #include "utils/camera.h"
 
 class CameraTrack
 {
 public:
-    CameraTrack(Camera* sceneCamera);
-    ~CameraTrack();
+    CameraTrack();
 
     void AppendSegment(CameraTrackSegment* segment, float duration);
 
-    void get(float t, CameraParams& params){};
+    void linkCamera(Camera* sceneCamera);
+
+    void step(float deltaTime);
+
+public:
+    static void AddDefaultSegments(CameraTrack& cameraTrack);
 
 private:
+    float currentTime = 0.0f;
+    int currentSegmentIndex;
+
     float endTime = 0.0f;
     std::vector<CameraTrackSegment*> segments;
 
