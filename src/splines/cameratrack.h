@@ -18,6 +18,13 @@ public:
     void linkCamera(Camera* sceneCamera);
 
     void step(float deltaTime);
+    void reset();
+    void stop();
+
+    const bool isTrackFinished() const {return isDone;};
+
+private:
+    bool isDone = false;
 
 public:
     static void AddDefaultSegments(CameraTrack& cameraTrack);

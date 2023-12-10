@@ -89,7 +89,6 @@ private:
 
     CameraTrack cameraTrack;
     void buildCameraTrack();
-    bool cameraTrackStarted = false;
 
 
 

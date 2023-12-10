@@ -25,6 +25,7 @@ Realtime::Realtime(QWidget *parent)
     keyMap[Qt::Key_S]       = false;
     keyMap[Qt::Key_D]       = false;
     keyMap[Qt::Key_C]       = false;
+    keyMap[Qt::Key_X]       = false;
     keyMap[Qt::Key_Control] = false;
     keyMap[Qt::Key_Space]   = false;
 }
@@ -435,10 +436,15 @@ void Realtime::timerEvent(QTimerEvent *event) {
 
     if(keyMap[Qt::Key_C])
     {
-        cameraTrackStarted = true;
+        cameraTrack.reset();
     }
 
-    if(cameraTrackStarted)
+    if(keyMap[Qt::Key_X])
+    {
+        cameraTrack.stop();
+    }
+
+    if(!cameraTrack.isTrackFinished())
     {
         cameraTrack.step(deltaTime);
     }

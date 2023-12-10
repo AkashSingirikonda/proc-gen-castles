@@ -21,6 +21,11 @@ void CameraTrack::AppendSegment(CameraTrackSegment* segment, float duration)
 
 void CameraTrack::step(float deltaTime)
 {
+    if(isDone)
+    {
+        return; // Track finished
+    }
+
     currentTime += deltaTime;
 
     if(segments.size() <= 0)
@@ -30,6 +35,7 @@ void CameraTrack::step(float deltaTime)
 
     if(currentTime > endTime)
     {
+        isDone = true;
         return; // End of track
     }
 
@@ -49,6 +55,17 @@ void CameraTrack::step(float deltaTime)
     camera->updateLook(cameraParams.look);
 }
 
+void CameraTrack::reset()
+{
+    currentTime = 0.0f;
+    currentSegmentIndex = 0;
+    isDone = false;
+}
+
+void CameraTrack::stop()
+{
+    isDone = true;
+}
 
 void CameraTrack::AddDefaultSegments(CameraTrack& cameraTrack)
 {
