@@ -30,6 +30,11 @@ private:
     std::vector<glm::vec2> uvs;
 };
 
+class PrimitivePlane : public ScenePrimitive
+{
+    PrimitiveType getPrimitiveType() override { return PrimitiveType::PRIMITIVE_PLANE; };
+    void generate(int k1, int k2) override;
+};
 
 class PrimitiveCube : public ScenePrimitive
 {

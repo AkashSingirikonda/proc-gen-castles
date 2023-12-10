@@ -5,17 +5,22 @@
 #include "cameratracksegment.h"
 #include "cameraparams.h"
 
+#include "utils/camera.h"
+
 class CameraTrack
 {
 public:
-    CameraTrack();
+    CameraTrack(Camera* sceneCamera);
     ~CameraTrack();
 
-    void AppendSegment(CameraTrackSegment* segment, float duration){};
+    void AppendSegment(CameraTrackSegment* segment, float duration);
 
     void get(float t, CameraParams& params){};
 
 private:
+    float endTime = 0.0f;
     std::vector<CameraTrackSegment*> segments;
+
+    Camera* camera;
 };
 

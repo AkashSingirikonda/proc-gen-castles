@@ -108,6 +108,7 @@ void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, S
 void Realtime::generateScenePrimitives()
 {
     insertPrimitive(primitiveTypes, new PrimitiveCube());
+    insertPrimitive(primitiveTypes, new PrimitivePlane());
 }
 
 void Realtime::generateSceneMaterials()

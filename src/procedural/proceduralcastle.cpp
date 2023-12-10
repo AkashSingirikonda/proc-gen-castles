@@ -23,6 +23,13 @@ void ProceduralCastle::generateScene(Scene& scene)
     // TODO
     SceneNode* root = new SceneNode();
     SceneObject* cube = new SceneObject(PrimitiveType::PRIMITIVE_CUBE, TextureType::TEXTURE_STONE);
+    SceneObject* plane = new SceneObject(PrimitiveType::PRIMITIVE_PLANE, TextureType::TEXTURE_ROOF);
+
+    plane->transform = glm::rotate(plane->transform, 0.8f, glm::vec3(1.0f, 0.0f, 0.0f));
+    plane->transform = glm::translate(plane->transform, glm::vec3(0.0f, 0.5f, -0.5f));
+
+
+
 
 
     // Adding Scene Light Data
@@ -43,6 +50,7 @@ void ProceduralCastle::generateScene(Scene& scene)
     for (int i = 0; i < n*n; i++) {
         vals[i] = new SceneNode();
         vals[i]->objects.push_back(cube);
+        vals[i]->objects.push_back(plane);
 //        vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.01, 0.01, 0.01));
         vals[i]->transform = glm::translate(vals[i]->transform, glm::vec3(2 * (rand()/(float)RAND_MAX) * (i/n), 0, 2 * (rand()/(float)RAND_MAX) * (i % n)));
         scene.root->children.push_back(vals[i]);
