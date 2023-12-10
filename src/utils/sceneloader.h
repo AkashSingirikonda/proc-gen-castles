@@ -37,11 +37,13 @@ public:
             if(!primitiveTypes.contains(primitiveType))
             {
                 std::cout << "Encountered unknown primitive on load" << std::endl;
+                continue;
             }
 
             if(!materialTypes.contains(textureType))
             {
                 std::cout << "Encountered unknown material on load" << std::endl;
+                continue;
             }
 
             ScenePrimitive* primitive = primitiveTypes.find(primitiveType)->second;

@@ -14,7 +14,8 @@ RenderObject::RenderObject(glm::mat4 globalTransform, ScenePrimitive* scenePrimi
 
 RenderLight::RenderLight(glm::mat4 globalTransform, SceneLightData& sceneLightData)
 {
+    lightData = sceneLightData;
     pos = globalTransform[3];
     dir = globalTransform * lightData.direction;
-    lightData = sceneLightData;
+    dir[3] = 0.0f;
 }
