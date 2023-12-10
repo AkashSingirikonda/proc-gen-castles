@@ -52,24 +52,9 @@ void CameraTrack::step(float deltaTime)
 
 void CameraTrack::AddDefaultSegments(CameraTrack& cameraTrack)
 {
-    {
-        CameraParams p1 = {glm::vec3(10,5,0), glm::vec3(0)};
-        CameraParams p2 = {glm::vec3(0,5,10), glm::vec3(0)};
-        LerpSegment* segment = new LerpSegment(p1, p2);
-        cameraTrack.AppendSegment(segment, 3);
-    }
+    LerpSegment* segment = new LerpSegment({glm::vec3(-1,0,1), glm::vec3(-1,0,0)}, {glm::vec3(-1,3,15), glm::vec3(-1,0,0)});
+    BezierSegment* segment2 = new BezierSegment(segment, {glm::vec3(10,3,15), glm::vec3(0)}, {glm::vec3(15,10,10), glm::vec3(0)}, {glm::vec3(15,10,-1), glm::vec3(5,0,5)});
 
-    {
-        CameraParams p1 = {glm::vec3(0,5,10), glm::vec3(0, 0, 0)};
-        CameraParams p2 = {glm::vec3(10,5,10), glm::vec3(5, 0, 5)};
-        LerpSegment* segment = new LerpSegment(p1, p2);
-        cameraTrack.AppendSegment(segment, 3);
-    }
-
-    {
-        CameraParams p1 = {glm::vec3(10,5,10), glm::vec3(5, 0, 5)};
-        CameraParams p2 = {glm::vec3(-5,20,20), glm::vec3(5, 0, 5)};
-        LerpSegment* segment = new LerpSegment(p1, p2);
-        cameraTrack.AppendSegment(segment, 5);
-    }
+    cameraTrack.AppendSegment(segment, 5);
+    cameraTrack.AppendSegment(segment2, 5);
 }

@@ -19,7 +19,7 @@ CubicSpline<T>::CubicSpline(T startData, T p1Data, T p2Data, T endData)
     start = startData;
     p1 = p1Data;
     p2 = p2Data;
-    end = startData;
+    end = endData;
 }
 
 template <class T>
@@ -33,7 +33,7 @@ T CubicSpline<T>::get(float t)
 
 EaseSpline::EaseSpline(float x1, float y1, float x2, float y2)
 {
-    for(float t = 0.0; t <= 1.0f; t += SEGMENT_SIZE)
+    for(float t = 0.0f; t <= 1.0f; t += SEGMENT_SIZE)
     {
         data.push_back(3 * t * (1-t) * (1-t) * x1 + 3 * t * t * (1-t) * x2 + t * t * t);
     }

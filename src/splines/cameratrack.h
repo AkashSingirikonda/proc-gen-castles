@@ -24,7 +24,7 @@ public:
 
 private:
     float currentTime = 0.0f;
-    int currentSegmentIndex;
+    int currentSegmentIndex = 0;
 
     float endTime = 0.0f;
     std::vector<CameraTrackSegment*> segments;
