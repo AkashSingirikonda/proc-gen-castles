@@ -4,6 +4,9 @@
 #include <iostream>
 #include <set>
 #include <unordered_map>
+#include <map>
+#include <utility>
+
 #include "scene/sceneobject.h"
 
 template <typename T>
@@ -15,7 +18,10 @@ public:
     // Add a node to the graph
     void addNode(int nodeId, T* val);
 
-    // Add an edge to the graph
+    // Add an edge to the graph. edgeVal represents a type.
+    void addEdge(int node1, int node2, int edgeVal);
+
+    // Add an edge to the graph without a value. Value defaults to -1
     void addEdge(int node1, int node2);
 
     // Gets the neighbor Ids of a node in the graph.
@@ -26,6 +32,12 @@ public:
     void printGraph() const;
 private:
     std::unordered_map<int, std::set<int>> m_nodes;
+    // Stores a map from edge to edgeVal
+    std::map<std::pair<int, int>, int> m_edgeV;
+
+    // Stores a map from edgeVal to edge (Used when edgeVal represents a type)
+    std::unordered_map<int, std::set<std::pair<int, int>>> m_Vedge;
+
     std::unordered_map<int, T*> m_vals;
 };
 
