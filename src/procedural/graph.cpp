@@ -56,14 +56,27 @@ T* Graph<T>::getVal(int nodeId) {
 
 // Print the graph
 template <typename T>
-void Graph<T>::printGraph() const {
+void Graph<T>::printGraph() {
     for (const auto& entry : m_nodes) {
         std::cout << "Node " << entry.first << " is connected to: ";
         for (int neighbor : entry.second) {
             std::cout << neighbor << " ";
+            std::cout << "T(" << getValFromEdge(entry.first, neighbor) << ") ";
         }
         std::cout << std::endl;
     }
+}
+
+// Gets the value associated with an edge.
+template <typename T>
+int Graph<T>::getValFromEdge(int edge1, int edge2) {
+    return m_edgeV[std::pair(edge1, edge2)];
+}
+
+// Gets the edges associated with a value.
+template <typename T>
+std::set<std::pair<int, int>>* Graph<T>::getEdgesFromVal(int val) {
+    return &m_Vedge[val];
 }
 
 template class Graph<SceneNode>;

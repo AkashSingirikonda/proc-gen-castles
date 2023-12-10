@@ -1,23 +1,44 @@
 #ifndef WFC_H
 #define WFC_H
+#include <queue>
+#include "graph.h"
 
-
+template <typename T>
 class WFC
 {
 public:
     // To Implement:
-    // A Printing function to make debugging easier.
-    // Checking to see if a pattern is valid.
-    // Rotating shapes to see if they can be placed. Storing the remaining shapes in some sort of hashmap, caching stuff.
-    // Defining rotations in graph space, how to represent things spacially. It's a good idea to write a type on each edge.
-    // So go through and map a type to each edge? This could also be a weight, then the graph class becomes undirected weighted.
-    // Once we have types of edges, you can filter that to type of connections.
-    // Each tile has connections.
-    // After this, run the collapse
-    // Actually running the collapse.
 
     // PrintGrid Function.
-    WFC();
+
+    // Function to check if edge is valid.
+
+    // Rotation space graph, bind new edges.
+
+    // Entropy Function
+
+    // Running the collapse.
+
+    // Choosing the next edge.
+    // Takes in a priority queu
+    static float calculateEntropy(const std::vector<int>& vec);
+    static float calculateEntropyFromNode(int nodeID);
+
+    struct Tile {
+        // Placeholder
+    };
+    WFC(Graph<SceneNode>, std::set<Tile>);
+private:
+    // Custom comparator for vectors based on their entropy
+    struct VectorEntropyComparator {
+        bool operator()(int v1, int v2) const {
+            double entropy1 = calculateEntropyFromNode(v1);
+            double entropy2 = calculateEntropyFromNode(v2);
+            return entropy1 < entropy2;
+        }
+    };
+
+    std::priority_queue<std::pair<int, int>, VectorEntropyComparator> pq;
 };
 
 #endif // WFC_H
