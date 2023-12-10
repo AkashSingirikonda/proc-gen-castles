@@ -410,8 +410,8 @@ void Realtime::mouseMoveEvent(QMouseEvent *event) {
         // Use deltaX and deltaY here to rotate
         if(mouseDown){
             if(deltaX != 0 || deltaY != 0){
-                camera.rotateYaw(-((float)deltaX) * rotationSpeed);
-                camera.rotatePitch((-(float)deltaY) * rotationSpeed);
+                camera.rotateYaw(((float)deltaX) * rotationSpeed);
+                camera.rotatePitch(((float)deltaY) * rotationSpeed);
             }
         }
 
@@ -438,10 +438,10 @@ void Realtime::timerEvent(QTimerEvent *event) {
         movement[1] += 1;
     }
     if(keyMap[Qt::Key_Space]){
-        movement[2] -= 1;
+        movement[2] += 1;
     }
     if(keyMap[Qt::Key_Control]){
-        movement[2] += 1;
+        movement[2] -= 1;
     }
     if(movement.length() > .001f){
         movement *= movementSpeed * deltaTime;

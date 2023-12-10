@@ -2,9 +2,9 @@
 
 Scene::Scene()
 {
-    cameraData.pos = glm::vec4(5.0f, 5.0f, 5.0f, 1.0f);
+    cameraData.pos = glm::vec4(10.0f, 5.0f, 10.0f, 1.0f);
     cameraData.look = glm::vec4(0.0f);
-    cameraData.up = glm::vec4(0.0f, 1.0f, 0.0f, 0.0f);
+    cameraData.up = glm::vec4(0.0f, -1.0f, 0.0f, 0.0f);
 
     cameraData.heightAngle = 49.5f;
 
