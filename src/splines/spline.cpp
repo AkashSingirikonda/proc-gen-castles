@@ -10,7 +10,7 @@ LinearSpline<T>::LinearSpline(T startData, T endData)
 template <class T>
 T LinearSpline<T>::get(float t)
 {
-    return this->start * (1-t) + this->end * t;
+    return (1-t) * start + t * end;
 }
 
 template <class T>
@@ -25,10 +25,10 @@ CubicSpline<T>::CubicSpline(T startData, T p1Data, T p2Data, T endData)
 template <class T>
 T CubicSpline<T>::get(float t)
 {
-    return (1-t) * (1-t) * (1-t) * this->start
+    return (1.0f-t) * (1-t) * (1-t) * start
            + 3 * t * (1-t) * (1-t) * p1
            + 3 * t * t * (1-t) * p2
-           + t * t * t * this->end;
+           + t * t * t * end;
 }
 
 EaseSpline::EaseSpline(float x1, float y1, float x2, float y2)

@@ -8,12 +8,12 @@ class CameraTrackSegment
 public:
     CameraTrackSegment(){};
 
-    CameraTrackSegment(const CameraParams& start, const CameraParams& end);
-    CameraTrackSegment(CameraTrackSegment* previous, const CameraParams& end);
+    CameraTrackSegment(const glm::vec3 startPoint, const glm::vec3 endPoint);
+    CameraTrackSegment(CameraTrackSegment* previous, const glm::vec3 endPoint);
 
 
     // Params are always computed assuming 0 <= t <= 1
-    virtual void get(float t, CameraParams& params){params = CameraParams();};
+    virtual glm::vec3 get(float t) = 0;
 
 public:
     // Track segments store their global start, end
@@ -21,30 +21,38 @@ public:
     float startTime = 0;
     float duration = 1;
 
-    CameraParams startParams;
-    CameraParams endParams;
+    glm::vec3 start;
+    glm::vec3 end;
 
+};
+
+class ConstSegment : public CameraTrackSegment
+{
+public:
+    ConstSegment(const glm::vec3 value) : CameraTrackSegment(value, value) {};
+    ConstSegment(CameraTrackSegment* previous) : CameraTrackSegment(previous, previous->end) {};
+
+    glm::vec3 get(float t) override { return end; };
 };
 
 class LerpSegment : public CameraTrackSegment
 {
 public:
-    LerpSegment(const CameraParams& start, const CameraParams& end) : CameraTrackSegment(start, end){};
-    LerpSegment(CameraTrackSegment* previous, const CameraParams& end) : CameraTrackSegment(previous, end){};
+    LerpSegment(const glm::vec3 startPoint, const glm::vec3 endPoint) : CameraTrackSegment(startPoint, endPoint) {};
+    LerpSegment(CameraTrackSegment* previous, const glm::vec3 endPoint) : CameraTrackSegment(previous->end, endPoint) {};
 
-    void get(float t, CameraParams& params) override;
+    glm::vec3 get(float t) override { return (1-t) * start + t * end; };
 };
 
 class BezierSegment : public CameraTrackSegment
 {
 public:
-    BezierSegment(const CameraParams& start, const CameraParams& p1, const CameraParams& p2, const CameraParams& end);
-    BezierSegment(CameraTrackSegment* previous, const CameraParams& p1, const CameraParams& p2, const CameraParams& end);
-    ~BezierSegment();
+    BezierSegment(const glm::vec3 startPoint, const glm::vec3 p1, const glm::vec3 p2, const glm::vec3 endPoint);
+    BezierSegment(CameraTrackSegment* previous, const glm::vec3 p1, const glm::vec3 p2, const glm::vec3 endPoint);
+    ~BezierSegment(){ delete spline; };
 
-    void get(float t, CameraParams& params) override;
+    glm::vec3 get(float t) override { return spline->get(t); };
 
 private:
-    CubicSpline<glm::vec3>* positionSpline;
-    CubicSpline<glm::vec3>* lookSpline;
+    CubicSpline<glm::vec3>* spline;
 };

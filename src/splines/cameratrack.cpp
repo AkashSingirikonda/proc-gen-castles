@@ -11,12 +11,36 @@ void CameraTrack::linkCamera(Camera* sceneCamera)
     camera = sceneCamera;
 }
 
-void CameraTrack::AppendSegment(CameraTrackSegment* segment, float duration)
+void CameraTrack::appendSegment(std::vector<CameraTrackSegment*>& segments, float* endTime, CameraTrackSegment* segment, float duration)
 {
-    segment->startTime = endTime;
+    segment->startTime = *endTime;
     segment->duration = duration;
     segments.push_back(segment);
-    endTime += duration;
+    (*endTime) += duration;
+}
+
+glm::vec3 CameraTrack::getUpdatedParams(int* index, std::vector<CameraTrackSegment*>& segments)
+{
+    if(segments.size() <= 0)
+    {
+        return glm::vec3(0); // No segments have been set
+    }
+
+    CameraTrackSegment* currentSegment = segments[*index];
+    while(currentTime - currentSegment->startTime > currentSegment->duration && *index < segments.size() - 1)
+    {
+        (*index)++;
+        currentSegment = segments[*index];
+    }
+
+    float t = (currentTime - currentSegment->startTime) / currentSegment->duration;
+
+    if(t > 1)
+    {
+        t = 1;
+    }
+
+    return currentSegment->get(t);
 }
 
 void CameraTrack::step(float deltaTime)
@@ -28,37 +52,23 @@ void CameraTrack::step(float deltaTime)
 
     currentTime += deltaTime;
 
-    if(segments.size() <= 0)
-    {
-        return; // No segments have been set
-    }
-
-    if(currentTime > endTime)
+    if(currentTime > positionEndTime && currentTime > lookEndTime)
     {
         isDone = true;
         return; // End of track
     }
 
-    CameraTrackSegment* currentSegment = segments[currentSegmentIndex];
-    while(currentTime - currentSegment->startTime > currentSegment->duration && currentSegmentIndex < segments.size() - 1)
-    {
-        currentSegmentIndex++;
-        currentSegment = segments[currentSegmentIndex];
-    }
 
-    float t = (currentTime - currentSegment->startTime) / currentSegment->duration;
 
-    CameraParams cameraParams;
-    currentSegment->get(t, cameraParams);
-
-    camera->updatePos(cameraParams.position);
-    camera->updateLook(cameraParams.look);
+    camera->updatePos(getUpdatedParams(&positionSegmentIndex, positionSegments));
+    camera->updateLook(getUpdatedParams(&lookSegmentIndex, lookSegments));
 }
 
 void CameraTrack::reset()
 {
     currentTime = 0.0f;
-    currentSegmentIndex = 0;
+    positionSegmentIndex = 0;
+    lookSegmentIndex = 0;
     isDone = false;
 }
 
@@ -69,9 +79,15 @@ void CameraTrack::stop()
 
 void CameraTrack::AddDefaultSegments(CameraTrack& cameraTrack)
 {
-    LerpSegment* segment = new LerpSegment({glm::vec3(-1,0,1), glm::vec3(-1,0,0)}, {glm::vec3(-1,3,15), glm::vec3(-1,0,0)});
-    BezierSegment* segment2 = new BezierSegment(segment, {glm::vec3(10,3,15), glm::vec3(0)}, {glm::vec3(15,10,10), glm::vec3(0)}, {glm::vec3(15,10,-1), glm::vec3(5,0,5)});
+    LerpSegment* pos1 = new LerpSegment(glm::vec3(-1,0,1), glm::vec3(-1,3,15));
+    ConstSegment* look1 = new ConstSegment(glm::vec3(-1,0,0));
 
-    cameraTrack.AppendSegment(segment, 5);
-    cameraTrack.AppendSegment(segment2, 5);
+    BezierSegment* pos2 = new BezierSegment(pos1, glm::vec3(10,3,15), glm::vec3(15,10,10), glm::vec3(15,10,-1));
+    LerpSegment* look2 = new LerpSegment(look1, glm::vec3(5,0,5));
+
+    cameraTrack.appendPositionSegment(pos1, 3);
+    cameraTrack.appendLookSegment(look1, 2);
+
+    cameraTrack.appendPositionSegment(pos2, 3);
+    cameraTrack.appendLookSegment(look2, 8);
 }
