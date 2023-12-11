@@ -6,6 +6,7 @@ in vec2 uv_pos;
 out vec4 fragColor;
 
 // uniform sampler2D wallTex;
+uniform int tex_type;
 
 uniform float k_a;
 uniform float k_d;

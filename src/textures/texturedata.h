@@ -3,6 +3,7 @@
 #include <string>
 #include <glm/glm.hpp>
 #include "scene/scenedata.h"
+#include "textures/texturetypes.h"
 
 // Struct which contains data for texture mapping files
 struct SceneFileMap {
@@ -36,6 +37,7 @@ struct SceneMaterial {
     float ior;               // Index of refraction; used for extra credit (refraction)
 
     SceneFileMap textureMap; // Used for texture mapping
+    TextureType type;
     float blend;             // Used for texture mapping
 
     SceneColor cEmissive; // Not used

@@ -332,6 +332,8 @@ void Realtime::renderScene(){
         glBindVertexArray(primitive->VAO_name);
 
         SceneMaterial* material = renderObject->material;
+        glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));
+
         glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
         glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);
         glUniform4fv(glGetUniformLocation(shader, "cSpecular"), 1, &material->cSpecular[0]);
