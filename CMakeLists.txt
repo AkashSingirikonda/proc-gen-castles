@@ -46,7 +46,7 @@ add_subdirectory(glm)
 add_library(StaticGLEW STATIC glew/src/glew.c
     src/splines/spline.h src/splines/spline.cpp
     src/splines/cameratrack.h src/splines/cameratrack.cpp
-    src/splines/cameratracksegment.h src/splines/cameratracksegment.cpp
+    src/splines/tracksegment.h src/splines/tracksegment.cpp
     src/scene/scene.h src/scene/scene.cpp
     src/scene/sceneobject.h src/scene/sceneobject.cpp
     src/scene/sceneprimitive.h src/scene/sceneprimitive.cpp
@@ -62,7 +62,8 @@ add_library(StaticGLEW STATIC glew/src/glew.c
     src/textures/defaultmaterials.h
     src/procedural/graph.h src/procedural/graph.cpp
     src/procedural/wfc.h src/procedural/wfc.cpp
-    src/splines/easefunctions.h)
+    src/splines/easefunctions.h
+    src/splines/animationtrack.h src/splines/animationtrack.cpp)
 
 include_directories(${PROJECT_NAME} PRIVATE glew/include)
 

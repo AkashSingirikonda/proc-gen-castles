@@ -26,6 +26,11 @@ public:
 
     void move(float forwardStep, float rightStep, float upStep);
 
+    glm::vec3* getPosPointer(){ return &pos; };
+    glm::vec3* getLookPointer(){ return &look; };
+    // TODO we can be smarter about detecting what changed and what needs to be updated.
+    // Right now it can only be pos and look so technically only the view matrix needs updating.
+    void markDirty(){ updateViewMatrix(); };
 
     glm::vec3& getCameraPos(){ return pos; };
     glm::mat4& getViewMatrix(){ return viewMatrix; };
