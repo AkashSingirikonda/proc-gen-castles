@@ -79,6 +79,13 @@ void Realtime::initializeGL() {
     shader = ShaderLoader::createShaderProgram(":/resources/shaders/default.vert", ":/resources/shaders/default.frag");
     textureShader = ShaderLoader::createShaderProgram(":/resources/shaders/texture.vert", ":/resources/shaders/texture.frag");
 
+    // ADDING TEXTURE STUFF
+    QString wall_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
+    image = QImage(wall_filepath); // get image from filepath
+    image = image.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
+    setUpTextures(wallTex, GL_TEXTURE0);
+    // FINISHED ADDING TEXTURE STUFF
+
     glUseProgram(textureShader);
     glUniform1i(glGetUniformLocation(textureShader, "tex"), 0);
     glUseProgram(0);
@@ -133,6 +140,17 @@ void Realtime::generateSceneMaterials()
     }
 }
 
+void Realtime::setUpTextures(GLuint &texture, GLenum slot)
+{
+    glGenTextures(1, &texture);
+    glActiveTexture(slot);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.width(), image.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, image.bits());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); // min
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); // mag
+    glBindTexture(GL_TEXTURE_2D, 0); // unbind
+}
+
 void Realtime::initVBOandVAOs()
 {
     int k1 = settings.shapeParameter1;
@@ -154,11 +172,13 @@ void Realtime::initVBOandVAOs()
 
 
         //TODO add UVs to VAO
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), reinterpret_cast<void *>(0));
-        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), reinterpret_cast<void *>(3 * sizeof(GLfloat)));
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), reinterpret_cast<void *>(0));
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), reinterpret_cast<void *>(3 * sizeof(GLfloat)));
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), reinterpret_cast<void *>(6 * sizeof(GLfloat)));
 
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
+        glEnableVertexAttribArray(2);
 
         glBindVertexArray(0);
         glBindBuffer(GL_ARRAY_BUFFER,0);
@@ -321,7 +341,7 @@ void Realtime::renderScene(){
         glUniformMatrix4fv(glGetUniformLocation(shader, "model"), 1, false, &renderObject->ctm[0][0]);
         glUniformMatrix4fv(glGetUniformLocation(shader, "norm_inv"), 1, false, &renderObject->normInv[0][0]);
 
-        glDrawArrays(GL_TRIANGLES, 0, primitive->VBO.size() / 6);
+        glDrawArrays(GL_TRIANGLES, 0, primitive->VBO.size() / 8); // divide by stride
 
         glBindVertexArray(0);
         Debug::glErrorCheck();

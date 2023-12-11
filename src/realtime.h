@@ -116,8 +116,6 @@ private:
 
 
 
-
-
     GLuint shader;
 
     // FBO for screen level filters
@@ -136,8 +134,12 @@ private:
     GLuint FBO_texture;
     GLuint FBO_renderBuffer;
 
+    // Textures
+    GLuint wallTex;
+
     void makeFBO();
     void makeTextureVBOandVAO();
+    void setUpTextures(GLuint &texture, GLenum slot); // for different texture images
     void paintTexture(GLuint texture);
 
 };

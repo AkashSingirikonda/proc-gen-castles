@@ -2,9 +2,11 @@
 
 layout(location = 0) in vec3 object_pos;
 layout(location = 1) in vec3 object_normal;
+layout(location = 2) in vec2 uv;
 
 out vec3 world_pos;
 out vec3 world_norm;
+out vec2 uv_pos;
 
 uniform mat4 model;
 uniform mat4 norm_inv;
@@ -16,6 +18,8 @@ void main() {
     world_pos = vec3(model * pos);
 
     world_norm = vec3(normalize(norm_inv * vec4(object_normal, 0)));
+
+    uv_pos = uv;
 
     gl_Position = (proj * view * model) * pos;
 }

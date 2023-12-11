@@ -1,8 +1,11 @@
 #version 330 core
 in vec3 world_pos;
 in vec3 world_norm;
+in vec2 uv_pos;
 
 out vec4 fragColor;
+
+// uniform sampler2D wallTex;
 
 uniform float k_a;
 uniform float k_d;
