@@ -99,6 +99,7 @@ void Realtime::initializeGL() {
     setUpTextures(wallTex, GL_TEXTURE0);
     glUseProgram(shader);
     glUniform1i(glGetUniformLocation(shader, "wallTex"), 0);
+    glUseProgram(0);
     // FINISHED ADDING TEXTURE STUFF
 
     glUseProgram(textureShader);

@@ -100,6 +100,6 @@ void main() {
         fragColor += I * f * color * sum;
 
         // testing if map works as texture!
-        fragColor = texture(wallTex, uv_pos);
+        //fragColor = texture(wallTex, uv_pos);
     }
 }

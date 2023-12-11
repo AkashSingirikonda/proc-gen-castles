@@ -81,5 +81,5 @@ void ProceduralCastle::generateScene(Scene& scene)
         }
     }
 
-    g.printGraph();
+    //g.printGraph();
 }
