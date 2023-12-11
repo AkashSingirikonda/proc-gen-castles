@@ -79,18 +79,6 @@ void Realtime::initializeGL() {
     shader = ShaderLoader::createShaderProgram(":/resources/shaders/default.vert", ":/resources/shaders/default.frag");
     textureShader = ShaderLoader::createShaderProgram(":/resources/shaders/texture.vert", ":/resources/shaders/texture.frag");
 
-    // ADDING TEXTURE STUFF
-    QString wall_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
-    image = QImage(wall_filepath); // get image from filepath
-    image = image.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
-    setUpTextures(wallTex, GL_TEXTURE0);
-    // FINISHED ADDING TEXTURE STUFF
-
-    glUseProgram(textureShader);
-    glUniform1i(glGetUniformLocation(textureShader, "tex"), 0);
-    glUseProgram(0);
-
-
     ProceduralCastle castleGenerator = ProceduralCastle();
     castleGenerator.generateScene(scene);
 
@@ -103,6 +91,19 @@ void Realtime::initializeGL() {
     camera = Camera(scene.cameraData, 1.0f * size().width() / size().height(), settings.nearPlane, settings.farPlane);
     cameraTrack.linkCamera(&camera);
     buildCameraTrack();
+
+    // ADDING TEXTURE STUFF
+    QString wall_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
+    image = QImage(wall_filepath); // get image from filepath
+    image = image.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
+    setUpTextures(wallTex, GL_TEXTURE0);
+    glUseProgram(shader);
+    glUniform1i(glGetUniformLocation(shader, "wallTex"), 0);
+    // FINISHED ADDING TEXTURE STUFF
+
+    glUseProgram(textureShader);
+    glUniform1i(glGetUniformLocation(textureShader, "tex"), 0);
+    glUseProgram(0);
 
     initVBOandVAOs();
     makeTextureVBOandVAO();
@@ -331,6 +332,10 @@ void Realtime::renderScene(){
 
         glBindVertexArray(primitive->VAO_name);
 
+        // send texture to shader
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, wallTex);
+
         SceneMaterial* material = renderObject->material;
         glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));
 
@@ -345,6 +350,7 @@ void Realtime::renderScene(){
 
         glDrawArrays(GL_TRIANGLES, 0, primitive->VBO.size() / 8); // divide by stride
 
+        glBindTexture(GL_TEXTURE_2D, 0);
         glBindVertexArray(0);
         Debug::glErrorCheck();
     }

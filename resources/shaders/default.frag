@@ -5,7 +5,7 @@ in vec2 uv_pos;
 
 out vec4 fragColor;
 
-// uniform sampler2D wallTex;
+uniform sampler2D wallTex;
 uniform int tex_type;
 
 uniform float k_a;
@@ -40,6 +40,11 @@ float lightFalloff(float x, float inner, float outer){
 void main() {
     vec4 pos = vec4(world_pos, 1);
     vec4 norm = vec4(normalize(world_norm), 0.0f);
+
+//    vec4 texNorm;
+//    if (tex_type == 0) {
+//        texNorm = texture(wallTex, uv_pos);
+//    }
 
     vec4 dir_camera = normalize(camera_position - pos);
     dir_camera.w = 0;
@@ -93,5 +98,8 @@ void main() {
         }
 
         fragColor += I * f * color * sum;
+
+        // testing if map works as texture!
+        fragColor = texture(wallTex, uv_pos);
     }
 }
