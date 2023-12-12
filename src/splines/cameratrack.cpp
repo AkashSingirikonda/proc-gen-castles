@@ -49,6 +49,7 @@ void CameraTrack::stop()
 void CameraTrack::AddDefaultSegments(CameraTrack& cameraTrack)
 {
     LerpSegment* pos1 = new LerpSegment(glm::vec3(-1,0,1), glm::vec3(-1,3,15));
+    pos1->SetEaseFunction(EaseType::EASE_IN);
     ConstSegment* look1 = new ConstSegment(glm::vec3(-1,0,0));
 
     BezierSegment* pos2 = new BezierSegment(pos1, glm::vec3(10,3,15), glm::vec3(15,10,10), glm::vec3(15,10,-1));

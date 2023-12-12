@@ -139,7 +139,11 @@ void Realtime::generateSceneMaterials()
 
     for(TextureType textureType : textureTypes)
     {
-        materialTypes[textureType] = DefaultMaterials::getDefaultMaterial(textureType);
+        SceneMaterial material = DefaultMaterials::getDefaultMaterial(textureType);
+
+
+
+        materialTypes[textureType] = material;
     }
 }
 
@@ -339,7 +343,7 @@ void Realtime::renderScene(){
         glBindTexture(GL_TEXTURE_2D, wallTex);
 
         SceneMaterial* material = renderObject->material;
-        glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));
+        //glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));
 
         glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
         glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);

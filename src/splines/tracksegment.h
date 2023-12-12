@@ -1,16 +1,19 @@
 #pragma once
 
-#include "cameraparams.h"
+#include "easefunctions.h"
 #include "splines/spline.h"
 
 class TrackSegment
 {
 public:
     TrackSegment(){};
+    ~TrackSegment(){ delete easeFunction; };
 
     TrackSegment(const glm::vec3 startPoint, const glm::vec3 endPoint);
     TrackSegment(TrackSegment* previous, const glm::vec3 endPoint);
 
+    EaseSpline* easeFunction = nullptr;
+    void SetEaseFunction(EaseType easeType);
 
     // Params are always computed assuming 0 <= t <= 1
     virtual glm::vec3 get(float t) = 0;
@@ -23,7 +26,6 @@ public:
 
     glm::vec3 start;
     glm::vec3 end;
-
 };
 
 class ConstSegment : public TrackSegment
@@ -55,4 +57,17 @@ public:
 
 private:
     CubicSpline<glm::vec3>* spline;
+};
+
+class TangentSegment : public TrackSegment
+{
+public:
+    TangentSegment(const glm::vec3 startPoint, const glm::vec3 t1, const glm::vec3 t2, const glm::vec3 endPoint);
+    TangentSegment(TrackSegment* previous, const glm::vec3 t1, const glm::vec3 t2, const glm::vec3 endPoint);
+    ~TangentSegment(){ delete spline; };
+
+    glm::vec3 get(float t) override { return spline->get(t); };
+
+private:
+    TangentSpline<glm::vec3>* spline;
 };
