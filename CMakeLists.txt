@@ -67,7 +67,11 @@ add_library(StaticGLEW STATIC glew/src/glew.c
     src/procedural/algorithms/lsystem.h src/procedural/algorithms/lsystem.cpp
     src/procedural/layoutgenerator.h
     src/procedural/algorithms/lsystemstructuretypes.h
-    src/scene/meshprimitive.h src/scene/meshprimitive.cpp)
+    src/scene/meshprimitive.h src/scene/meshprimitive.cpp
+    src/procedural/cell.h src/procedural/cell.cpp
+    src/procedural/grid.h src/procedural/grid.cpp
+
+    src/procedural/tile.h src/procedural/tile.cpp)
 
 include_directories(${PROJECT_NAME} PRIVATE glew/include)
 

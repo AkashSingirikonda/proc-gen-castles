@@ -3,7 +3,6 @@
 #include <queue>
 #include "graph.h"
 
-template <typename T>
 class WFC
 {
 public:
@@ -22,23 +21,27 @@ public:
     // Choosing the next edge.
     // Takes in a priority queu
     static float calculateEntropy(const std::vector<int>& vec);
-    static float calculateEntropyFromNode(int nodeID);
+//    static float calculateEntropyFromNode(int nodeID);
 
     struct Tile {
         // Placeholder
-    };
-    WFC(Graph<SceneNode>, std::set<Tile>);
-private:
-    // Custom comparator for vectors based on their entropy
-    struct VectorEntropyComparator {
-        bool operator()(int v1, int v2) const {
-            double entropy1 = calculateEntropyFromNode(v1);
-            double entropy2 = calculateEntropyFromNode(v2);
-            return entropy1 < entropy2;
-        }
+        std::string tileLabel;
     };
 
-    std::priority_queue<std::pair<int, int>, VectorEntropyComparator> pq;
+    std::unordered_map<std::string, std::string> validConnections;
+
+    WFC(Graph<SceneNode>, std::set<Tile>);
+private:
+//    // Custom comparator for vectors based on their entropy
+//    struct VectorEntropyComparator {
+//        bool operator()(int v1, int v2) const {
+//            double entropy1 = calculateEntropyFromNode(v1);
+//            double entropy2 = calculateEntropyFromNode(v2);
+//            return entropy1 < entropy2;
+//        }
+//    };
+
+//    std::priority_queue<std::pair<int, int>, VectorEntropyComparator> pq;
 };
 
 #endif // WFC_H
