@@ -93,12 +93,19 @@ void Realtime::initializeGL() {
     buildCameraTrack();
 
     // ADDING TEXTURE STUFF
-    QString wall_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
-    image = QImage(wall_filepath); // get image from filepath
-    image = image.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
-    setUpTextures(wallTex, GL_TEXTURE0);
+    // normal map:
+    QString wallMap_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
+    wallMap = QImage(wallMap_filepath); // get image from filepath
+    wallMap = wallMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
+    // texture/image:
+//    QString wallImage_filepath = QString(":/resources/images/Wall_Stone_023_BaseColor.png");
+//    wallImage = QImage(wallImage_filepath);
+//    wallImage = wallImage.convertToFormat(QImage::Format_RGBA8888).mirrored();
+    setUpTextures(wallMapTex, GL_TEXTURE0);
+//    setUpTextures(wallImageTex, GL_TEXTURE1);
     glUseProgram(shader);
     glUniform1i(glGetUniformLocation(shader, "wallTex"), 0);
+//    glUniform1i(glGetUniformLocation(shader, "wallImage"), 1);
     glUseProgram(0);
     // FINISHED ADDING TEXTURE STUFF
 
@@ -141,6 +148,16 @@ void Realtime::generateSceneMaterials()
     {
         SceneMaterial material = DefaultMaterials::getDefaultMaterial(textureType);
 
+        // figure out how best to implement this
+        /*
+        QString wall_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
+        wallMap = QImage(wall_filepath); // get image from filepath
+        wallMap = wallMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
+        setUpTextures(wallTex, GL_TEXTURE0);
+        glUseProgram(shader);
+        glUniform1i(glGetUniformLocation(shader, "wallTex"), 0);
+        glUseProgram(0);
+        */
 
 
         materialTypes[textureType] = material;
@@ -152,7 +169,7 @@ void Realtime::setUpTextures(GLuint &texture, GLenum slot)
     glGenTextures(1, &texture);
     glActiveTexture(slot);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.width(), image.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, image.bits());
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, wallMap.width(), wallMap.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, wallMap.bits());
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); // min
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); // mag
     glBindTexture(GL_TEXTURE_2D, 0); // unbind
@@ -340,7 +357,7 @@ void Realtime::renderScene(){
 
         // send texture to shader
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, wallTex);
+        glBindTexture(GL_TEXTURE_2D, wallMapTex);
 
         SceneMaterial* material = renderObject->material;
         //glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));

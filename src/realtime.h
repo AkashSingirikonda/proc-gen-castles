@@ -129,13 +129,15 @@ private:
     GLuint textureShader;
     GLuint fullscreenVbo;
     GLuint fullscreenVao;
-    QImage image;
     GLuint FBO_id;
     GLuint FBO_texture;
     GLuint FBO_renderBuffer;
 
     // Textures
-    GLuint wallTex;
+    GLuint wallMapTex;
+    QImage wallMap;
+    GLuint wallImageTex;
+    QImage wallImage;
 
     void makeFBO();
     void makeTextureVBOandVAO();
