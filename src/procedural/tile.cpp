@@ -8,7 +8,7 @@ Tile::Tile()
 
 void Tile::setRules(std::vector<Tile>& tiles) {
     for (const auto& tile : tiles) {
-        // Upper edge
+        // Backwards Edge
         if (m_edges[0] == tile.m_edges[2]) {
             m_back.push_back(tile);
         }
@@ -18,7 +18,7 @@ void Tile::setRules(std::vector<Tile>& tiles) {
             m_right.push_back(tile);
         }
 
-        // Lower edge
+        // Front
         if (m_edges[2] == tile.m_edges[0]) {
             m_front.push_back(tile);
         }

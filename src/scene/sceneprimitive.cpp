@@ -230,7 +230,6 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
         }
     }
     file.close();
-
 }
 
 int PrimitiveMesh::counter = PRIMITIVE_MESH;

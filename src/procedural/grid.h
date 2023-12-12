@@ -1,7 +1,7 @@
 #ifndef GRID_H
 #define GRID_H
 
-#include <tile.h>
+#include "tile.h"
 
 #include <iostream>
 #include "cell.h"
@@ -9,8 +9,9 @@ class Grid
 {
 public:
     Grid(int width, int height, int rez, std::vector<int> options);
-    void initiate(int rez, std::vector<int> options);
-    void heuristic_pick();
+    void initiate(int rez, std::vector<Tile> options);
+    void collapse();
+    Cell* heuristicPick();
     int m_width;
     int m_height;
     int m_rez;
