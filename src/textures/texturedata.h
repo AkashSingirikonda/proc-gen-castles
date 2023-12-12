@@ -37,6 +37,7 @@ struct SceneMaterial {
     float ior;               // Index of refraction; used for extra credit (refraction)
 
     SceneFileMap textureMap; // Used for texture mapping
+    SceneFileMap normalMap;
     TextureType type;
     float blend;             // Used for texture mapping
 

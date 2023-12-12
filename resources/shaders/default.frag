@@ -43,6 +43,7 @@ void main() {
     vec4 norm = vec4(normalize(world_norm), 0.0f);
 
     norm = texture(wallTex, uv_pos);
+    norm = normalize(norm * 2.f - 1.f); // convert to proper range
     norm.w = 0;
 
     vec4 dir_camera = normalize(camera_position - pos);
