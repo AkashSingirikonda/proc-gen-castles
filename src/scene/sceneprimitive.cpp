@@ -220,9 +220,9 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
                 int vIndex, nIndex, tIndex;
                 iss >> vIndex;
                 iss.ignore();
-                iss >> nIndex;
-                iss.ignore();
                 iss >> tIndex;
+                iss.ignore();
+                iss >> nIndex;
 
                 pushPointAndNorm3(c_vertices[vIndex-1], c_normals[nIndex-1], &VBO);
                 pushUV(c_uvs[tIndex-1], &VBO);

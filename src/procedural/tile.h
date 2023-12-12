@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <vector>
-
 class Tile
 {
 public:

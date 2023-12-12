@@ -2,7 +2,7 @@
 #define WFC_H
 #include <queue>
 #include "graph.h"
-
+#include <vector>
 class WFC
 {
 public:
