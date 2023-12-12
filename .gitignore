@@ -114,7 +114,7 @@ compile_commands.json
 *.core
 *.moc
 *.o
-*.obj
+#*.obj
 *.orig
 *.rej
 *.so
