@@ -1,5 +1,9 @@
-#include "sceneprimitive.h"
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <sstream>
 
+#include "sceneprimitive.h"
 void pushVec3(glm::vec3 vec, std::vector<float>* data)
 {
     data->push_back(vec.x);
@@ -165,4 +169,64 @@ void PrimitiveCone::generate(int phiTesselations, int thetaTesselations) {
 
         }
     }
+}
+
+// Primitive Mesh Function
+
+void PrimitiveMesh::input_filename(std::string filepath) {
+    m_filepath = filepath;
+}
+
+void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
+    VBO.clear();
+    // Getting the filepath
+    std::ifstream file(m_filepath);
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << m_filepath << std::endl;
+        return;
+    }
+    std::vector<glm::vec3> c_vertices;
+    std::vector<glm::vec3> c_normals;
+    std::vector<glm::vec2> c_uvs;
+
+    std::string line;
+    while (std::getline(file, line)) {
+        std::istringstream iss(line);
+        std::string token;
+        iss >> token;
+
+        if (token == "v") {
+            glm::vec3 to_add = {0, 0, 0};
+            for (int i = 0; i < 3; i++) {
+                iss >> to_add[i];
+                c_vertices.push_back(to_add);
+            }
+        } else if (token == "vn") {
+            glm::vec3 to_add = {0, 0, 0};
+            for (int i = 0; i < 3; i++) {
+                iss >> to_add[i];
+                c_normals.push_back(to_add);
+            }
+        } else if (token == "vt") {
+            glm::vec2 to_add = {0, 0};
+            for (int i = 0; i < 2; i++) {
+                iss >> to_add[i];
+                c_uvs.push_back(to_add);
+            }
+        } else if (token == "f") {
+            bool noNormal = false;
+            for (int i = 0; i < 3; ++i) {
+                int vIndex, nIndex, tIndex;
+                iss >> vIndex;
+                iss.ignore();
+                iss >> nIndex;
+                iss.ignore();
+                iss >> tIndex;
+
+                pushPointAndNorm3(c_vertices[vIndex], c_normals[nIndex], &VBO);
+                pushUV(c_uvs[tIndex], &VBO);
+            }
+        }
+    }
+    file.close();
 }

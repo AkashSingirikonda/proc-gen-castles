@@ -3,6 +3,7 @@
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <vector>
+#include <iostream>
 
 #include "primitivetypes.h"
 
@@ -24,7 +25,6 @@ public:
     virtual PrimitiveType getPrimitiveType() = 0;
 
 private:
-
     std::vector<glm::vec3> points;
     std::vector<glm::vec3> norms;
     std::vector<glm::vec2> uvs;
@@ -46,6 +46,15 @@ class PrimitiveCone : public ScenePrimitive
     PrimitiveType getPrimitiveType() override { return PrimitiveType::PRIMITIVE_CONE; };
     void generate(int k1, int k2) override;
 };
+class PrimitiveMesh : public ScenePrimitive
+{
+    PrimitiveType getPrimitiveType() override { return PrimitiveType::PRIMITIVE_MESH; };
+    void generate(int k1, int k2) override;
+    void input_filename(std::string filename);
+private:
+    std::string m_filepath;
+};
+
 
 
 // TODO add more scene primitives

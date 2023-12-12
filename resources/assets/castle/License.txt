@@ -1,9 +1,8 @@
 	
 
-	Retro Medieval Kit (1.0)
+	Castle Kit (1.0)
 
 	Created/distributed by Kenney (www.kenney.nl)
-	Creation date: 01-07-2021 12:39
 
 			------------------------------
 
@@ -11,7 +10,7 @@
 	http://creativecommons.org/publicdomain/zero/1.0/
 
 	This content is free to use in personal, educational and commercial projects.
-	Support us by crediting Kenney or www.kenney.nl (this is not mandatory)
+	Support us by crediting (Kenney or www.kenney.nl), this is not mandatory.
 
 			------------------------------
 
@@ -20,4 +19,4 @@
 	Patreon:  http://patreon.com/kenney/
 
 	Follow on Twitter for updates:
-	http://twitter.com/KenneyNL
+	@KenneyNL
