@@ -50,9 +50,9 @@ void ProceduralCastle::generateScene(Scene& scene)
 
     for (int i = 0; i < n*n; i++) {
         vals[i] = new SceneNode();
-        //vals[i]->objects.push_back(cube);
-        //vals[i]->objects.push_back(plane);
-        vals[i]->objects.push_back(cone);
+        vals[i]->objects.push_back(cube);
+        vals[i]->objects.push_back(plane);
+        //vals[i]->objects.push_back(cone);
 //        vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.01, 0.01, 0.01));
         vals[i]->transform = glm::translate(vals[i]->transform, glm::vec3(2 * (rand()/(float)RAND_MAX) * (i/n), 0, 2 * (rand()/(float)RAND_MAX) * (i % n)));
         scene.root->children.push_back(vals[i]);
