@@ -29,6 +29,9 @@ void ProceduralCastle::generateScene(Scene& scene)
     SceneObject* cube = new SceneObject(PrimitiveType::PRIMITIVE_CUBE, TextureType::TEXTURE_STONE);
     SceneObject* plane = new SceneObject(PrimitiveType::PRIMITIVE_PLANE, TextureType::TEXTURE_ROOF);
     SceneObject* cone = new SceneObject(PrimitiveType::PRIMITIVE_CONE, TextureType::TEXTURE_ROOF);
+    SceneObject* tower = new SceneObject(PrimitiveType::PRIMITIVE_MESH, TextureType::TEXTURE_ROOF);
+
+
 
     plane->transform = glm::rotate(plane->transform, 0.8f, glm::vec3(1.0f, 0.0f, 0.0f));
     plane->transform = glm::translate(plane->transform, glm::vec3(0.0f, 0.5f, -0.5f));
@@ -49,43 +52,47 @@ void ProceduralCastle::generateScene(Scene& scene)
     scene.root = root;
 
     // Creating an nxn graph:
-    int n = 10;
+    int n = 5;
     std::vector<SceneNode*> vals(n*n);
 
     for (int i = 0; i < n*n; i++) {
         vals[i] = new SceneNode();
-        vals[i]->objects.push_back(cube);
-        vals[i]->objects.push_back(plane);
+        //vals[i]->objects.push_back(cube);
+        //vals[i]->objects.push_back(plane);
+        vals[i]->objects.push_back(tower);
+
         //vals[i]->objects.push_back(cone);
 //        vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.01, 0.01, 0.01));
+
         vals[i]->transform = glm::translate(vals[i]->transform, glm::vec3(2 * (rand()/(float)RAND_MAX) * (i/n), 0, 2 * (rand()/(float)RAND_MAX) * (i % n)));
+        vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.1, 0.1, 0.1));
         scene.root->children.push_back(vals[i]);
     }
 
-    Graph<SceneNode> g = Graph<SceneNode>();
-    for (int i = 0; i < n*n; i++) {
-        g.addNode(i, vals[i]);
-    }
+//    Graph<SceneNode> g = Graph<SceneNode>();
+//    for (int i = 0; i < n*n; i++) {
+//        g.addNode(i, vals[i]);
+//    }
 
-    for (int i = 0; i < n*n; i++) {
-        // Horizontal Edges
-        if (i % n > 0 ) {
-            g.addEdge(i, i-1);
-        }
+//    for (int i = 0; i < n*n; i++) {
+//        // Horizontal Edges
+//        if (i % n > 0 ) {
+//            g.addEdge(i, i-1);
+//        }
 
-        if (i % n != n-1) {
-            g.addEdge(i, i+1);
-        }
+//        if (i % n != n-1) {
+//            g.addEdge(i, i+1);
+//        }
 
-        // Vertical Edges
-        if (i / n != 0) {
-            g.addEdge(i, i - n);
-        }
+//        // Vertical Edges
+//        if (i / n != 0) {
+//            g.addEdge(i, i - n);
+//        }
 
-        if (i / n != n-1) {
-            g.addEdge(i, i + n);
-        }
-    }
+//        if (i / n != n-1) {
+//            g.addEdge(i, i + n);
+//        }
+//    }
 
     //g.printGraph();
 }

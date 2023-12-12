@@ -93,6 +93,7 @@ void PrimitiveCube::generate(int k1, int k2)
              glm::vec3(-0.5f,  0.5f, -0.5f),
              glm::vec3(-0.5f, -0.5f, -0.5f));
 }
+
 void PrimitiveCone::generate(int phiTesselations, int thetaTesselations) {
     thetaTesselations = fmax(thetaTesselations, 3);
     float PI = 3.14159265358979323;
@@ -178,6 +179,8 @@ void PrimitiveMesh::input_filename(std::string filepath) {
 }
 
 void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
+    std::cout << "absolute" << std::endl;
+    m_filepath = "/Users/akash/Brown/fp/proc-gen-castles/resources/assets/castle/Models/towerSquareMidOpen.obj";
     VBO.clear();
     // Getting the filepath
     std::ifstream file(m_filepath);
@@ -199,20 +202,20 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
             glm::vec3 to_add = {0, 0, 0};
             for (int i = 0; i < 3; i++) {
                 iss >> to_add[i];
-                c_vertices.push_back(to_add);
             }
+            c_vertices.push_back(to_add);
         } else if (token == "vn") {
             glm::vec3 to_add = {0, 0, 0};
             for (int i = 0; i < 3; i++) {
                 iss >> to_add[i];
-                c_normals.push_back(to_add);
             }
+            c_normals.push_back(to_add);
         } else if (token == "vt") {
             glm::vec2 to_add = {0, 0};
             for (int i = 0; i < 2; i++) {
                 iss >> to_add[i];
-                c_uvs.push_back(to_add);
             }
+            c_uvs.push_back(to_add);
         } else if (token == "f") {
             bool noNormal = false;
             for (int i = 0; i < 3; ++i) {
@@ -223,10 +226,11 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
                 iss.ignore();
                 iss >> tIndex;
 
-                pushPointAndNorm3(c_vertices[vIndex], c_normals[nIndex], &VBO);
-                pushUV(c_uvs[tIndex], &VBO);
+                pushPointAndNorm3(c_vertices[vIndex-1], c_normals[nIndex-1], &VBO);
+                pushUV(c_uvs[tIndex-1], &VBO);
             }
         }
     }
     file.close();
+
 }
