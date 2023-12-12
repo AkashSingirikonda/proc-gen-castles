@@ -7,6 +7,8 @@
 #include <random>
 #include <settings.h>
 
+#include "layoutgenerator.h"
+
 ProceduralCastle::ProceduralCastle()
 {
 
@@ -19,6 +21,8 @@ void ProceduralCastle::generateScene(Scene& scene)
     // Initialize Seed
     auto seed = settings.rootSeed;
     srand(seed);
+
+    //CastleLayoutGenerator::GenerateCastleLayout(seed);
 
     // TODO
     SceneNode* root = new SceneNode();

@@ -64,7 +64,9 @@ add_library(StaticGLEW STATIC glew/src/glew.c
     src/procedural/wfc.h src/procedural/wfc.cpp
     src/splines/easefunctions.h
     src/splines/animationtrack.h src/splines/animationtrack.cpp
-    src/procedural/algorithms/lsystem.h src/procedural/algorithms/lsystem.cpp)
+    src/procedural/algorithms/lsystem.h src/procedural/algorithms/lsystem.cpp
+    src/procedural/layoutgenerator.h
+    src/procedural/algorithms/lsystemstructuretypes.h)
 
 include_directories(${PROJECT_NAME} PRIVATE glew/include)
 
