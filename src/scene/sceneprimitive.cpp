@@ -173,13 +173,12 @@ void PrimitiveCone::generate(int phiTesselations, int thetaTesselations) {
 }
 
 // Primitive Mesh Function
-
-void PrimitiveMesh::input_filename(std::string filepath) {
+PrimitiveMesh::PrimitiveMesh(std::string filepath) {
     m_filepath = filepath;
 }
 
 void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
-    m_filepath = "../../resources/assets/castle/Models/towerSquareMidOpen.obj";
+//    m_filepath = "../../resources/assets/castle/Models/towerSquareMidOpen.obj";
     VBO.clear();
     // Getting the filepath
     std::ifstream file(m_filepath);
@@ -233,3 +232,5 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
     file.close();
 
 }
+
+int PrimitiveMesh::counter = PRIMITIVE_MESH;

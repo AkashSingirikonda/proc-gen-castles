@@ -29,7 +29,20 @@ void ProceduralCastle::generateScene(Scene& scene)
     SceneObject* cube = new SceneObject(PrimitiveType::PRIMITIVE_CUBE, TextureType::TEXTURE_STONE);
     SceneObject* plane = new SceneObject(PrimitiveType::PRIMITIVE_PLANE, TextureType::TEXTURE_ROOF);
     SceneObject* cone = new SceneObject(PrimitiveType::PRIMITIVE_CONE, TextureType::TEXTURE_ROOF);
-    SceneObject* tower = new SceneObject(PrimitiveType::PRIMITIVE_MESH, TextureType::TEXTURE_ROOF);
+    SceneObject* stairs = new SceneObject(PrimitiveType::STAIRS_STONE, TextureType::TEXTURE_ROOF);
+    SceneObject* tower_top_roof = new SceneObject(PrimitiveType::TOWER_TOP_ROOF, TextureType::TEXTURE_STONE);
+
+//        STAIRS_STONE,
+//        TOWER_BASE,
+//        TOWER_SQUARE_BASE,
+//        TOWER_SQUARE,
+//        TOWER_SQUARE_ARCH,
+//        TOWER_SQUARE_MID,
+//        TOWER_SQUARE_ROOF,
+//        TOWER_SQUARE_TOP,
+//        WALL,
+//        WALL_CORNER,
+//        WALL_DOOR
 
 
 
@@ -59,7 +72,7 @@ void ProceduralCastle::generateScene(Scene& scene)
         vals[i] = new SceneNode();
         //vals[i]->objects.push_back(cube);
         //vals[i]->objects.push_back(plane);
-        vals[i]->objects.push_back(tower);
+        vals[i]->objects.push_back(tower_top_roof);
 
         //vals[i]->objects.push_back(cone);
 //        vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.01, 0.01, 0.01));

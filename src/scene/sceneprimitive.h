@@ -48,11 +48,15 @@ class PrimitiveCone : public ScenePrimitive
 };
 class PrimitiveMesh : public ScenePrimitive
 {
-    PrimitiveType getPrimitiveType() override { return PrimitiveType::PRIMITIVE_MESH; };
+    PrimitiveType getPrimitiveType() override { counter++; return PrimitiveType(counter); };
     void generate(int k1, int k2) override;
+public:
+    PrimitiveMesh(std::string filename);
     void input_filename(std::string filename);
+    static int counter;
 private:
     std::string m_filepath;
+    //int counter = 5;
 };
 
 

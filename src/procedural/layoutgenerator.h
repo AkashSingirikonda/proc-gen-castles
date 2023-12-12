@@ -40,11 +40,11 @@ public:
     {
         LSystem layoutGenerator = LSystem<StructureType>();
 
-        layoutGenerator.addRule(KEEP, {KEEP, WALL});
-        layoutGenerator.addRule(KEEP, {KEEP, KEEP});
+        layoutGenerator.addRule(KEEP_S, {KEEP_S, WALL_S});
+        layoutGenerator.addRule(KEEP_S, {KEEP_S, KEEP_S});
 
         std::vector<StructureType> layout;
-        layoutGenerator.generate(seed, KEEP, 3, layout);
+        layoutGenerator.generate(seed, KEEP_S, 3, layout);
 
 
         std::vector<Region> regions;
@@ -63,14 +63,14 @@ public:
 
             switch(structureType)
             {
-            case KEEP:
+            case KEEP_S:
                 structureRadius = 10;
                 region.center = center + randDirection() * (radius + structureRadius + margin);
                 region.radius = structureRadius;
                 center = (region.center * structureRadius + center * radius) / (structureRadius + radius);
                 radius = radius + structureRadius + margin;
                 break;
-            case WALL:
+            case WALL_S:
                 structureRadius = 20;
                 region.center = center;
                 region.radius = structureRadius + radius + margin;

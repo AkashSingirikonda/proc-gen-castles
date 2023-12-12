@@ -130,14 +130,6 @@ void insertPrimitive(std::map<PrimitiveType, ScenePrimitive*>& primitiveTypes, S
     primitiveTypes[primitive->getPrimitiveType()] = primitive;
 }
 
-void Realtime::generateScenePrimitives()
-{
-    insertPrimitive(primitiveTypes, new PrimitiveCube());
-    insertPrimitive(primitiveTypes, new PrimitivePlane());
-    insertPrimitive(primitiveTypes, new PrimitiveCone());
-    insertPrimitive(primitiveTypes, new PrimitiveMesh());
-}
-
 void Realtime::generateSceneMaterials()
 {
     std::vector<TextureType> textureTypes;
@@ -597,4 +589,38 @@ void Realtime::saveViewportImage(std::string filePath) {
     glDeleteTextures(1, &texture);
     glDeleteRenderbuffers(1, &rbo);
     glDeleteFramebuffers(1, &fbo);
+}
+
+void Realtime::generateScenePrimitives()
+{
+    insertPrimitive(primitiveTypes, new PrimitiveCube());
+    insertPrimitive(primitiveTypes, new PrimitivePlane());
+    insertPrimitive(primitiveTypes, new PrimitiveCone());
+
+    // Inserting mesh stuff.
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/stairsStone.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerBase.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerSquareBase.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerSquare.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerSquareArch.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerSquareMid.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerSquareRoof.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerSquareTop.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/wall.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/wallCorner.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/wallDoor.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/wallHalf.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/wallCornerHalfTower.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerTopRoof.obj"));
+//    STAIRS_STONE,
+//        TOWER_BASE,
+//        TOWER_SQUARE_BASE,
+//        TOWER_SQUARE,
+//        TOWER_SQUARE_ARCH,
+//        TOWER_SQUARE_MID,
+//        TOWER_SQUARE_ROOF,
+//        TOWER_SQUARE_TOP,
+//        WALL,
+//        WALL_CORNER,
+//        WALL_DOOR
 }

@@ -2,6 +2,6 @@
 
 enum StructureType
 {
-    KEEP,
-    WALL
+    KEEP_S,
+    WALL_S
 };
