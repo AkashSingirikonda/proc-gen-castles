@@ -179,7 +179,6 @@ void PrimitiveMesh::input_filename(std::string filepath) {
 }
 
 void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
-    std::cout << "absolute" << std::endl;
     m_filepath = "../../resources/assets/castle/Models/towerSquareMidOpen.obj";
     VBO.clear();
     // Getting the filepath
