@@ -31,7 +31,7 @@ template <class T>
 class CubicSpline : public Spline<T>
 {
 public:
-    CubicSpline(T startData, T p1, T p2, T endData);
+    CubicSpline(T startData, T p1Data, T p2Data, T endData);
 
     T get(float time) override;
 private:
@@ -39,6 +39,21 @@ private:
     T end;
     T p1;
     T p2;
+};
+
+template <class T>
+class TangentSpline : public Spline<T>
+{
+public:
+    TangentSpline(T startData, T t1Data, T t2Data, T endData);
+
+    T get(float time) override;
+private:
+    T start;
+    T end;
+    T t2;
+    T a;
+    T b;
 };
 
 
@@ -54,7 +69,7 @@ private:
      * Instead we precompute values and then interpolate between them
      */
     std::vector<float> data;
-    float SEGMENT_SIZE = 0.05f;
+    float SEGMENT_SIZE = 0.001f;
 
     float p1;
     float p2;

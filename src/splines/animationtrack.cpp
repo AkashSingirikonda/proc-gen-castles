@@ -1,5 +1,6 @@
 #include "animationtrack.h"
 
+
 void AnimationTrack::append(TrackSegment* segment, float duration)
 {
     segment->startTime = endTime;
@@ -37,6 +38,11 @@ void AnimationTrack::step(float time)
     if(t > 1)
     {
         t = 1;
+    }
+
+    if(currentSegment->easeFunction != nullptr)
+    {
+        t = currentSegment->easeFunction->get(t);
     }
 
     (*param) = currentSegment->get(t);
