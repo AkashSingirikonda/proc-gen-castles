@@ -12,6 +12,7 @@
 #include "utils/sceneloader.h"
 
 #include "textures/defaultmaterials.h"
+#include "textures/texturedata.h"
 
 Realtime::Realtime(QWidget *parent)
     : QOpenGLWidget(parent)
@@ -92,6 +93,8 @@ void Realtime::initializeGL() {
     cameraTrack.linkCamera(&camera);
     buildCameraTrack();
 
+
+    /*
     // ADDING TEXTURE STUFF
     // normal map:
     QString wallMap_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
@@ -108,6 +111,7 @@ void Realtime::initializeGL() {
 //    glUniform1i(glGetUniformLocation(shader, "wallImage"), 1);
     glUseProgram(0);
     // FINISHED ADDING TEXTURE STUFF
+    */
 
     glUseProgram(textureShader);
     glUniform1i(glGetUniformLocation(textureShader, "tex"), 0);
@@ -140,17 +144,14 @@ void Realtime::generateSceneMaterials()
     for(TextureType textureType : textureTypes)
     {
         SceneMaterial material = DefaultMaterials::getDefaultMaterial(textureType);
-
-        // figure out how best to implement this
-        /*
-        QString wall_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
-        wallMap = QImage(wall_filepath); // get image from filepath
+        std::cout << material.normalMap.filename << std::endl;
+        QString filepath = QString(material.normalMap.filename.c_str()); // filepath
+        wallMap = QImage(filepath); // get image from filepath
         wallMap = wallMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
-        setUpTextures(wallTex, GL_TEXTURE0);
+        setUpTextures(material.tex, GL_TEXTURE0);
         glUseProgram(shader);
         glUniform1i(glGetUniformLocation(shader, "wallTex"), 0);
         glUseProgram(0);
-        */
 
 
         materialTypes[textureType] = material;
@@ -348,12 +349,17 @@ void Realtime::renderScene(){
 
         glBindVertexArray(primitive->VAO_name);
 
-        // send texture to shader
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, wallMapTex);
+//        // send texture to shader
+//        glActiveTexture(GL_TEXTURE0);
+//        glBindTexture(GL_TEXTURE_2D, wallMapTex);
 
         SceneMaterial* material = renderObject->material;
         //glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));
+
+        // send texture to shader
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, material->tex);
+
 
         glUniform4fv(glGetUniformLocation(shader, "cAmbient"), 1, &material->cAmbient[0]);
         glUniform4fv(glGetUniformLocation(shader, "cDiffuse"), 1, &material->cDiffuse[0]);
