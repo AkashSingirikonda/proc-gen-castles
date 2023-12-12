@@ -4,6 +4,7 @@
 #include "tile.h"
 
 #include <iostream>
+#include <vector>
 #include "cell.h"
 class Grid
 {

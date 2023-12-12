@@ -101,5 +101,8 @@ void main() {
         }
 
         fragColor += I * f * color * sum;
+
+        // test textures:
+//        fragColor = texture(wallTex, uv_pos);
     }
 }

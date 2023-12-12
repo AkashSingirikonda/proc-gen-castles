@@ -2,6 +2,7 @@
 #define TILE_H
 
 #include <iostream>
+#include <vector>
 
 class Tile
 {

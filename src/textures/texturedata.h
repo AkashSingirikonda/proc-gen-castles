@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <GL/glew.h>
 #include <glm/glm.hpp>
 #include "scene/scenedata.h"
 #include "textures/texturetypes.h"
@@ -38,6 +39,7 @@ struct SceneMaterial {
 
     SceneFileMap textureMap; // Used for texture mapping
     SceneFileMap normalMap;
+    GLuint tex;
     TextureType type;
     float blend;             // Used for texture mapping
 
