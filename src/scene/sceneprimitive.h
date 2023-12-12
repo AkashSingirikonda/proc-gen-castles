@@ -41,6 +41,11 @@ class PrimitiveCube : public ScenePrimitive
     PrimitiveType getPrimitiveType() override { return PrimitiveType::PRIMITIVE_CUBE; };
     void generate(int k1, int k2) override;
 };
+class PrimitiveCone : public ScenePrimitive
+{
+    PrimitiveType getPrimitiveType() override { return PrimitiveType::PRIMITIVE_CONE; };
+    void generate(int k1, int k2) override;
+};
 
 
 // TODO add more scene primitives

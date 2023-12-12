@@ -127,6 +127,7 @@ void Realtime::generateScenePrimitives()
 {
     insertPrimitive(primitiveTypes, new PrimitiveCube());
     insertPrimitive(primitiveTypes, new PrimitivePlane());
+    insertPrimitive(primitiveTypes, new PrimitiveCone());
 }
 
 void Realtime::generateSceneMaterials()
