@@ -212,6 +212,8 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
             glm::vec2 to_add = {0, 0};
             for (int i = 0; i < 2; i++) {
                 iss >> to_add[i];
+                // FIXING UV COORDS
+                to_add[i] = (to_add[i] + 32) / 64; // bc images are 64x64
             }
             c_uvs.push_back(to_add);
         } else if (token == "f") {
