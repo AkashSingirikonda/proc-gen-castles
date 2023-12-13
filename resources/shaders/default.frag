@@ -2,7 +2,7 @@
 in vec3 world_pos;
 in vec3 world_norm;
 in vec2 uv_pos;
-// in mat3 TBN;
+in mat3 TBN;
 
 out vec4 fragColor;
 
@@ -45,8 +45,8 @@ void main() {
 
     norm = texture(wallTex, uv_pos);
     norm = norm * 2.f - 1.f; // convert to proper range
-//    norm.xyz = normalize(TBN * norm.xyz);
-    norm = normalize(norm);
+    norm.xyz = normalize(TBN * norm.xyz);
+//    norm = normalize(norm);
     norm.w = 0;
 
     vec4 dir_camera = normalize(camera_position - pos);

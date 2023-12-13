@@ -189,13 +189,15 @@ void Realtime::initVBOandVAOs()
 
 
         //TODO add UVs to VAO
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), reinterpret_cast<void *>(0));
-        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), reinterpret_cast<void *>(3 * sizeof(GLfloat)));
-        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), reinterpret_cast<void *>(6 * sizeof(GLfloat)));
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(GLfloat), reinterpret_cast<void *>(0));
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(GLfloat), reinterpret_cast<void *>(3 * sizeof(GLfloat)));
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 11 * sizeof(GLfloat), reinterpret_cast<void *>(6 * sizeof(GLfloat)));
+        glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(GLfloat), reinterpret_cast<void *>(8 * sizeof(GLfloat)));
 
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
         glEnableVertexAttribArray(2);
+        glEnableVertexAttribArray(3);
 
         glBindVertexArray(0);
         glBindBuffer(GL_ARRAY_BUFFER,0);
@@ -369,7 +371,7 @@ void Realtime::renderScene(){
         glUniformMatrix4fv(glGetUniformLocation(shader, "model"), 1, false, &renderObject->ctm[0][0]);
         glUniformMatrix4fv(glGetUniformLocation(shader, "norm_inv"), 1, false, &renderObject->normInv[0][0]);
 
-        glDrawArrays(GL_TRIANGLES, 0, primitive->VBO.size() / 8); // divide by stride
+        glDrawArrays(GL_TRIANGLES, 0, primitive->VBO.size() / 11); // divide by stride
 
         glBindTexture(GL_TEXTURE_2D, 0);
         glBindVertexArray(0);
