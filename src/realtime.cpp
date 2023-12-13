@@ -669,6 +669,8 @@ void Realtime::generateScenePrimitives()
     insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/wallHalf.obj"));
     insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/wallCornerHalfTower.obj"));
     insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerTopRoof.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/wallCornerHalf.obj"));
+    insertPrimitive(primitiveTypes, new PrimitiveMesh("../../resources/assets/castle/Models/towerSquareTopRoof.obj"));
 //    STAIRS_STONE,
 //        TOWER_BASE,
 //        TOWER_SQUARE_BASE,
