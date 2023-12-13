@@ -17,6 +17,9 @@ public:
             material.cDiffuse = SceneColor(0.5f, 0.5f, 0.5f, 1.0f);
             material.cSpecular = SceneColor(1.0f, 1.0f, 1.0f, 1.0f);
             material.shininess = 15;
+            material.normalMap = SceneFileMap();
+            material.normalMap.filename = ":/resources/images/grass.png";
+            material.normalMap.isUsed = 1;
             break;
         case TextureType::TEXTURE_STONE:
             material.cAmbient = SceneColor(0.6f, 0.6f, 0.6f, 1.0f);
