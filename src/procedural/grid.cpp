@@ -112,21 +112,16 @@ void Grid::collapse() {
             if (!m_grid[i][j]->m_collapsed) {
                 std::vector<Tile> cumulative_value_options = m_options;
 
-                // Check the upper cell:
-
+                // Check the backward cell:
                 Cell* cell_back = m_grid[pythonMod(i-1, m_h)][j];
                 std::vector<int> valid_options;
                 for (Tile& option : cell_back->m_options) {
                     valid_options.insert(valid_options.end(), option.m_front.begin(), option.m_front.end());
                 }
 
-                std::vector<int> temp;
-                for (auto& cv : cumulative_value_options) {
-                    temp.push_back(cv.m_id);
-                }
-                std::vector<Tile> temp_options;
+                std::vector<Tile> temp_options = cumulative_value_options;
                 for (int i = 0; i < cumulative_value_options.size(); i++) {
-                    std::vector<int>::iterator it = find(temp.begin(), temp.end(), cumulative_value_options[i].m_id);
+                    std::vector<int>::iterator it = find(valid_options.begin(), valid_options.end(), cumulative_value_options[i].m_id);
                     if (it != valid_options.end()) {
                         temp_options.push_back(cumulative_value_options[i]);
                     }
@@ -135,18 +130,15 @@ void Grid::collapse() {
 
 
                 // Check the right cell:
+                valid_options.clear();
                 Cell* cell_right = m_grid[i][pythonMod(j+1, m_w)];
                 for (Tile& option : cell_right->m_options) {
                     valid_options.insert(valid_options.end(), option.m_left.begin(), option.m_left.end());
                 }
 
-                temp.clear();
-                for (auto& cv : cumulative_value_options) {
-                    temp.push_back(cv.m_id);
-                }
-                temp_options.clear();
+                temp_options = cumulative_value_options;
                 for (int i = 0; i < cumulative_value_options.size(); i++) {
-                    std::vector<int>::iterator it = find(temp.begin(), temp.end(), cumulative_value_options[i].m_id);
+                    std::vector<int>::iterator it = find(valid_options.begin(), valid_options.end(), cumulative_value_options[i].m_id);
                     if (it != valid_options.end()) {
                         temp_options.push_back(cumulative_value_options[i]);
                     }
@@ -155,45 +147,42 @@ void Grid::collapse() {
 
 
                 // Check the front:
+                valid_options.clear();
                 Cell* cell_front = m_grid[pythonMod(i+1, m_h)][j];
                 for (Tile& option : cell_front->m_options) {
                     valid_options.insert(valid_options.end(), option.m_back.begin(), option.m_back.end());
                 }
 
-                temp.clear();
-                for (auto& cv : cumulative_value_options) {
-                    temp.push_back(cv.m_id);
-                }
-                temp_options.clear();
+                temp_options = cumulative_value_options;
                 for (int i = 0; i < cumulative_value_options.size(); i++) {
-                    std::vector<int>::iterator it = find(temp.begin(), temp.end(), cumulative_value_options[i].m_id);
+                    std::vector<int>::iterator it = find(valid_options.begin(), valid_options.end(), cumulative_value_options[i].m_id);
                     if (it != valid_options.end()) {
                         temp_options.push_back(cumulative_value_options[i]);
                     }
                 }
                 cumulative_value_options = temp_options;
 
+
                 // Check the left:
+                valid_options.clear();
                 Cell* cell_left = m_grid[i][pythonMod(j-1, m_w)];
                 for (Tile& option : cell_left->m_options) {
                     valid_options.insert(valid_options.end(), option.m_right.begin(), option.m_right.end());
                 }
 
-                temp.clear();
-                for (auto& cv : cumulative_value_options) {
-                    temp.push_back(cv.m_id);
-                }
-                temp_options.clear();
+                temp_options = cumulative_value_options;
                 for (int i = 0; i < cumulative_value_options.size(); i++) {
-                    std::vector<int>::iterator it = find(temp.begin(), temp.end(), cumulative_value_options[i].m_id);
+                    std::vector<int>::iterator it = find(valid_options.begin(), valid_options.end(), cumulative_value_options[i].m_id);
                     if (it != valid_options.end()) {
                         temp_options.push_back(cumulative_value_options[i]);
                     }
                 }
                 cumulative_value_options = temp_options;
 
+
+                // Updating the next grid.
                 nextGrid[i][j]->m_options = cumulative_value_options;
-                if (nextGrid[i][j]->m_options.size()) {
+                if (nextGrid[i][j]->m_options.size() == 0) {
                     std::cout << "no valid moves" << std::endl;
                 }
                 nextGrid[i][j]->update();

@@ -49,8 +49,8 @@ void ProceduralCastle::generateScene(Scene& scene)
         options[i].setRules(&tileMap);
     }
 
-    int width = 3;
-    int height = 3;
+    int width = 10;
+    int height = 10;
     Grid wave = Grid(width, height, 0, options, tileMap);
 
     wave.initiate(0, options);
