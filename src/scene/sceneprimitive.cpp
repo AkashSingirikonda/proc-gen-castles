@@ -227,7 +227,12 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
                 iss >> to_add[i];
 //                to_add[i] = (to_add[i] + 32) / 64; // bc images are 64x64
 //                to_add[i] = to_add[i] / 64;
-                to_add[i] = to_add[i] / 32;
+//                to_add[i] = to_add[i] / 32;
+                if (i == 0) {
+                    to_add[i] = (to_add[i] + 16) / 32;
+                } else if (i == 1) {
+                    to_add[i] = (to_add[i] + 32) / 64;
+                }
             }
             c_uvs.push_back(to_add);
         } else if (token == "f") {
