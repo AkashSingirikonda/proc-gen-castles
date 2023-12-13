@@ -3,11 +3,12 @@
 layout(location = 0) in vec3 object_pos;
 layout(location = 1) in vec3 object_normal;
 layout(location = 2) in vec2 uv;
+layout(location = 3) in vec3 tangent;
 
 out vec3 world_pos;
 out vec3 world_norm;
 out vec2 uv_pos;
-// out mat3 TBN; // matrix to convert from tangent space
+ out mat3 TBN; // matrix to convert from tangent space
 
 uniform mat4 model;
 uniform mat4 norm_inv;
@@ -23,10 +24,10 @@ void main() {
     uv_pos = uv;
 
     // calculate TBN, multiply by model to get to ws
-//    vec3 tangent = normalize(mat3(model) * vec3(uv.x, 0, 0)); // is this right? might need to be calculated in cpu and passed in
-//    vec3 normal = normalize(mat3(model) * object_normal);
-//    vec3 bitangent = normalize(mat3(model) * cross(tangent, normal));
-//    TBN = mat3(tangent, bitangent, normal);
+    vec3 tan = normalize(mat3(model) * tangent); // is this right? might need to be calculated in cpu and passed in
+    vec3 normal = normalize(mat3(model) * object_normal);
+    vec3 bitangent = normalize(mat3(model) * cross(normal, tangent));
+    TBN = mat3(tan, bitangent, normal);
 
     gl_Position = (proj * view * model) * pos;
 }

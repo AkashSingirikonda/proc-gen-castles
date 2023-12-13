@@ -172,6 +172,18 @@ void PrimitiveCone::generate(int phiTesselations, int thetaTesselations) {
     }
 }
 
+// this function is not used bc it doesn't work with iss, i guess because of how it's initialized?
+// not sure exactly but would be good if we can do this to reduce repeated code
+void fillIndices(std::istringstream &iss, int vIndex, int nIndex, int tIndex)
+{
+    iss >> vIndex;
+    iss.ignore();
+    iss >> tIndex;
+    iss.ignore();
+    iss >> nIndex;
+
+}
+
 // Primitive Mesh Function
 PrimitiveMesh::PrimitiveMesh(std::string filepath) {
     m_filepath = filepath;
@@ -189,6 +201,7 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
     std::vector<glm::vec3> c_vertices;
     std::vector<glm::vec3> c_normals;
     std::vector<glm::vec2> c_uvs;
+    // std::vector<glm::vec3> c_tangents;
 
     std::string line;
     while (std::getline(file, line)) {
@@ -217,6 +230,7 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
             c_uvs.push_back(to_add);
         } else if (token == "f") {
             bool noNormal = false;
+            /*
             for (int i = 0; i < 3; ++i) {
                 int vIndex, nIndex, tIndex;
                 iss >> vIndex;
@@ -225,9 +239,70 @@ void PrimitiveMesh::generate(int phiTesselations, int thetaTesselations) {
                 iss.ignore();
                 iss >> nIndex;
 
+                // calculate tangents here
+                // glm::vec3 tangent;
+                // glm::vec3 vertex;
+                // glm::vec3 normal;
+                // glm::vec2 uv;
+                // ...
                 pushPointAndNorm3(c_vertices[vIndex-1], c_normals[nIndex-1], &VBO);
                 pushUV(c_uvs[tIndex-1], &VBO);
+                // pushVec3(tangent, &VBO)
             }
+            */
+            int vIndex1, nIndex1, tIndex1;
+//            fillIndices(iss, vIndex1, nIndex1, tIndex1);
+            iss >> vIndex1;
+            iss.ignore();
+            iss >> tIndex1;
+            iss.ignore();
+            iss >> nIndex1;
+
+            int vIndex2, nIndex2, tIndex2;
+//            fillIndices(iss, vIndex2, nIndex2, tIndex2);
+            iss >> vIndex2;
+            iss.ignore();
+            iss >> tIndex2;
+            iss.ignore();
+            iss >> nIndex2;
+
+            int vIndex3, nIndex3, tIndex3;
+//            fillIndices(iss, vIndex3, nIndex3, tIndex3);
+            iss >> vIndex3;
+            iss.ignore();
+            iss >> tIndex3;
+            iss.ignore();
+            iss >> nIndex3;
+
+            // calculate tangents here
+            glm::vec3 tangent; // one tangent per tri bc they're flat
+
+            glm::vec3 edge_1 = c_vertices[vIndex2 - 1] - c_vertices[vIndex1 - 1];
+            glm::vec3 edge_2 = c_vertices[vIndex3 - 1] - c_vertices[vIndex1 - 1];
+
+            glm::vec2 deltaUV_1 = c_uvs[tIndex2 - 1] - c_uvs[tIndex1 - 1];
+            glm::vec2 deltaUV_2 = c_uvs[tIndex3 - 1] - c_uvs[tIndex1 - 1];
+
+            float det = 1.f / (deltaUV_1.x * deltaUV_2.y - deltaUV_2.x * deltaUV_1.y);
+
+            tangent.x = det * (deltaUV_2.y * edge_1.x - deltaUV_1.y * edge_2.x);
+            tangent.y = det * (deltaUV_2.y * edge_1.y - deltaUV_1.y * edge_2.y);
+            tangent.z = det * (deltaUV_2.y * edge_1.z - deltaUV_1.y * edge_2.z);
+
+
+            // should prob make a helper here
+            pushPointAndNorm3(c_vertices[vIndex1-1], c_normals[nIndex1-1], &VBO);
+            pushUV(c_uvs[tIndex1-1], &VBO);
+            pushVec3(tangent, &VBO);
+
+            pushPointAndNorm3(c_vertices[vIndex2-1], c_normals[nIndex2-1], &VBO);
+            pushUV(c_uvs[tIndex2-1], &VBO);
+            pushVec3(tangent, &VBO);
+
+            pushPointAndNorm3(c_vertices[vIndex3-1], c_normals[nIndex3-1], &VBO);
+            pushUV(c_uvs[tIndex3-1], &VBO);
+            pushVec3(tangent, &VBO);
+
         }
     }
     file.close();
