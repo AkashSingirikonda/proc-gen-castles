@@ -93,11 +93,11 @@ void Realtime::initializeGL() {
     cameraTrack.linkCamera(&camera);
     buildCameraTrack();
 
-
     /*
     // ADDING TEXTURE STUFF
     // normal map:
-    QString wallMap_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
+//    QString wallMap_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
+    QString wallMap_filepath = QString(":/resources/images/Wall_Stone_Normal_Map.png"); // filepath
     wallMap = QImage(wallMap_filepath); // get image from filepath
     wallMap = wallMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
     // texture/image:
@@ -111,7 +111,7 @@ void Realtime::initializeGL() {
 //    glUniform1i(glGetUniformLocation(shader, "wallImage"), 1);
     glUseProgram(0);
     // FINISHED ADDING TEXTURE STUFF
-    */
+*/
 
     glUseProgram(textureShader);
     glUniform1i(glGetUniformLocation(textureShader, "tex"), 0);
@@ -152,7 +152,6 @@ void Realtime::generateSceneMaterials()
         glUseProgram(shader);
         glUniform1i(glGetUniformLocation(shader, "wallTex"), 0);
         glUseProgram(0);
-
 
         materialTypes[textureType] = material;
     }

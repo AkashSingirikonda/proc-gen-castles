@@ -25,7 +25,7 @@ public:
             material.shininess = 15;
             // adding mapping values
             material.normalMap = SceneFileMap();
-            material.normalMap.filename = ":/resources/images/Wall_Stone_023_Normal.png";
+            material.normalMap.filename = ":/resources/images/Wall_Stone_Normal_Map.png";
             material.normalMap.isUsed = 1;
             break;
         case TextureType::TEXTURE_ROOF:

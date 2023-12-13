@@ -11,7 +11,7 @@
 class SceneObject
 {
 public:
-    SceneObject();
+    SceneObject(){};
     ~SceneObject();
 
     SceneObject(PrimitiveType primitiveType, TextureType textureType);
@@ -25,7 +25,7 @@ public:
 class SceneLight
 {
 public:
-    SceneLight();
+    SceneLight(){};
     ~SceneLight();
 
     SceneLight(SceneLightData sceneLightData);
@@ -38,7 +38,7 @@ public:
 class SceneNode
 {
 public:
-    SceneNode();
+    SceneNode(){};
     ~SceneNode();
 
     glm::mat4 transform = glm::mat4(1);

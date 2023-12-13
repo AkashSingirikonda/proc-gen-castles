@@ -4,8 +4,11 @@
 #include "unordered_map"
 #include "set"
 #include "scene/sceneobject.h"
+#include "tile.h"
+#include "grid.h"
 #include <random>
 #include <settings.h>
+#include <unordered_map>
 
 #include "layoutgenerator.h"
 
@@ -22,6 +25,65 @@ void ProceduralCastle::generateScene(Scene& scene)
     auto seed = settings.rootSeed;
     srand(seed);
 
+    int tileNum = 5;
+    // Testing out Wave Function Collapse:
+    std::vector<Tile> options;
+    std::unordered_map<int, std::vector<int>> tileMap;
+
+    for (int i = 0; i < tileNum; i++) {
+        options.push_back(Tile());
+    }
+    // Scheme: Back, Right, Front, Left
+    options[0].m_edges = {0, 0, 0, 0};
+    options[1].m_edges = {1, 1, 0, 1};
+    options[2].m_edges = {1, 1, 1, 0};
+    options[3].m_edges = {0, 1, 1, 1};
+    options[4].m_edges = {1, 0, 1, 1};
+
+    for (int i = 0; i < tileNum; i++) {
+        options[i].m_id = i;
+        tileMap[i] = options[i].m_edges;
+    }
+
+    for (int i = 0; i < tileNum; i++) {
+        options[i].setRules(&tileMap);
+    }
+
+    int width = 3;
+    int height = 3;
+    Grid wave = Grid(width, height, 0, options, tileMap);
+
+    wave.initiate(0, options);
+
+    std::map<int, std::string> to_print;
+    to_print[0].append("OOOOOOOOO");
+    to_print[1].append("OXOXXXOOO");
+    to_print[2].append("OXOOXXOXO");
+    to_print[3].append("OOOXXXOXO");
+    to_print[4].append("OXOXXOOXO");
+
+    for (int i = 0; i < width*height; i++) {
+        wave.collapse();
+        //wave.printGrid();
+        for (int x = 0; x < height; x++) {
+            for (int j = 0; j < 3; j++) {
+                for (int y = 0; y < width; y++) {
+                    if (!wave.m_grid[x][y]->m_collapsed) {
+                        std::cout << "LLL";
+                    } else {
+                        std::cout << to_print[wave.m_grid[x][y]->m_options[0].m_id].substr(j*3, 3);
+                    }
+                }
+                std::cout << std::endl;
+            }
+        }
+        std::cout << std::endl;
+    }
+
+    std::cout << "done";
+    // Done with Wave function collapse
+
+    // Not testing right now:::
     //CastleLayoutGenerator::GenerateCastleLayout(seed);
 
     // TODO
@@ -30,8 +92,9 @@ void ProceduralCastle::generateScene(Scene& scene)
     SceneObject* plane = new SceneObject(PrimitiveType::PRIMITIVE_PLANE, TextureType::TEXTURE_ROOF);
     SceneObject* cone = new SceneObject(PrimitiveType::PRIMITIVE_CONE, TextureType::TEXTURE_ROOF);
     SceneObject* stairs = new SceneObject(PrimitiveType::STAIRS_STONE, TextureType::TEXTURE_ROOF);
-    SceneObject* tower_top_roof = new SceneObject(PrimitiveType::WALL_CORNER_HALF_TOWER, TextureType::TEXTURE_STONE);
+    SceneObject* tower_top_roof = new SceneObject(PrimitiveType::WALL_CORNER_HALF_TOWER, TextureType::TEXTURE_ROOF);
 
+// List of current assets:
 //        STAIRS_STONE,
 //        TOWER_BASE,
 //        TOWER_SQUARE_BASE,
@@ -80,31 +143,4 @@ void ProceduralCastle::generateScene(Scene& scene)
         vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.1, 0.1, 0.1));
         scene.root->children.push_back(vals[i]);
     }
-
-//    Graph<SceneNode> g = Graph<SceneNode>();
-//    for (int i = 0; i < n*n; i++) {
-//        g.addNode(i, vals[i]);
-//    }
-
-//    for (int i = 0; i < n*n; i++) {
-//        // Horizontal Edges
-//        if (i % n > 0 ) {
-//            g.addEdge(i, i-1);
-//        }
-
-//        if (i % n != n-1) {
-//            g.addEdge(i, i+1);
-//        }
-
-//        // Vertical Edges
-//        if (i / n != 0) {
-//            g.addEdge(i, i - n);
-//        }
-
-//        if (i / n != n-1) {
-//            g.addEdge(i, i + n);
-//        }
-//    }
-
-    //g.printGraph();
 }
