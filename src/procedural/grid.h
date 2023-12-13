@@ -16,11 +16,13 @@ public:
     void initiate(int rez, std::vector<Tile> options);
     void collapse();
     Cell* heuristicPick();
+
     int m_rez;
     int m_w;
     int m_h;
     std::unordered_map<int, std::vector<int>> m_tileMap;
     std::vector<std::vector<Cell*>> m_grid;
+    std::vector<std::vector<std::vector<Cell>>> m_history;
     std::vector<Tile> m_options;
     void printGrid();
 };

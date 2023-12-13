@@ -17,7 +17,27 @@ ProceduralCastle::ProceduralCastle()
 
 }
 
+bool check_vc(char to_check) {
+    if (to_check == 'E') {
+        return true;
+    } else if (to_check == 'W') {
+        return false;
+    }
+    std::cout << "invalid string" << std::endl;
+    return false;
+}
 
+std::vector<int> string_to_edges(std::string to_move) {
+    std::vector<int> to_ret(4);
+    for (int i = 0; i < 3; i++) {
+        to_ret[0] += check_vc(to_move[i]) * (1 << i);
+        to_ret[1] += check_vc(to_move[3*i + 2]) * (1 << i);
+        to_ret[2] += check_vc(to_move[6+i]) * (1 << i);
+        to_ret[3] += check_vc(to_move[3*i]) * (1 << i);
+
+    }
+    return to_ret;
+}
 
 void ProceduralCastle::generateScene(Scene& scene)
 {
@@ -33,56 +53,70 @@ void ProceduralCastle::generateScene(Scene& scene)
     for (int i = 0; i < tileNum; i++) {
         options.push_back(Tile());
     }
+
+    std::vector<std::string> to_print;
+//    to_print.push_back("WEWWEEWEW");
+//    to_print.push_back("WWWEEEWEW");
+//    to_print.push_back("WEWEEEWWW");
+//    to_print.push_back("WEWEEWWEW");
+//    to_print.push_back("WWWWWWWWW");
+    to_print.push_back("WWWWWWWWW");
+    to_print.push_back("EEEEEEEEE");
+    to_print.push_back("EWWEWWEWW");
+    to_print.push_back("EEEWWWWWW");
+    to_print.push_back("WWEWWEWWE");
+    to_print.push_back("WWWWWWEEE");
+    to_print.push_back("EWWEWWEEE");
+    to_print.push_back("EEEEWWEWW");
+    to_print.push_back("EEEWWEWWE");
+    to_print.push_back("WWEWWEEEE");
+//    to_print.push_back("WEEEEEEEE");
+//    to_print.push_back("EEWEEEEEE");
+//    to_print.push_back("EEEEEEEEW");
+//    to_print.push_back("EEEEEEWEE");
     // Scheme: Back, Right, Front, Left
     // 1s refer to walls, 0s refer to air/edges
-    // Air
-    options[0].m_edges = {0, 0, 0, 0};
-    // Wall
-    options[1].m_edges = {1, 1, 1, 1};
-    // External Corner Pieces:
-    options[2].m_edges = {0, 0, 1, 1}; // LF
-    options[3].m_edges = {1, 0, 0, 1}; // BL
-    options[4].m_edges = {1, 1, 0, 0};
-    options[5].m_edges = {0, 1, 1, 0};
-
-    // Walls:
-    options[6].m_edges = {0, 0, 0, 1}; // L
-    options[7].m_edges = {1, 0, 0, 0}; // B
-    options[8].m_edges = {0, 1, 0, 0}; // R
-    options[9].m_edges = {0, 0, 1, 0}; // F
-
-    // Rotations take place in clockwise direction around y axis.
-
-    //
-    for (int i = 0; i < tileNum; i++) {
+    for (int i = 0; i < to_print.size(); i++) {
+        options[i].m_edges = string_to_edges(to_print[i]);
         options[i].m_id = i;
         tileMap[i] = options[i].m_edges;
     }
 
-    for (int i = 0; i < tileNum; i++) {
+    for (int i = 0; i < options.size(); i++) {
         options[i].setRules(&tileMap);
     }
 
-    int width = 10;
-    int height = 10;
+    // Ws are 0s, Es are 1s, binary representation. left to right largest digit, up to down largest digit to smallest digit.
+
+//    // Air
+//    options[0].m_edges = {7, 7, 7, 7};
+//    // Wall
+//    options[1].m_edges = {0, 0, 0, 0};
+
+//    // External Corner Pieces:
+//    options[2].m_edges = {4, 1, 7, 7}; // LF
+//    options[3].m_edges = {7, 4, 4, 7}; // BL
+//    options[4].m_edges = {7, 7, 1, 4}; // BR
+//    options[5].m_edges = {1, 7, 7, 1}; // RF
+
+//    // Walls:
+//    options[6].m_edges = {4, 0, 4, 7}; // L
+//    options[7].m_edges = {7, 4, 0, 4}; // B
+//    options[8].m_edges = {1, 7, 1, 0}; // R
+//    options[9].m_edges = {0, 1, 7, 1}; // F
+
+    // Rotations take place in clockwise direction around y axis.
+
+    //
+
+    int width = 15;
+    int height = 15;
     Grid wave = Grid(width, height, 0, options, tileMap);
 
     wave.initiate(0, options);
 
-    std::map<int, std::string> to_print;
-    to_print[0].append("WWWWWWWWW");
-    to_print[1].append("EEEEEEEEE");
-    to_print[2].append("EWWEWWEEE");
-    to_print[3].append("EEEEWWEWW");
-    to_print[4].append("EEEWWEWWE");
-    to_print[5].append("WWEWWEEEE");
-    to_print[6].append("EWWEWWEWW");
-    to_print[7].append("EEEWWWWWW");
-    to_print[8].append("WWEWWEWWE");
-    to_print[9].append("WWWWWWEEE");
 
-
-    for (int i = 0; i < width*height; i++) {
+    for (int i = 0; i < 100; i++) {
         wave.collapse();
         //wave.printGrid();
         for (int x = 0; x < height; x++) {
@@ -128,6 +162,25 @@ void ProceduralCastle::generateScene(Scene& scene)
 //        WALL_DOOR
 
 
+//    to_print.push_back("WWWWWWWWW");
+//    to_print.push_back("EEEEEEEEE");
+//    to_print.push_back("EWWEWWEWW");
+//    to_print.push_back("EEEWWWWWW");
+//    to_print.push_back("WWEWWEWWE");
+//    to_print.push_back("WWWWWWEEE");
+//    to_print.push_back("EWWEWWEEE");
+//    to_print.push_back("EEEEWWEWW");
+//    to_print.push_back("EEEWWEWWE");
+//    to_print.push_back("WWEWWEEEE");
+//    to_print.push_back("WEEEEEEEE");
+//    to_print.push_back("EEWEEEEEE");
+//    to_print.push_back("EEEEEEEEW");
+//    to_print.push_back("EEEEEEWEE");
+
+    // Adding in assets:
+    SceneObject* wall = new SceneObject(PrimitiveType::WALL_DOOR, TextureType::TEXTURE_STONE);
+    SceneObject* wallCorner = new SceneObject(PrimitiveType::WALL_DOOR, TextureType::TEXTURE_STONE);
+    SceneObject* towerSquareRoof = new SceneObject(PrimitiveType::WALL_DOOR, TextureType::TEXTURE_STONE);
 
     plane->transform = glm::rotate(plane->transform, 0.8f, glm::vec3(1.0f, 0.0f, 0.0f));
     plane->transform = glm::translate(plane->transform, glm::vec3(0.0f, 0.5f, -0.5f));
@@ -162,5 +215,14 @@ void ProceduralCastle::generateScene(Scene& scene)
         vals[i]->transform = glm::translate(vals[i]->transform, glm::vec3(2 * (rand()/(float)RAND_MAX) * (i/n), 0, 2 * (rand()/(float)RAND_MAX) * (i % n)));
         vals[i]->transform = glm::scale(vals[i]->transform, glm::vec3(0.1, 0.1, 0.1));
         scene.root->children.push_back(vals[i]);
+    }
+
+    auto va = string_to_edges("WWWWWWWWW");
+    auto vb = string_to_edges("EWWEWWEWW");
+    for (auto v1 : va) {
+        std::cout << v1 << std::endl;
+    }
+    for (auto v1 : vb) {
+        std::cout << v1 << std::endl;
     }
 }

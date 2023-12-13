@@ -7,7 +7,7 @@ class Cell
 {
 public:
     Cell(int x, int y, int rez, std::vector<Tile> options, std::unordered_map<int, std::vector<int>>* tileMap);
-    float entropy() {m_options.size();};
+    float entropy() {return m_options.size();};
     void update() {m_collapsed = bool(this->entropy() == 1);};
     void observe() {
         if (!m_options.empty()) {

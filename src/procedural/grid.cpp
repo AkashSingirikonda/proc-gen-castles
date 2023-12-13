@@ -33,6 +33,9 @@ void Grid::initiate(int rez, std::vector<Tile> options) {
             m_grid[i].push_back(new Cell(i, j, m_rez, options, &m_tileMap));
         }
     }
+
+    // In this special case, we'll make the outside boxes all the same edges
+    m_options = options;
 }
 
 // Arbitrarily pick a cell using entropy heuristic
@@ -46,15 +49,15 @@ Cell* Grid::heuristicPick() {
         }
     }
 
-    // Sort based on entropy
-    std::sort(gridCopy.begin(), gridCopy.end(), [](Cell* a, Cell* b) {
-        return a->entropy() < b->entropy();
-    });
+
 
     // Filter cells with entropy greater than 1
-    std::vector<Cell*> filteredGrid = gridCopy;
-    auto entropyGreaterThanOne = [](Cell* x) { return x->entropy() > 1.0; };
-    filteredGrid.erase(std::remove_if(filteredGrid.begin(), filteredGrid.end(), entropyGreaterThanOne), filteredGrid.end());
+    std::vector<Cell*> filteredGrid;
+    for (auto c : gridCopy) {
+        if (c->entropy() > 1) {
+            filteredGrid.push_back(c);
+        }
+    }
 
     if (filteredGrid.empty()) {
         return nullptr;
@@ -62,15 +65,21 @@ Cell* Grid::heuristicPick() {
 
     // Find the least entropy cell
     Cell* leastEntropyCell = filteredGrid[0];
-    for (int i = 0; i < gridCopy.size(); i++) {
-        if (leastEntropyCell->entropy() > gridCopy[i]->entropy()) {
-            leastEntropyCell = gridCopy[i];
+    for (auto c : filteredGrid) {
+        if (c->entropy() <= leastEntropyCell->entropy()) {
+            leastEntropyCell = c;
         }
     }
 
-    filteredGrid.erase(std::remove_if(filteredGrid.begin(), filteredGrid.end(),
-                                      [leastEntropyCell](Cell* x) { return x->entropy() != leastEntropyCell->entropy();}),
-                       filteredGrid.end());
+
+    std::vector<Cell*> new_filteredGrid;
+    for (auto c : filteredGrid) {
+        if (c->entropy() <= leastEntropyCell->entropy()) {
+            new_filteredGrid.push_back(c);
+        }
+    }
+
+    filteredGrid = new_filteredGrid;
 
     // Return a random pick if filtered copy is not empty
     if (!filteredGrid.empty()) {
@@ -87,6 +96,18 @@ int pythonMod(int a, int b) {
     return (b + (a % b)) % b;
 }
 void Grid::collapse() {
+    // Store all the states in the state matrix:
+    std::vector<std::vector<Cell>> to_store;
+    for (auto& row : m_grid) {
+        std::vector<Cell> curRow;
+        for (int i = 0 ; i < row.size(); i++) {
+            curRow.push_back(*row[i]);
+        }
+        to_store.push_back(curRow);
+    }
+
+    m_history.push_back(to_store);
+
     // Pick a random cell using entropy heuristic
     Cell* pick = heuristicPick();
     if (pick) {
@@ -107,86 +128,87 @@ void Grid::collapse() {
     }
 
     // Need to take care of references outside.
-    for (int i = 0; i < m_grid.size(); i++) {
-        for (int j = 0; j < m_grid[0].size(); j++) {
+    for (int i = 1; i < m_grid.size()-1; i++) {
+        for (int j = 1; j < m_grid[0].size()-1; j++) {
             if (!m_grid[i][j]->m_collapsed) {
-                std::vector<Tile> cumulative_value_options = m_options;
+                std::vector<int> cumulative_value_options;
+                for (int k = 0; k < m_options.size(); k++) {
+                    cumulative_value_options.push_back(k);
+                }
 
-                // Check the backward cell:
+                // Back
                 Cell* cell_back = m_grid[pythonMod(i-1, m_h)][j];
-                std::vector<int> valid_options;
-                for (Tile& option : cell_back->m_options) {
-                    valid_options.insert(valid_options.end(), option.m_front.begin(), option.m_front.end());
-                }
-
-                std::vector<Tile> temp_options = cumulative_value_options;
-                for (int i = 0; i < cumulative_value_options.size(); i++) {
-                    std::vector<int>::iterator it = find(valid_options.begin(), valid_options.end(), cumulative_value_options[i].m_id);
-                    if (it != valid_options.end()) {
-                        temp_options.push_back(cumulative_value_options[i]);
+                std::set<int> valid_options;
+                for (int k = 0; k < cell_back->m_options.size(); k++) {
+                    for (int l = 0; l < cell_back->m_options[k].m_front.size(); l++) {
+                        valid_options.insert(cell_back->m_options[k].m_front[l]);
                     }
                 }
-                cumulative_value_options = temp_options;
+                cumulative_value_options.erase(std::remove_if(cumulative_value_options.begin(), cumulative_value_options.end(),
+                                                              [&valid_options](int value) {
+                                                                  return valid_options.find(value) == valid_options.end();
+                                                              }),
+                                               cumulative_value_options.end());
 
-
-                // Check the right cell:
-                valid_options.clear();
+                // Right
                 Cell* cell_right = m_grid[i][pythonMod(j+1, m_w)];
-                for (Tile& option : cell_right->m_options) {
-                    valid_options.insert(valid_options.end(), option.m_left.begin(), option.m_left.end());
-                }
-
-                temp_options = cumulative_value_options;
-                for (int i = 0; i < cumulative_value_options.size(); i++) {
-                    std::vector<int>::iterator it = find(valid_options.begin(), valid_options.end(), cumulative_value_options[i].m_id);
-                    if (it != valid_options.end()) {
-                        temp_options.push_back(cumulative_value_options[i]);
+                valid_options.clear();
+                for (int k = 0; k < cell_right->m_options.size(); k++) {
+                    for (int l = 0; l < cell_right->m_options[k].m_left.size(); l++) {
+                        valid_options.insert(cell_right->m_options[k].m_left[l]);
                     }
                 }
-                cumulative_value_options = temp_options;
+                cumulative_value_options.erase(std::remove_if(cumulative_value_options.begin(), cumulative_value_options.end(),
+                                                              [&valid_options](int value) {
+                                                                  return valid_options.find(value) == valid_options.end();
+                                                              }),
+                                               cumulative_value_options.end());
 
 
-                // Check the front:
-                valid_options.clear();
+
+                // Front
                 Cell* cell_front = m_grid[pythonMod(i+1, m_h)][j];
-                for (Tile& option : cell_front->m_options) {
-                    valid_options.insert(valid_options.end(), option.m_back.begin(), option.m_back.end());
-                }
-
-                temp_options = cumulative_value_options;
-                for (int i = 0; i < cumulative_value_options.size(); i++) {
-                    std::vector<int>::iterator it = find(valid_options.begin(), valid_options.end(), cumulative_value_options[i].m_id);
-                    if (it != valid_options.end()) {
-                        temp_options.push_back(cumulative_value_options[i]);
-                    }
-                }
-                cumulative_value_options = temp_options;
-
-
-                // Check the left:
                 valid_options.clear();
-                Cell* cell_left = m_grid[i][pythonMod(j-1, m_w)];
-                for (Tile& option : cell_left->m_options) {
-                    valid_options.insert(valid_options.end(), option.m_right.begin(), option.m_right.end());
-                }
-
-                temp_options = cumulative_value_options;
-                for (int i = 0; i < cumulative_value_options.size(); i++) {
-                    std::vector<int>::iterator it = find(valid_options.begin(), valid_options.end(), cumulative_value_options[i].m_id);
-                    if (it != valid_options.end()) {
-                        temp_options.push_back(cumulative_value_options[i]);
+                for (int k = 0; k < cell_front->m_options.size(); k++) {
+                    for (int l = 0; l < cell_front->m_options[k].m_back.size(); l++) {
+                        valid_options.insert(cell_front->m_options[k].m_back[l]);
                     }
                 }
-                cumulative_value_options = temp_options;
+                cumulative_value_options.erase(std::remove_if(cumulative_value_options.begin(), cumulative_value_options.end(),
+                                                              [&valid_options](int value) {
+                                                                  return valid_options.find(value) == valid_options.end();
+                                                              }),
+                                               cumulative_value_options.end());
+                valid_options.clear();
 
+                // Left
+                Cell* cell_left = m_grid[i][pythonMod(j-1, m_w)];
+                valid_options.clear();
+                for (int k = 0; k < cell_left->m_options.size(); k++) {
+                    for (int l = 0; l < cell_left->m_options[k].m_right.size(); l++) {
+                        valid_options.insert(cell_left->m_options[k].m_right[l]);
+                    }
+                }
+                cumulative_value_options.erase(std::remove_if(cumulative_value_options.begin(), cumulative_value_options.end(),
+                                                              [&valid_options](int value) {
+                                                                  return valid_options.find(value) == valid_options.end();
+                                                              }),
+                                               cumulative_value_options.end());
+                valid_options.clear();
 
                 // Updating the next grid.
-                nextGrid[i][j]->m_options = cumulative_value_options;
+                std::vector<int> new_options_int(cumulative_value_options.begin(), cumulative_value_options.end());
+                nextGrid[i][j]->m_options.clear();
+                for (auto neighbor : new_options_int) {
+                    nextGrid[i][j]->m_options.push_back(m_options[neighbor]);
+                }
                 if (nextGrid[i][j]->m_options.size() == 0) {
                     std::cout << "no valid moves" << std::endl;
                 }
                 nextGrid[i][j]->update();
+                std::cout << nextGrid[i][j]->entropy() << " ";
             }
+            std::cout << std::endl;
         }
     }
     // Copying next_grid into current grid
@@ -198,3 +220,4 @@ void Grid::collapse() {
         m_grid[i] = curRow;
     }
 }
+
