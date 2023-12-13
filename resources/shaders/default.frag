@@ -105,6 +105,6 @@ void main() {
         // test textures:
 //        fragColor = texture(wallTex, uv_pos);
 //        fragColor = vec4(1);
-//        fragColor.x = uv_pos.x;
+//        fragColor.x = uv_pos.y;
     }
 }

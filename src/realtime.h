@@ -139,9 +139,14 @@ private:
     GLuint wallImageTex;
     QImage wallImage;
 
+    GLuint grassMapTex;
+    QImage grassMap;
+    GLuint roofMapTex;
+    QImage roofMap;
+
     void makeFBO();
     void makeTextureVBOandVAO();
-    void setUpTextures(GLuint &texture, GLenum slot); // for different texture images
+    void setUpTextures(GLuint &texture, GLenum slot, QImage map); // for different texture images
     void paintTexture(GLuint texture);
 
 };

@@ -40,6 +40,7 @@ struct SceneMaterial {
     SceneFileMap textureMap; // Used for texture mapping
     SceneFileMap normalMap;
     GLuint tex;
+    GLenum slot;
     TextureType type;
     float blend;             // Used for texture mapping
 

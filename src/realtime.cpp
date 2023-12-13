@@ -83,8 +83,10 @@ void Realtime::initializeGL() {
     ProceduralCastle castleGenerator = ProceduralCastle();
     castleGenerator.generateScene(scene);
 
-    generateScenePrimitives();
+//    generateScenePrimitives();
     generateSceneMaterials();
+    generateScenePrimitives();
+
 
     SceneLoader::GetRenderObjectsForScene(scene, primitiveTypes, materialTypes, renderObjects, renderLights);
     updateLights();
@@ -93,11 +95,12 @@ void Realtime::initializeGL() {
     cameraTrack.linkCamera(&camera);
     buildCameraTrack();
 
+
     /*
     // ADDING TEXTURE STUFF
     // normal map:
 //    QString wallMap_filepath = QString(":/resources/images/Wall_Stone_023_Normal.png"); // filepath
-    QString wallMap_filepath = QString(":/resources/images/Wall_Stone_Normal_Map.png"); // filepath
+    QString wallMap_filepath = QString(":/resources/images/brick_wall_normal.png"); // filepath
     wallMap = QImage(wallMap_filepath); // get image from filepath
     wallMap = wallMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
     // texture/image:
@@ -111,7 +114,33 @@ void Realtime::initializeGL() {
 //    glUniform1i(glGetUniformLocation(shader, "wallImage"), 1);
     glUseProgram(0);
     // FINISHED ADDING TEXTURE STUFF
-*/
+
+    QString grassMap_filepath = QString(":/resources/images/grass.png"); // filepath
+    grassMap = QImage(grassMap_filepath); // get image from filepath
+    grassMap = grassMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
+    setUpTextures(grassMapTex, GL_TEXTURE0, grassMap);
+    glUseProgram(shader);
+    glUniform1i(glGetUniformLocation(shader, "wallTex"), 0);
+    glUseProgram(0);
+
+    QString wallMap_filepath = QString(":/resources/images/brick_wall_normal.png"); // filepath
+    wallMap = QImage(wallMap_filepath); // get image from filepath
+    wallMap = wallMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
+    setUpTextures(wallMapTex, GL_TEXTURE1, wallMap);
+    glUseProgram(shader);
+    glUniform1i(glGetUniformLocation(shader, "wallTex"), 1);
+    glUseProgram(0);
+
+    QString roofMap_filepath = QString(":/resources/images/Roof_Tile_Map.png"); // filepath
+    roofMap = QImage(roofMap_filepath); // get image from filepath
+    roofMap = roofMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
+    setUpTextures(roofMapTex, GL_TEXTURE2, roofMap);
+    glUseProgram(shader);
+    glUniform1i(glGetUniformLocation(shader, "wallTex"), 2);
+    glUseProgram(0);
+    */
+
+
 
     glUseProgram(textureShader);
     glUniform1i(glGetUniformLocation(textureShader, "tex"), 0);
@@ -141,6 +170,11 @@ void Realtime::generateSceneMaterials()
     textureTypes.push_back(TextureType::TEXTURE_STONE);
     textureTypes.push_back(TextureType::TEXTURE_ROOF);
 
+    std::vector<QImage> maps;
+    maps.push_back(grassMap);
+    maps.push_back(wallMap);
+    maps.push_back(roofMap);
+
     for(TextureType textureType : textureTypes)
     {
         SceneMaterial material = DefaultMaterials::getDefaultMaterial(textureType);
@@ -148,21 +182,37 @@ void Realtime::generateSceneMaterials()
         QString filepath = QString(material.normalMap.filename.c_str()); // filepath
         wallMap = QImage(filepath); // get image from filepath
         wallMap = wallMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
-        setUpTextures(material.tex, GL_TEXTURE0);
+        setUpTextures(material.tex, GL_TEXTURE0, wallMap);
         glUseProgram(shader);
         glUniform1i(glGetUniformLocation(shader, "wallTex"), 0);
         glUseProgram(0);
 
         materialTypes[textureType] = material;
     }
+
+    /*
+    for (int i = 0; i < textureTypes.size(); i++) {
+        SceneMaterial material = DefaultMaterials::getDefaultMaterial(textureTypes[i]);
+        std::cout << material.normalMap.filename << std::endl;
+//        QString filepath = QString(material.normalMap.filename.c_str()); // filepath
+//        maps[i] = QImage(filepath); // get image from filepath
+//        maps[i] = wallMap.convertToFormat(QImage::Format_RGBA8888).mirrored(); // correct format
+//        setUpTextures(material.tex, material.slot, maps[i]);
+//        glUseProgram(shader);
+//        glUniform1i(glGetUniformLocation(shader, "wallTex"), i);
+//        glUseProgram(0);
+
+        materialTypes[textureTypes[i]] = material;
+    }
+    */
 }
 
-void Realtime::setUpTextures(GLuint &texture, GLenum slot)
+void Realtime::setUpTextures(GLuint &texture, GLenum slot, QImage map)
 {
     glGenTextures(1, &texture);
     glActiveTexture(slot);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, wallMap.width(), wallMap.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, wallMap.bits());
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, map.width(), map.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, map.bits());
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); // min
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); // mag
     glBindTexture(GL_TEXTURE_2D, 0); // unbind
@@ -357,7 +407,7 @@ void Realtime::renderScene(){
         SceneMaterial* material = renderObject->material;
         //glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));
 
-        // send texture to shader
+        // send texture to shader        
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, material->tex);
 

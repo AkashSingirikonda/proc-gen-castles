@@ -19,6 +19,7 @@ public:
             material.shininess = 15;
             material.normalMap = SceneFileMap();
             material.normalMap.filename = ":/resources/images/grass.png";
+            material.slot = GL_TEXTURE0;
             material.normalMap.isUsed = 1;
             break;
         case TextureType::TEXTURE_STONE:
@@ -28,7 +29,8 @@ public:
             material.shininess = 15;
             // adding mapping values
             material.normalMap = SceneFileMap();
-            material.normalMap.filename = ":/resources/images/Wall_Stone_Normal_Map.png";
+            material.normalMap.filename = ":/resources/images/brick_wall_normal.png";
+            material.slot = GL_TEXTURE1;
             material.normalMap.isUsed = 1;
             break;
         case TextureType::TEXTURE_ROOF:
@@ -38,6 +40,7 @@ public:
             material.shininess = 15;
             material.normalMap = SceneFileMap();
             material.normalMap.filename = ":/resources/images/Roof_Tile_Map.png";
+            material.slot = GL_TEXTURE2;
             material.normalMap.isUsed = 1;
             break;
         default:
