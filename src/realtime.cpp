@@ -408,7 +408,7 @@ void Realtime::renderScene(){
         //glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));
 
         // send texture to shader
-        glActiveTexture(material->slot);
+        glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, material->tex);
 
 
