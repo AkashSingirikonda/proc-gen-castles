@@ -34,6 +34,19 @@ void Grid::initiate(int rez, std::vector<Tile> options) {
         }
     }
 
+    for (int i = 0; i < m_w; i++) {
+        m_grid[0][i] = new Cell(i, 0, m_rez, {options[0]}, &m_tileMap);
+        m_grid[0][i]->m_collapsed = true;
+        m_grid[m_w-1][i] = new Cell(i, m_w-1, m_rez, {options[0]}, &m_tileMap);
+        m_grid[m_w-1][i]->m_collapsed = true;
+    }
+
+    for (int i = 0; i < m_h; i++) {
+        m_grid[i][0] = new Cell(0, i, m_rez, {options[0]}, &m_tileMap);
+        m_grid[i][0]->m_collapsed = true;
+        m_grid[i][m_h-1] = new Cell(m_h-1, i, m_rez, {options[0]}, &m_tileMap);
+        m_grid[i][m_h-1]->m_collapsed = true;
+    }
     // In this special case, we'll make the outside boxes all the same edges
     m_options = options;
 }
@@ -97,16 +110,16 @@ int pythonMod(int a, int b) {
 }
 void Grid::collapse() {
     // Store all the states in the state matrix:
-    std::vector<std::vector<Cell>> to_store;
-    for (auto& row : m_grid) {
-        std::vector<Cell> curRow;
-        for (int i = 0 ; i < row.size(); i++) {
-            curRow.push_back(*row[i]);
-        }
-        to_store.push_back(curRow);
-    }
+//    std::vector<std::vector<Cell>> to_store;
+//    for (auto& row : m_grid) {
+//        std::vector<Cell> curRow;
+//        for (int i = 0 ; i < row.size(); i++) {
+//            curRow.push_back(*row[i]);
+//        }
+//        to_store.push_back(curRow);
+//    }
 
-    m_history.push_back(to_store);
+//    m_history.push_back(to_store);
 
     // Pick a random cell using entropy heuristic
     Cell* pick = heuristicPick();
@@ -128,8 +141,8 @@ void Grid::collapse() {
     }
 
     // Need to take care of references outside.
-    for (int i = 1; i < m_grid.size()-1; i++) {
-        for (int j = 1; j < m_grid[0].size()-1; j++) {
+    for (int i = 0; i < m_grid.size(); i++) {
+        for (int j = 0; j < m_grid[0].size(); j++) {
             if (!m_grid[i][j]->m_collapsed) {
                 std::vector<int> cumulative_value_options;
                 for (int k = 0; k < m_options.size(); k++) {
