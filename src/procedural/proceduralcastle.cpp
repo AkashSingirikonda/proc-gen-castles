@@ -25,7 +25,7 @@ void ProceduralCastle::generateScene(Scene& scene)
     auto seed = settings.rootSeed;
     srand(seed);
 
-    int tileNum = 5;
+    int tileNum = 10;
     // Testing out Wave Function Collapse:
     std::vector<Tile> options;
     std::unordered_map<int, std::vector<int>> tileMap;
@@ -34,12 +34,26 @@ void ProceduralCastle::generateScene(Scene& scene)
         options.push_back(Tile());
     }
     // Scheme: Back, Right, Front, Left
+    // 1s refer to walls, 0s refer to air/edges
+    // Air
     options[0].m_edges = {0, 0, 0, 0};
-    options[1].m_edges = {1, 1, 0, 1};
-    options[2].m_edges = {1, 1, 1, 0};
-    options[3].m_edges = {0, 1, 1, 1};
-    options[4].m_edges = {1, 0, 1, 1};
+    // Wall
+    options[1].m_edges = {1, 1, 1, 1};
+    // External Corner Pieces:
+    options[2].m_edges = {0, 0, 1, 1}; // LF
+    options[3].m_edges = {1, 0, 0, 1}; // BL
+    options[4].m_edges = {1, 1, 0, 0};
+    options[5].m_edges = {0, 1, 1, 0};
 
+    // Walls:
+    options[6].m_edges = {0, 0, 0, 1}; // L
+    options[7].m_edges = {1, 0, 0, 0}; // B
+    options[8].m_edges = {0, 1, 0, 0}; // R
+    options[9].m_edges = {0, 0, 1, 0}; // F
+
+    // Rotations take place in clockwise direction around y axis.
+
+    //
     for (int i = 0; i < tileNum; i++) {
         options[i].m_id = i;
         tileMap[i] = options[i].m_edges;
@@ -56,11 +70,17 @@ void ProceduralCastle::generateScene(Scene& scene)
     wave.initiate(0, options);
 
     std::map<int, std::string> to_print;
-    to_print[0].append("OOOOOOOOO");
-    to_print[1].append("OXOXXXOOO");
-    to_print[2].append("OXOOXXOXO");
-    to_print[3].append("OOOXXXOXO");
-    to_print[4].append("OXOXXOOXO");
+    to_print[0].append("WWWWWWWWW");
+    to_print[1].append("EEEEEEEEE");
+    to_print[2].append("EWWEWWEEE");
+    to_print[3].append("EEEEWWEWW");
+    to_print[4].append("EEEWWEWWE");
+    to_print[5].append("WWEWWEEEE");
+    to_print[6].append("EWWEWWEWW");
+    to_print[7].append("EEEWWWWWW");
+    to_print[8].append("WWEWWEWWE");
+    to_print[9].append("WWWWWWEEE");
+
 
     for (int i = 0; i < width*height; i++) {
         wave.collapse();
