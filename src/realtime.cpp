@@ -170,10 +170,10 @@ void Realtime::generateSceneMaterials()
     textureTypes.push_back(TextureType::TEXTURE_STONE);
     textureTypes.push_back(TextureType::TEXTURE_ROOF);
 
-    std::vector<QImage> maps;
-    maps.push_back(grassMap);
-    maps.push_back(wallMap);
-    maps.push_back(roofMap);
+//    std::vector<QImage> maps;
+//    maps.push_back(grassMap);
+//    maps.push_back(wallMap);
+//    maps.push_back(roofMap);
 
     for(TextureType textureType : textureTypes)
     {
@@ -407,8 +407,8 @@ void Realtime::renderScene(){
         SceneMaterial* material = renderObject->material;
         //glUniform1i(glGetUniformLocation(shader, "tex_type"), static_cast<TextureType>(material->type));
 
-        // send texture to shader        
-        glActiveTexture(GL_TEXTURE0);
+        // send texture to shader
+        glActiveTexture(material->slot);
         glBindTexture(GL_TEXTURE_2D, material->tex);
 
 
