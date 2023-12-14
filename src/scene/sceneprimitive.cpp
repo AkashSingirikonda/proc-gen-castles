@@ -29,17 +29,23 @@ void makeFace(std::vector<float>* data, glm::vec3 topLeft, glm::vec3 topRight, g
 
     pushPointAndNorm3(topLeft, n, data);
     pushUV(glm::vec2(0.f, 1.f), data);
+    pushVec3(topLeft - topRight, data);
     pushPointAndNorm3(bottomLeft, n, data);
     pushUV(glm::vec2(0.f, 0.f), data);
+    pushVec3(topLeft - topRight, data);
     pushPointAndNorm3(bottomRight, n, data);
     pushUV(glm::vec2(1.f, 0.f), data);
+    pushVec3(topLeft - topRight, data);
 
     pushPointAndNorm3(topLeft, n, data);
     pushUV(glm::vec2(0.f, 1.f), data);
+    pushVec3(topLeft - topRight, data);
     pushPointAndNorm3(bottomRight, n, data);
     pushUV(glm::vec2(1.f, 0.f), data);
+    pushVec3(topLeft - topRight, data);
     pushPointAndNorm3(topRight, n, data);
     pushUV(glm::vec2(1.f, 1.f), data);
+    pushVec3(topLeft - topRight, data);
 }
 
 void PrimitivePlane::generate(int k1, int k2)

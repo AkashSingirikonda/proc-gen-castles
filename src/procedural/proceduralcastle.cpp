@@ -23,7 +23,7 @@ bool check_vc(char to_check) {
     } else if (to_check == 'W') {
         return false;
     }
-    std::cout << "invalid string" << std::endl;
+    //std::cout << "invalid string" << std::endl;
     return false;
 }
 
@@ -147,7 +147,7 @@ void ProceduralCastle::generateScene(Scene& scene)
             }
         }
         if (!to_break_acc) {
-            std::cout << "exited on restart" << i << std::endl;
+            //std::cout << "exited on restart" << i << std::endl;
             break;
         }
     }
@@ -157,23 +157,22 @@ void ProceduralCastle::generateScene(Scene& scene)
         for (int j = 0; j < 3; j++) {
             for (int y = 0; y < width; y++) {
                 if (!wave.m_grid[x][y]->m_collapsed) {
-                    std::cout << "LLL";
+                    //std::cout << "LLL";
                 } else {
-                    std::cout << tileStrings[wave.m_grid[x][y]->m_options[0].m_id].substr(j*3, 3);
+                    ////std::cout << tileStrings[wave.m_grid[x][y]->m_options[0].m_id].substr(j*3, 3);
                 }
             }
-            std::cout << std::endl;
+            //std::cout << std::endl;
         }
     }
-    std::cout << std::endl;
+    //std::cout << std::endl;
 
-    std::cout << "done";
+    //std::cout << "done";
     // Done with Wave function collapse
 
     // Not testing right now:::
     //CastleLayoutGenerator::GenerateCastleLayout(seed);
 
-    // TODO
     // Adding Scene Light Data
     SceneLightData sceneLightData;
     sceneLightData.type = LightType::LIGHT_DIRECTIONAL;
@@ -183,6 +182,23 @@ void ProceduralCastle::generateScene(Scene& scene)
     sceneLight->transform = glm::translate(sceneLight->transform, glm::vec3(0.0f, 100.0f, 0.0f));
     SceneNode* root = new SceneNode();
     root->lights.push_back(sceneLight);
+
+
+    // Addign grass to scene
+    SceneObject* grassTile = new SceneObject(PrimitiveType::PRIMITIVE_PLANE, TextureType::TEXTURE_GRASS);
+
+    int grassGridSize = 5;
+    for(int i = -grassGridSize/2; i < 1.5 * grassGridSize; i++)
+    {
+        for(int j = -grassGridSize/2; j < 1.5 * grassGridSize; j++)
+        {
+            SceneNode* tile = new SceneNode();
+            tile->objects.push_back(grassTile);
+            tile->transform = glm::scale(tile->transform, glm::vec3(6, 6, 6));
+            tile->transform = glm::translate(tile->transform, glm::vec3(i, -0.5f, j));
+            root->children.push_back(tile);
+        }
+    }
 
 // List of current assets:
 //        STAIRS_STONE,

@@ -6,13 +6,13 @@ void Grid::printGrid() {
     for (int i = 0; i < m_grid.size(); i++) {
         for (int j = 0; j < m_grid[i].size(); j++) {
             if (m_grid[i][j]->m_collapsed) {
-                std::cout << m_grid[i][j]->m_options[0].m_id;
+                //std::cout << m_grid[i][j]->m_options[0].m_id;
             } else {
-                std::cout << "L";
+                //std::cout << "L";
             }
-            std::cout << " ";
+            //std::cout << " ";
         }
-        std::cout << std::endl;
+        //std::cout << std::endl;
     }
 }
 
@@ -216,12 +216,12 @@ void Grid::collapse() {
                     nextGrid[i][j]->m_options.push_back(m_options[neighbor]);
                 }
                 if (nextGrid[i][j]->m_options.size() == 0) {
-                    std::cout << "no valid moves" << std::endl;
+                    //std::cout << "no valid moves" << std::endl;
                 }
                 nextGrid[i][j]->update();
-                std::cout << nextGrid[i][j]->entropy() << " ";
+                //std::cout << nextGrid[i][j]->entropy() << " ";
             }
-            std::cout << std::endl;
+            //std::cout << std::endl;
         }
     }
     // Copying next_grid into current grid
