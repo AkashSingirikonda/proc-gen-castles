@@ -1,7 +1,6 @@
 Procedurally Generated Castles
 
-![Uploading image.png…]()
-
+<img width="1386" alt="image" src="https://github.com/AkashSingirikonda/proc-gen-castles/assets/75210265/779c345a-ae6f-4e4c-ac20-094fcab12610">
 
 General Code Layout
 
