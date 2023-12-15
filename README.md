@@ -69,3 +69,20 @@ allowing only the conversion of a single vocabulary word into an arbitrary succe
 The Lsystem is used to generate a sample hierachical layout for a castle in procedural/layoutgenerator.h
 This demonstraights how the LSystem can be setup with an enum and then how the output can be used to produce a data structure that can
 be piped into more procedural generation.
+
+
+Normal Mapping Textures : Yaara Kaplan
+
+For the textures, we used normal maps to add more depth to the primitives. We decided to have 3 different texture types that were 
+attached to different primitives: Stone for the walls, a roof texture for roofs, and grass for the ground which was implemented using 
+simple cubes. 
+
+To create the normal maps, I found images online that matched the texture we wanted to replicate and edited them into normal maps 
+using Photoshop. These normal maps are then loaded into the shader based on the material of the primitive. Unlike regularly mapped 
+textures, we use the pixel data from the normal map to overwrite the primitive normals, so that the surface of the primitive reacts more 
+realistically to light shining. We then compute the rest of the lighting using the phong illumination model, just as we did in Action.
+
+In order to implement these textures, we added uv coordinates as well as tangent vectors to the VBO. The uv coordinates allow us to map 
+the textures onto the primitives with the correct pixels, and the tangent vectors are used in the vertex shader to compute a 
+transformation matrix that converts the normals from the normal map from tangent space into object space. This transformation matrix is
+what ensures accurate lighting effects using the phong illumination model.
