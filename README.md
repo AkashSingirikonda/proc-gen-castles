@@ -31,6 +31,28 @@ The general code flow is as follows:
 5. The scene is rendered in the same way as previous projects.
   - A normal map from the material is passed to the fragment shader in addition to a flag to indicate if it should be used.
 
+Generic 3x3 Tiling system for Wave Function Collapse : Akash Singirikonda
+
+- Tiles are defined from wave function collapse by using strings which represent a 3x3 grid. Only tiles with matching edges can be placed together. These tiles are defined in ProceduralCastle::generateScene().
+- Tiles are defined as strings where the index of the character in the string represents the position in a 3x3 array. The first row of the array would correspond to the back of the asset, the last row the front of the asset. E corresponds to the outer face of a wall and W the inner face. So "EEEEWWEWW" would refer to an asset a wall on the left and front faces. This would be able to connect with an empty block ("EEEEEEEEE") on the left and front and with a block which only has a wall facing forward ("EEEEEEWWW") on the to the right of this block.
+- These strings are inserted into the the set of valid tiles to be used in wave function collapse by inserting into the vector tilestrings in ProceduralCastle::generateScene().
+
+Wave Function Collapse : Akash Singirikonda 
+
+- Wave function collapse is implemented primarily in the classes "wfc", "cell", and "grid".
+- Wave function collapse was implemented on arbitrary tiles in 2D with the constraint that only edges of the same type can be matched with each other. It can be modified to work on arbitrary graphs, but is very slow in 3D.
+- If at any point in time the wave function collapse determines that a cell in a grid has no valid option, it will restart. (It doesn't do backtracking currently)
+- It can use any entropy function to detect which edges to collapse first. The current entropy function is just the number of options. This gives a dense grid. A function that prefers interior walls or absence of tiles can be used to get more disjoint grids. Three tiles that we didn't end up using, but created infrastructure were interior corners like "EWWWWWWWW" which can be placed to create a castle that's has a concave corner, "EWEWWWWWW" which can connect to a bridge connecting "buildings," and "EWEEWEEWE" which acts a bridge and connects bodies of buildings together which have the previous tiles. Additionally, to give these bridges twists and turns, we can use tiles like "EEEEWWEWE" and its rotations.
+- The castles were generated with just four types of tiles and various rotations of them. A tile with walls on 2 sides, a tile with walls on 1 side, a castle interior tiles, and a tile that represents the absence of an asset.
+
+Managing Assets : Rohit Panse
+
+- Assets were loaded from .obj files from from https://www.kenney.nl/assets/castle-kit.
+- They are loaded from .obj files with a parser that we wrote ourselves that handles .obj files with vertices, normals, and texture coordinates.
+- They are stored in the program with the PRIMITIVE_TYPE of PRIMITIVE_MESH.
+- Then they are mapped by hand to tilestrings that are created using the 3x3 tileset used above.
+- They are then mapped to different rotation components and offsets so that they can be placed according to the grid generated in wave function collapse. (The center of the assets according to the model matrix isn't the "center" of the asset, but a unique corner per asset)
+- On top of interior blocks of the castle, towers are placed with roofs. This forms the castle.
 
 Camera Work : Alexander Ivanov
 
